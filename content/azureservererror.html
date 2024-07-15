@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <!-- GOOGLE FONTS - ROBOTO -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <a href="../index.html"><</a>
+        <nav>
+            
+            <h1> <a href="../index.html">My Blog</a> </h1>
+        </nav>
+    </header>
+    <section>
+        <article>
+            <h2>Azure server error 500.30</h2>
+            <p>
+                Well... I wanted to talk about this because it was one of the first errors I couldn't find a solution the first time, I didn't find the solution in the documentation, stackoverflow, youtube, google, chatgpt... I was stuck and didn't know what to do, the backend project was working perfectly locally but when and publish the project on Azure I was getting this generic error for 3 days. <br><br>
+                But, then I discovered it was not that hard, I was just calling something from the appsettings.json file and wasn't using it, and yeah, sounds stupid, 3 days and I just needed to not using it and delete it or just use it, in that momment I was implementing push notifications to the project and I just did the base configuration. <br><br>
+                If you ever get this error the FIRST thing you must do is click on the project in Azure Portal -> App Services, then click on "Diagnose and solve problems", look for the Diagnostic Tools section and click on "Application Event Logs", this may sound extremely obvious for most developers with some experience but since I just published a backend project without any previous knowledge I had no idea how that was working, the first time I used it I had to publish the project, I was scared and had no idea about anything, I asked for help but my mind was stuck, sometimes the way you feel in a job may block you for being productive. <br><br>
+                Below I will attach the docs and other sites you can find info about this problem, I know I just showed one situacion where you find this issue and there is a lot of situations you face this, but please know you are not alone, take a deep breath and ask for help, most of the times it's not that hard, you are making it harder.
+                <br><br>
+                <a href="https://learn.microsoft.com/en-us/answers/questions/1608662/http-error-500-30-asp-net-core-app-failed-to-start">https://learn.microsoft.com/en-us/answers/questions/1608662/http-error-500-30-asp-net-core-app-failed-to-start</a> <br>
+                <a href="https://learn.microsoft.com/en-us/answers/questions/1251831/how-to-fix-http-error-500-30-asp-net-core-app-fail">https://learn.microsoft.com/en-us/answers/questions/1251831/how-to-fix-http-error-500-30-asp-net-core-app-fail</a>
+                 <br>
+                 <a href="https://stackoverflow.com/questions/53811569/http-error-500-30-ancm-in-process-start-failure">https://stackoverflow.com/questions/53811569/http-error-500-30-ancm-in-process-start-failure</a>
+                 <- if you face it locally you may want to see this one.
+            </p>
+        </article>
+    </section>
+</body>
+</html>
