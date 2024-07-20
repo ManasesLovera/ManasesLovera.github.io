@@ -30,19 +30,18 @@
 
                     Data Annotation:
 
-                    csharp
-                    Copiar código
                     if(!ModelState.IsValid)
                         return BadRequest(ModelState);
+
+
                     FluentValidation:
 
-                    csharp
-                    Copiar código
                     var validationResult = await validator.ValidateAsync(Dto);
                     if (!validationResult.IsValid)
                     {
                         return BadRequest(validationResult.Errors);
                     }
+                    
                     Data Annotations are easier to implement, while FluentValidation requires another file, installation, dependency injection, and more code for validation.
 
                     In FluentValidation, when the data is invalid, errors come as an array with everything that is invalid. In contrast, in Data Annotations, it is an object with each property, and each one comes with an array with the name of each property. I prefer how FluentValidation handles this part, as it is less complicated for the frontend.
