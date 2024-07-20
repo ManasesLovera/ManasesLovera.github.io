@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <!-- GOOGLE FONTS - ROBOTO -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <a href="../index.html"><</a>
+        <nav>
+            <h1> <a href="../index.html">My Blog</a> </h1>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <article>
+                <h2>Data Annotations vs Fluent Validation: Object Validation in .NET</h2>
+                <p>
+                    I have an internal debate about which is better for validating DTOs. This is the conclusion I reached:
+
+                    Both allow you to validate equally and provide the same tools.
+
+                    Both are equally easy to check for validation once everything is configured. However, FluentValidation takes more time to configure since it must be done via DependencyInjection for each validator, and an external library must be installed.
+
+                    Data Annotation:
+
+                    csharp
+                    Copiar código
+                    if(!ModelState.IsValid)
+                        return BadRequest(ModelState);
+                    FluentValidation:
+
+                    csharp
+                    Copiar código
+                    var validationResult = await validator.ValidateAsync(Dto);
+                    if (!validationResult.IsValid)
+                    {
+                        return BadRequest(validationResult.Errors);
+                    }
+                    Data Annotations are easier to implement, while FluentValidation requires another file, installation, dependency injection, and more code for validation.
+
+                    In FluentValidation, when the data is invalid, errors come as an array with everything that is invalid. In contrast, in Data Annotations, it is an object with each property, and each one comes with an array with the name of each property. I prefer how FluentValidation handles this part, as it is less complicated for the frontend.
+
+                    Considering that code should be written for both your understanding and for others to read, FluentValidation offers a better way to view all the validations that the DTO will have to be valid without having to review each DTO's data annotations.
+
+                    In my opinion, although Data Annotations, being an internal library, are much easier to implement in your code, FluentValidation can allow the developer to understand more easily, quickly, and accessibly, and provide better-organized error handling. It is worth taking a few extra minutes to install, etc.
+
+                    I hope you find this useful!
+                </p>
+            </article>
+        </section>
+    </main>
+    <footer>
+        <p>Find me in the following socials:</p>
+        <a target="_blank" href="https://github.com/ManasesLovera"><img src="./src/GitHub-logo.png" alt="github logo"></a>
+        <a target="_blank" href="https://www.linkedin.com/in/manas%C3%A9s-lovera-a35038225/"><img src="./src/linkedin-logo.png" alt="linkedin logo"></a>
+    </footer>
+</body>
+</html>
