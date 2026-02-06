@@ -2,13 +2,13 @@
 
 ## Project Overview
 
-This is a personal portfolio website built with Astro, a modern static site generator. The site is deployed at https://manases.dev and uses GitHub Pages for hosting.
+This is a personal portfolio website built with Astro, a modern static site generator. The site uses GitHub Pages for hosting.
 
 ## Technology Stack
 
 - **Framework**: Astro v4.16.6
 - **Language**: TypeScript/JavaScript
-- **Deployment**: GitHub Pages (custom domain)
+- **Deployment**: GitHub Pages
 - **Build Output**: `docs/` directory (configured for GitHub Pages)
 
 ## Project Structure
@@ -67,7 +67,7 @@ This is a personal portfolio website built with Astro, a modern static site gene
 
 - Output directory is set to `docs/` (not default `dist/`)
 - The `.nojekyll` file must remain to prevent Jekyll processing
-- Site URL is configured as `https://manases.dev`
+- Site URL can be configured in `astro.config.mjs` if using a custom domain
 
 ### Important Notes
 
