@@ -1,23 +1,29 @@
 <!DOCTYPE html>
 
-<html lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Manasés Lovera | Backend &amp; AI/ML Engineer</title>
-<meta name="description" content="Manasés Lovera (mlovera) - Software Engineer and Software Developer specializing in Machine Learning and Backend development. Building intelligent systems and scalable infrastructure." />
-<meta name="keywords" content="Manases Lovera, Manasés Lovera, manaseslovera, mlovera, lovera, manases, Software Engineer, Software Developer, AI Engineer, Machine Learning, Backend, ASP.NET Core, Python, React, Dominican Republic" />
-<meta name="author" content="Manasés Lovera" />
-<meta name="robots" content="index, follow" />
-<link rel="canonical" href="https://mlovera.dev/" />
-<meta property="og:title" content="Manasés Lovera | Backend & AI/ML Engineer" />
-<meta property="og:description" content="Manasés Lovera (mlovera) – Software Engineer and Developer building systems that think, learn, and scale. Specializing in Backend and AI/ML." />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://mlovera.dev/" />
-<meta property="og:site_name" content="Manasés Lovera" />
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="Manasés Lovera | Backend & AI/ML Engineer" />
-<meta name="twitter:description" content="Manasés Lovera (mlovera) – Software Engineer and Developer building systems that think, learn, and scale." />
-<script type="application/ld+json">
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Manasés Lovera | Backend &amp; AI/ML Engineer</title>
+    <meta name="description"
+        content="Manasés Lovera (mlovera) - Software Engineer and Software Developer specializing in Machine Learning and Backend development. Building intelligent systems and scalable infrastructure." />
+    <meta name="keywords"
+        content="Manases Lovera, Manasés Lovera, manaseslovera, mlovera, lovera, manases, Software Engineer, Software Developer, AI Engineer, Machine Learning, Backend, ASP.NET Core, Python, React, Dominican Republic" />
+    <meta name="author" content="Manasés Lovera" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://mlovera.dev/" />
+    <meta property="og:title" content="Manasés Lovera | Backend & AI/ML Engineer" />
+    <meta property="og:description"
+        content="Manasés Lovera (mlovera) – Software Engineer and Developer building systems that think, learn, and scale. Specializing in Backend and AI/ML." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://mlovera.dev/" />
+    <meta property="og:site_name" content="Manasés Lovera" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Manasés Lovera | Backend & AI/ML Engineer" />
+    <meta name="twitter:description"
+        content="Manasés Lovera (mlovera) – Software Engineer and Developer building systems that think, learn, and scale." />
+    <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Person",
@@ -32,10 +38,14 @@
   ]
 }
 </script>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=JetBrains+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=JetBrains+Mono:wght@400;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
             theme: {
@@ -63,374 +73,722 @@
             },
         }
     </script>
-<script>
-    (function() {
-        const saved = localStorage.getItem('theme');
-        if (saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            document.documentElement.classList.add('dark');
-        }
-    })();
-</script>
-<style>
+    <script>
+            (function () {
+                const saved = localStorage.getItem('theme');
+                if (saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                    document.documentElement.classList.add('dark');
+                }
+            })();
+    </script>
+    <style>
         html {
             scroll-behavior: smooth;
         }
+
         body {
             font-family: 'Inter', sans-serif;
         }
+
         .tech-grid-pattern {
             background-image: radial-gradient(#2f2348 1px, transparent 1px);
             background-size: 30px 30px;
         }
+
         html:not(.dark) .tech-grid-pattern {
             background-image: radial-gradient(#d8d5de 1px, transparent 1px);
         }
+
         * {
             transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
         }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-12px);
+            }
+        }
+
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .animate-float-slow {
+            animation: float 9s ease-in-out infinite;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            .animate-float,
+            .animate-float-slow {
+                animation: none;
+            }
+        }
     </style>
 </head>
-<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 selection:bg-primary selection:text-white">
-<!-- Top Navigation -->
-<header class="fixed top-0 w-full z-50 border-b border-solid border-slate-200 dark:border-border-dark bg-white/80 dark:bg-background-dark/80 backdrop-blur-md">
-<div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-<div class="flex items-center gap-3">
-<div class="size-8 bg-primary rounded flex items-center justify-center text-white">
-<span class="material-symbols-outlined">terminal</span>
-</div>
-<span class="text-slate-900 dark:text-white font-bold tracking-tight">Manasés Lovera</span>
-</div>
-<nav class="hidden md:flex items-center gap-8">
-<a class="text-sm font-medium hover:text-primary transition-colors text-slate-600 dark:text-slate-300" href="#about">About</a>
-<a class="text-sm font-medium hover:text-primary transition-colors text-slate-600 dark:text-slate-300" href="#experience">Experience</a>
-<a class="text-sm font-medium hover:text-primary transition-colors text-slate-600 dark:text-slate-300" href="#stack">Stack</a>
-<a class="text-sm font-medium hover:text-primary transition-colors text-slate-600 dark:text-slate-300" href="#projects">Projects</a>
-</nav>
-<div class="flex items-center gap-4">
-<button onclick="toggleTheme()" class="p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-border-dark transition-colors" aria-label="Toggle theme">
-    <span class="material-symbols-outlined dark:hidden">dark_mode</span>
-    <span class="material-symbols-outlined hidden dark:inline">light_mode</span>
-</button>
-<a class="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg text-sm font-bold transition-all flex items-center gap-2" href="#footer">
+
+<body
+    class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 selection:bg-primary selection:text-white">
+    <!-- Top Navigation -->
+    <header
+        class="fixed top-0 w-full z-50 border-b border-solid border-slate-200 dark:border-border-dark bg-white/80 dark:bg-background-dark/80 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="size-8 bg-primary rounded flex items-center justify-center text-white">
+                    <span class="material-symbols-outlined">terminal</span>
+                </div>
+                <span class="text-slate-900 dark:text-white font-bold tracking-tight">Manasés Lovera</span>
+            </div>
+            <nav class="hidden md:flex items-center gap-8">
+                <a class="text-sm font-medium hover:text-primary transition-colors text-slate-600 dark:text-slate-300"
+                    href="#about">About</a>
+                <a class="text-sm font-medium hover:text-primary transition-colors text-slate-600 dark:text-slate-300"
+                    href="#experience">Experience</a>
+                <a class="text-sm font-medium hover:text-primary transition-colors text-slate-600 dark:text-slate-300"
+                    href="#stack">Stack</a>
+                <a class="text-sm font-medium hover:text-primary transition-colors text-slate-600 dark:text-slate-300"
+                    href="#projects">Projects</a>
+            </nav>
+            <div class="flex items-center gap-4">
+                <button onclick="toggleTheme()"
+                    class="p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-border-dark transition-colors"
+                    aria-label="Toggle theme">
+                    <span class="material-symbols-outlined dark:hidden">dark_mode</span>
+                    <span class="material-symbols-outlined hidden dark:inline">light_mode</span>
+                </button>
+                <a class="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg text-sm font-bold transition-all flex items-center gap-2"
+                    href="#footer">
                     Connect <span class="material-symbols-outlined text-sm">open_in_new</span>
-</a>
-</div>
-</div>
-</header>
-<main class="pt-16">
-<!-- Hero Section -->
-<section class="relative min-h-[90vh] flex items-center overflow-hidden tech-grid-pattern">
-<div class="absolute inset-0 bg-gradient-to-b from-transparent via-background-light/50 to-background-light dark:via-background-dark/50 dark:to-background-dark"></div>
-<div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
-<div class="flex flex-col gap-8">
-<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-mono">
-<span class="relative flex h-2 w-2">
-<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-<span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
-</span>
+                </a>
+            </div>
+        </div>
+    </header>
+    <main class="pt-16">
+        <!-- Hero Section -->
+        <section class="relative min-h-[90vh] flex items-center overflow-hidden tech-grid-pattern">
+            <div
+                class="absolute inset-0 pointer-events-none bg-gradient-to-b from-transparent via-background-light/50 to-background-light dark:via-background-dark/50 dark:to-background-dark">
+            </div>
+            <div
+                class="max-w-7xl mx-auto px-6 py-20 lg:py-16 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center relative z-10">
+                <div class="lg:col-span-7 flex flex-col gap-6">
+                    <div
+                        class="self-start inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-mono">
+                        <span class="relative flex h-2 w-2">
+                            <span
+                                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+                        </span>
                         Available for Engineering and Developer Roles
                     </div>
-<h1 class="text-5xl md:text-7xl font-black leading-tight tracking-tight text-slate-900 dark:text-white">Manasés Lovera</h1><h2 class="text-3xl md:text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white mt-2"><span class="text-primary">Fullstack &amp; AI</span> Software Engineer</h2>
-<p class="text-lg md:text-xl text-slate-500 dark:text-slate-400 max-w-xl leading-relaxed">
-                        I build the systems that think, learn, and scale—fusing Backend Craftsmanship with AI/ML Innovation.
+                    <div>
+                        <h1
+                            class="text-5xl md:text-7xl font-black leading-[1.05] tracking-tight text-slate-900 dark:text-white">
+                            Manasés Lovera</h1>
+                        <h2
+                            class="text-3xl md:text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white mt-3">
+                            <span class="text-primary">Fullstack &amp; AI</span> Software Engineer</h2>
+                    </div>
+                    <p class="text-lg md:text-xl text-slate-500 dark:text-slate-400 max-w-xl leading-relaxed">
+                        I build the systems that think, learn, and scale—fusing Backend Craftsmanship with AI/ML
+                        Innovation.
                     </p>
-<div class="flex flex-wrap gap-4 justify-center lg:justify-start">
-<a class="bg-primary text-white px-8 py-4 rounded-lg font-bold hover:scale-105 transition-transform flex items-center gap-2" href="#projects">
+                    <div
+                        class="flex flex-wrap items-center gap-x-6 gap-y-2 font-mono text-xs text-slate-500 dark:text-slate-400">
+                        <span class="flex items-center gap-1.5"><span
+                                class="material-symbols-outlined text-base text-primary">location_on</span> Dominican
+                            Republic</span>
+                        <span class="flex items-center gap-1.5"><span
+                                class="material-symbols-outlined text-base text-primary">public</span> Open to remote ·
+                            UTC−4</span>
+                        <span class="flex items-center gap-1.5"><span
+                                class="material-symbols-outlined text-base text-primary">bolt</span> Currently @ WELEEC
+                            · Alterna Academy</span>
+                    </div>
+                    <div class="flex flex-wrap items-center gap-3">
+                        <a class="bg-primary text-white px-7 py-3.5 rounded-lg font-bold hover:scale-105 transition-transform flex items-center gap-2"
+                            href="#projects">
                             View Projects <span class="material-symbols-outlined">arrow_forward</span>
-</a>
-<a class="bg-white border border-slate-200 text-slate-900 dark:bg-surface-dark dark:border-border-dark dark:text-white px-8 py-4 rounded-lg font-bold hover:bg-slate-100 dark:hover:bg-border-dark transition-colors" href="https://linkedin.com/in/manaseslovera" target="_blank">
-                            LinkedIn Profile
                         </a>
-<a class="bg-white border border-slate-200 text-slate-900 dark:bg-surface-dark dark:border-border-dark dark:text-white px-8 py-4 rounded-lg font-bold hover:bg-slate-100 dark:hover:bg-border-dark transition-colors flex items-center gap-2" href="cv.pdf" download="Manases_Lovera_CV_2026.pdf">
+                        <a class="bg-white border border-slate-200 text-slate-900 dark:bg-surface-dark dark:border-border-dark dark:text-white px-7 py-3.5 rounded-lg font-bold hover:bg-slate-100 dark:hover:bg-border-dark transition-colors flex items-center gap-2"
+                            href="cv.pdf" download="Manases_Lovera_CV_2026.pdf">
                             Download CV <span class="material-symbols-outlined">download</span>
-</a>
-<a class="bg-white border border-slate-200 text-slate-900 dark:bg-surface-dark dark:border-border-dark dark:text-white px-8 py-4 rounded-lg font-bold hover:bg-slate-100 dark:hover:bg-border-dark transition-colors flex items-center gap-2" href="https://github.com/manaseslovera" target="_blank">
-                            GitHub Profile <span class="material-symbols-outlined">code</span>
-</a>
-</div>
-</div>
-<div class="hidden lg:flex justify-center items-center relative">
-<div class="absolute size-[500px] bg-primary/10 rounded-full blur-[120px]"></div>
-<div class="relative z-10 bg-white/50 dark:bg-surface-dark/50 backdrop-blur-sm border border-slate-200 dark:border-border-dark p-8 rounded-2xl shadow-2xl rotate-3 hover:rotate-0 transition-transform duration-500">
-<div class="flex gap-2 mb-6">
-<div class="size-3 rounded-full bg-red-500/50"></div>
-<div class="size-3 rounded-full bg-yellow-500/50"></div>
-<div class="size-3 rounded-full bg-green-500/50"></div>
-</div>
-<div class="space-y-4 font-mono text-sm">
-<div class="flex gap-3 text-primary"><span class="opacity-50">01</span> <span>class SoftwareEngineer {</span></div>
-<div class="flex gap-3 text-slate-600 dark:text-slate-300"><span class="opacity-50">02</span> <span class="ml-4">constructor() {</span></div>
-<div class="flex gap-3 text-slate-600 dark:text-slate-300"><span class="opacity-50">03</span> <span class="ml-8">this.focus = ["AI", "Backend", "Cloud"];</span></div>
-<div class="flex gap-3 text-slate-600 dark:text-slate-300"><span class="opacity-50">04</span> <span class="ml-4">}</span></div>
-<div class="flex gap-3 text-primary"><span class="opacity-50">05</span> <span>}</span></div>
-</div>
-</div>
-</div></div>
-</section>
-<!-- About Section -->
-<section class="py-24 bg-slate-50 dark:bg-surface-dark/30" id="about">
-<div class="max-w-7xl mx-auto px-6">
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
-<div class="lg:col-span-4">
-<h2 class="text-slate-900 dark:text-white text-3xl font-bold flex items-center gap-3">About Me</h2>
-</div>
-<div class="lg:col-span-8 space-y-6 text-slate-600 dark:text-slate-300 text-lg leading-relaxed">
-<p>Hi, I'm Manasés Lovera, a passionate Software Engineer based in the Dominican Republic. My journey into tech started with a deep fascination for problem-solving and the way technology can transform ideas into reality.</p>
-<p>I specialize in Machine Learning and Backend development, driven by a curiosity about how complex systems operate and evolve. My expertise lies in building intelligent systems that seamlessly integrate advanced AI models with robust, production-ready backend infrastructure.</p>
-<p>I focus on creating architectures that are not only powerful but also highly performant and scalable. I am passionate about the intersection of software craftsmanship and artificial intelligence, constantly exploring new ways to automate processes and solve intricate problems through data-driven innovation.</p>
-</div>
-</div>
-</div>
-</section>
-<!-- Experience & Education -->
-<section class="py-24" id="experience">
-<div class="max-w-7xl mx-auto px-6">
-<h2 class="text-slate-900 dark:text-white text-3xl font-bold mb-16 flex items-center gap-3">Experience &amp; Education</h2>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-<!-- Professional Experience -->
-<div class="space-y-8">
-<h3 class="text-slate-500 dark:text-slate-400 font-mono text-xs uppercase tracking-widest mb-6">Professional Path</h3>
-<div class="relative pl-8 border-l border-slate-200 dark:border-border-dark group"><div class="absolute -left-1.5 top-0 size-3 rounded-full bg-primary ring-4 ring-primary/20"></div><div class="mb-1 text-primary font-mono text-sm"><time datetime="2026-07">July 2026</time> - Present</div><h4 class="text-slate-900 dark:text-white text-xl font-bold">IT Administrator &amp; Robotics Teacher</h4><div class="text-slate-500 dark:text-slate-400 mb-4">WELEEC</div><p class="text-slate-500 dark:text-slate-400 text-sm">Managing IT infrastructure and teaching robotics, while integrating AI/ML into core business processes.</p></div>
-<div class="relative pl-8 border-l border-slate-200 dark:border-border-dark group">
-<div class="absolute -left-1.5 top-0 size-3 rounded-full bg-slate-300 dark:bg-border-dark"></div>
-<div class="mb-1 text-slate-400 dark:text-slate-500 font-mono text-sm"><time datetime="2025-09">Sep 2025</time> - Present</div>
-<h4 class="text-slate-900 dark:text-white text-xl font-bold">Alterna Academy</h4>
-<div class="space-y-4 mt-4">
-<div class="relative pl-4 border-l border-slate-200 dark:border-border-dark">
-<div class="absolute -left-[5px] top-1 size-2 rounded-full bg-slate-300 dark:bg-border-dark"></div>
-<div class="mb-1 text-slate-400 dark:text-slate-500 font-mono text-xs"><time datetime="2026-05">May 2026</time> - Present</div>
-<h5 class="text-slate-900 dark:text-white text-base font-semibold">Builder Coach</h5>
-<p class="text-slate-500 dark:text-slate-400 text-sm">Coaching professionals on AI integration: LLM mechanics, advanced prompting, agentic skills, and MCP.</p>
-</div>
-<div class="relative pl-4 border-l border-slate-200 dark:border-border-dark">
-<div class="absolute -left-[5px] top-1 size-2 rounded-full bg-slate-300 dark:bg-border-dark"></div>
-<div class="mb-1 text-slate-400 dark:text-slate-500 font-mono text-xs"><time datetime="2025-09">Sep 2025</time> - <time datetime="2026-05">May 2026</time></div>
-<h5 class="text-slate-900 dark:text-white text-base font-semibold">AI / ML / Deep Learning Instructor</h5>
-<p class="text-slate-500 dark:text-slate-400 text-sm">Teaching AI/ML fundamentals, agent architectures, MCP (Model Context Protocol), and RAG (Retrieval-Augmented Generation).</p>
-</div>
-</div>
-</div>
-<div class="relative pl-8 border-l border-slate-200 dark:border-border-dark group"><div class="absolute -left-1.5 top-0 size-3 rounded-full bg-slate-300 dark:bg-border-dark"></div><div class="mb-1 text-slate-400 dark:text-slate-500 font-mono text-sm"><time datetime="2024-11">Nov 2024</time> - <time datetime="2026-07">July 2026</time></div><h4 class="text-slate-900 dark:text-white text-xl font-bold">AI / Software Engineer</h4><div class="text-slate-500 dark:text-slate-400 mb-4">Tagshelf</div><p class="text-slate-500 dark:text-slate-400 text-sm">Focusing on AI-driven automation and developing intelligent workflows for document processing.</p></div>
-<div class="relative pl-8 border-l border-slate-200 dark:border-border-dark group">
-<div class="absolute -left-1.5 top-0 size-3 rounded-full bg-slate-300 dark:bg-border-dark"></div>
-<div class="mb-1 text-slate-400 dark:text-slate-500 font-mono text-sm"><time datetime="2024-04">April 2024</time> - <time datetime="2024-07">July 2024</time></div>
-<h4 class="text-slate-900 dark:text-white text-xl font-bold">Software Developer</h4>
-<div class="text-slate-500 dark:text-slate-400 mb-4">Oriontek</div>
-<p class="text-slate-500 dark:text-slate-400 text-sm">Worked as a fullstack developer using ASP .NET Core and React for building from scratch an application. Responsible for both backend and frontend development, and deployed applications to the cloud using Netlify and Azure.</p>
-</div>
-</div>
-<!-- Education -->
-<div class="space-y-8">
-<h3 class="text-slate-500 dark:text-slate-400 font-mono text-xs uppercase tracking-widest mb-6">Academic Background</h3>
-<div class="bg-white border border-slate-200 dark:bg-surface-dark dark:border-border-dark p-6 rounded-xl hover:border-primary/50 transition-colors">
-<div class="flex items-center gap-4 mb-4">
-<span class="material-symbols-outlined text-primary text-3xl">school</span>
-<div>
-<h4 class="text-slate-900 dark:text-white font-bold">Software Engineering</h4>
-<p class="text-slate-500 dark:text-slate-400 text-sm">UAPA (Universidad Abierta para Adultos)</p>
-</div>
-</div>
-<p class="text-slate-400 dark:text-slate-500 text-sm font-mono"><time datetime="2021-01">Jan 2021</time> - Present</p>
-<p class="text-slate-500 dark:text-slate-400 text-sm mt-2">Focus on .NET stack, Agile methodologies, Distributed systems, and Algorithms.</p>
-</div>
-<div class="bg-white border border-slate-200 dark:bg-surface-dark dark:border-border-dark p-6 rounded-xl hover:border-primary/50 transition-colors">
-<div class="flex items-center gap-4 mb-4">
-<span class="material-symbols-outlined text-primary text-3xl">workspace_premium</span>
-<div>
-<h4 class="text-slate-900 dark:text-white font-bold">Full Stack Developer</h4>
-<p class="text-slate-500 dark:text-slate-400 text-sm">Alterna Academy</p>
-</div>
-</div>
-<p class="text-slate-400 dark:text-slate-500 text-sm font-mono"><time datetime="2024-02">Feb 2024</time> - <time datetime="2024-07">July 2024</time></p>
-<p class="text-slate-500 dark:text-slate-400 text-sm mt-2">Intensive bootcamp covering TypeScript, C#, ASP.NET Core, Node/Express, Linux, and React.</p>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Technical Stack -->
-<section class="py-24 bg-slate-50 dark:bg-surface-dark/30" id="stack">
-<div class="max-w-7xl mx-auto px-6">
-<h2 class="text-slate-900 dark:text-white text-3xl font-bold mb-16 flex items-center gap-3">Technical Stack</h2>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
-<!-- Languages -->
-<div class="p-6 bg-white border border-slate-200 dark:bg-background-dark dark:border-border-dark rounded-xl hover:translate-y-[-4px] transition-all">
-<div class="size-10 rounded bg-primary/20 flex items-center justify-center mb-6">
-<span class="material-symbols-outlined text-primary">code</span>
-</div>
-<h4 class="text-slate-900 dark:text-white font-bold mb-4">Languages</h4>
-<ul class="space-y-3 font-mono text-sm text-slate-500 dark:text-slate-400"><li class="flex items-center gap-2"><span class="size-1.5 rounded-full bg-primary"></span> Python</li><li class="flex items-center gap-2"><span class="size-1.5 rounded-full bg-primary"></span> JavaScript / TypeScript</li><li class="flex items-center gap-2"><span class="size-1.5 rounded-full bg-primary"></span> C#</li><li class="flex items-center gap-2"><span class="size-1.5 rounded-full bg-primary"></span> Rust</li><li class="flex items-center gap-2"><span class="size-1.5 rounded-full bg-primary"></span> SQL</li></ul>
-</div>
-<!-- AI/ML -->
-<div class="p-6 bg-white border border-slate-200 dark:bg-background-dark dark:border-border-dark rounded-xl hover:translate-y-[-4px] transition-all">
-<div class="size-10 rounded bg-primary/20 flex items-center justify-center mb-6">
-<span class="material-symbols-outlined text-primary">psychology</span>
-</div>
-<h4 class="text-slate-900 dark:text-white font-bold mb-4">AI / ML</h4>
-<ul class="space-y-3 font-mono text-sm text-slate-500 dark:text-slate-400">
-<li class="flex items-center gap-2"><span class="size-1.5 rounded-full bg-primary"></span> PyTorch</li>
-<li class="flex items-center gap-2"><span class="size-1.5 rounded-full bg-primary"></span> LangChain</li>
-<li class="flex items-center gap-2"><span class="size-1.5 rounded-full bg-primary"></span> Scikit-Learn</li>
-<li class="flex items-center gap-2"><span class="size-1.5 rounded-full bg-primary"></span> Document AI</li>
-</ul>
-</div><div class="p-6 bg-white border border-slate-200 dark:bg-background-dark dark:border-border-dark rounded-xl hover:translate-y-[-4px] transition-all"><div class="size-10 rounded bg-primary/20 flex items-center justify-center mb-6"><span class="material-symbols-outlined text-primary">database</span></div><h4 class="text-slate-900 dark:text-white font-bold mb-4">Databases</h4><ul class="space-y-3 font-mono text-sm text-slate-500 dark:text-slate-400"><li class="flex items-center gap-2"><span class="size-1.5 rounded-full bg-primary"></span> PostgreSQL</li><li class="flex items-center gap-2"><span class="size-1.5 rounded-full bg-primary"></span> SQL Server</li><li class="flex items-center gap-2"><span class="size-1.5 rounded-full bg-primary"></span> MongoDB</li></ul></div>
-<!-- Infrastructure -->
-<div class="p-6 bg-white border border-slate-200 dark:bg-background-dark dark:border-border-dark rounded-xl hover:translate-y-[-4px] transition-all">
-<div class="size-10 rounded bg-primary/20 flex items-center justify-center mb-6">
-<span class="material-symbols-outlined text-primary">cloud</span>
-</div>
-<h4 class="text-slate-900 dark:text-white font-bold mb-4">Infrastructure</h4>
-<ul class="space-y-3 font-mono text-sm text-slate-500 dark:text-slate-400">
-<li class="flex items-center gap-2"><span class="size-1.5 rounded-full bg-primary"></span> Docker &amp; K8s</li>
-<li class="flex items-center gap-2"><span class="size-1.5 rounded-full bg-primary"></span> GCP / Azure</li>
-<li class="flex items-center gap-2"><span class="size-1.5 rounded-full bg-primary"></span> Linux Internals</li>
-<li class="flex items-center gap-2"><span class="size-1.5 rounded-full bg-primary"></span> CI/CD Pipelines</li>
-</ul>
-</div>
-<!-- Backend/Web -->
-<div class="p-6 bg-white border border-slate-200 dark:bg-background-dark dark:border-border-dark rounded-xl hover:translate-y-[-4px] transition-all">
-<div class="size-10 rounded bg-primary/20 flex items-center justify-center mb-6">
-<span class="material-symbols-outlined text-primary">settings_ethernet</span>
-</div>
-<h4 class="text-slate-900 dark:text-white font-bold mb-4">Backend/Web</h4>
-<ul class="space-y-3 font-mono text-sm text-slate-500 dark:text-slate-400">
-<li class="flex items-center gap-2"><span class="size-1.5 rounded-full bg-primary"></span> FastAPI</li>
-<li class="flex items-center gap-2"><span class="size-1.5 rounded-full bg-primary"></span> ASP.NET Core</li>
-<li class="flex items-center gap-2"><span class="size-1.5 rounded-full bg-primary"></span> Express.js</li>
-<li class="flex items-center gap-2"><span class="size-1.5 rounded-full bg-primary"></span> React.js</li>
-</ul>
-</div>
-</div>
-</div>
-</section>
-<!-- Featured Projects -->
-<section class="py-24" id="projects">
-<div class="max-w-7xl mx-auto px-6">
-<h2 class="text-slate-900 dark:text-white text-3xl font-bold mb-16 flex items-center gap-3">Featured Projects</h2>
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-<!-- Project: Task Manager -->
-<div class="group">
-<div class="relative overflow-hidden rounded-xl aspect-video mb-6 bg-slate-50 border border-slate-200 dark:bg-surface-dark dark:border-border-dark">
-<img src="task-manager.png" alt="Task Manager Project Screenshot" class="absolute inset-0 w-full h-full object-cover" />
-<div class="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent"></div>
-</div>
-<div class="flex justify-between items-start mb-4">
-<div>
-<h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-2">task-manager</h3>
-<div class="flex gap-2">
-<span class="px-2 py-1 rounded bg-slate-50 border border-slate-200 dark:bg-surface-dark dark:border-border-dark text-[10px] font-mono text-slate-500 dark:text-slate-400">REACT</span>
-<span class="px-2 py-1 rounded bg-slate-50 border border-slate-200 dark:bg-surface-dark dark:border-border-dark text-[10px] font-mono text-slate-500 dark:text-slate-400">BACKEND</span>
-</div>
-</div>
-<div class="flex gap-2">
-<a class="text-slate-400 hover:text-slate-900 dark:text-slate-500 dark:hover:text-white transition-colors" href="https://github.com/ManasesLovera/task-manager" target="_blank" aria-label="GitHub Repository">
-<span class="material-symbols-outlined">code</span>
-</a>
-<a class="text-slate-400 hover:text-slate-900 dark:text-slate-500 dark:hover:text-white transition-colors" href="https://task-manager-ui.up.railway.app/" target="_blank" aria-label="Live Demo">
-<span class="material-symbols-outlined">open_in_new</span>
-</a>
-</div>
-</div>
-<p class="text-slate-500 dark:text-slate-400 mb-6">
-A comprehensive task management application designed to streamline workflow and improve team collaboration, featuring a modern UI and robust backend.
-</p>
-</div>
-<!-- Project 1: Stora -->
-<div class="group">
-<div class="relative overflow-hidden rounded-xl aspect-video mb-6 bg-slate-50 border border-slate-200 dark:bg-surface-dark dark:border-border-dark">
-<div class="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent"></div>
-<div class="absolute inset-0 flex items-center justify-center opacity-40 group-hover:opacity-100 transition-opacity">
-<div class="bg-white dark:bg-background-dark p-8 rounded-lg border border-slate-200 dark:border-border-dark shadow-2xl scale-90 group-hover:scale-100 transition-transform">
-<div class="flex gap-2 mb-3">
-<div class="h-2 w-12 bg-primary rounded"></div>
-<div class="h-2 w-8 bg-slate-200 dark:bg-border-dark rounded"></div>
-</div>
-<div class="space-y-2">
-<div class="h-1.5 w-full bg-slate-300 dark:bg-slate-700 rounded"></div>
-<div class="h-1.5 w-3/4 bg-slate-300 dark:bg-slate-700 rounded"></div>
-</div>
-</div>
-</div>
-</div>
-<div class="flex justify-between items-start mb-4">
-<div>
-<h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-2">stora</h3>
-<div class="flex gap-2">
-<span class="px-2 py-1 rounded bg-slate-50 border border-slate-200 dark:bg-surface-dark dark:border-border-dark text-[10px] font-mono text-slate-500 dark:text-slate-400">MULTI-TENANT</span>
-<span class="px-2 py-1 rounded bg-slate-50 border border-slate-200 dark:bg-surface-dark dark:border-border-dark text-[10px] font-mono text-slate-500 dark:text-slate-400">POSTGRES</span>
-</div>
-</div>
-<a class="text-slate-400 hover:text-slate-900 dark:text-slate-500 dark:hover:text-white transition-colors" href="https://github.com/ManasesLovera/stora" target="_blank" aria-label="GitHub Repository">
-<span class="material-symbols-outlined">code</span>
-</a>
-</div>
-<p class="text-slate-500 dark:text-slate-400 mb-6">
-                            A high-performance multi-tenant e-commerce platform built with an emphasis on database isolation and horizontal scalability.
+                        </a>
+                        <div class="flex items-center gap-2 sm:ml-2">
+                            <a class="size-[52px] rounded-lg bg-white border border-slate-200 text-slate-500 dark:bg-surface-dark dark:border-border-dark dark:text-slate-400 flex items-center justify-center hover:text-primary hover:border-primary/50 transition-colors"
+                                href="https://github.com/manaseslovera" target="_blank" aria-label="GitHub Profile"
+                                title="GitHub Profile">
+                                <span class="material-symbols-outlined">code</span>
+                            </a>
+                            <a class="size-[52px] rounded-lg bg-white border border-slate-200 text-slate-500 dark:bg-surface-dark dark:border-border-dark dark:text-slate-400 flex items-center justify-center hover:text-primary hover:border-primary/50 transition-colors"
+                                href="https://linkedin.com/in/manaseslovera" target="_blank"
+                                aria-label="LinkedIn Profile" title="LinkedIn Profile">
+                                <span class="material-symbols-outlined">person</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-3 pt-4 border-t border-slate-200 dark:border-border-dark">
+                        <span
+                            class="font-mono text-[11px] uppercase tracking-widest text-slate-400 dark:text-slate-500">Working
+                            with</span>
+                        <div class="flex flex-wrap gap-2">
+                            <span
+                                class="px-2.5 py-1 rounded bg-white border border-slate-200 dark:bg-surface-dark dark:border-border-dark text-[11px] font-mono text-slate-500 dark:text-slate-400">Python</span>
+                            <span
+                                class="px-2.5 py-1 rounded bg-white border border-slate-200 dark:bg-surface-dark dark:border-border-dark text-[11px] font-mono text-slate-500 dark:text-slate-400">TypeScript</span>
+                            <span
+                                class="px-2.5 py-1 rounded bg-white border border-slate-200 dark:bg-surface-dark dark:border-border-dark text-[11px] font-mono text-slate-500 dark:text-slate-400">C#</span>
+                            <span
+                                class="px-2.5 py-1 rounded bg-white border border-slate-200 dark:bg-surface-dark dark:border-border-dark text-[11px] font-mono text-slate-500 dark:text-slate-400">FastAPI</span>
+                            <span
+                                class="px-2.5 py-1 rounded bg-white border border-slate-200 dark:bg-surface-dark dark:border-border-dark text-[11px] font-mono text-slate-500 dark:text-slate-400">ASP.NET
+                                Core</span>
+                            <span
+                                class="px-2.5 py-1 rounded bg-white border border-slate-200 dark:bg-surface-dark dark:border-border-dark text-[11px] font-mono text-slate-500 dark:text-slate-400">PyTorch</span>
+                            <span
+                                class="px-2.5 py-1 rounded bg-white border border-slate-200 dark:bg-surface-dark dark:border-border-dark text-[11px] font-mono text-slate-500 dark:text-slate-400">Docker</span>
+                            <span
+                                class="px-2.5 py-1 rounded bg-white border border-slate-200 dark:bg-surface-dark dark:border-border-dark text-[11px] font-mono text-slate-500 dark:text-slate-400">PostgreSQL</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden lg:flex lg:col-span-5 justify-center items-center relative">
+                    <div class="absolute size-[500px] bg-primary/10 rounded-full blur-[120px]"></div>
+                    <div class="relative z-10 w-full animate-float">
+                        <div
+                            class="bg-white/60 dark:bg-surface-dark/60 backdrop-blur-sm border border-slate-200 dark:border-border-dark rounded-2xl shadow-2xl rotate-3 hover:rotate-0 transition-transform duration-500">
+                            <div
+                                class="flex items-center gap-3 px-5 py-3 border-b border-slate-200 dark:border-border-dark">
+                                <div class="flex gap-2">
+                                    <div class="size-3 rounded-full bg-red-500/50"></div>
+                                    <div class="size-3 rounded-full bg-yellow-500/50"></div>
+                                    <div class="size-3 rounded-full bg-green-500/50"></div>
+                                </div>
+                                <span
+                                    class="font-mono text-[11px] text-slate-400 dark:text-slate-500">engineer.py</span>
+                            </div>
+                            <div class="p-6 space-y-3 font-mono text-[13px] leading-relaxed">
+                                <div class="flex gap-3"><span
+                                        class="text-slate-400 dark:text-slate-600 select-none">01</span> <span><span
+                                            class="text-primary">class</span> <span
+                                            class="text-slate-900 dark:text-white">SoftwareEngineer</span><span
+                                            class="text-slate-500 dark:text-slate-400">:</span></span></div>
+                                <div class="flex gap-3"><span
+                                        class="text-slate-400 dark:text-slate-600 select-none">02</span> <span
+                                        class="ml-4 text-slate-500 dark:text-slate-400">name = <span
+                                            class="text-emerald-600 dark:text-emerald-400">"Manasés
+                                            Lovera"</span></span></div>
+                                <div class="flex gap-3"><span
+                                        class="text-slate-400 dark:text-slate-600 select-none">03</span> <span
+                                        class="ml-4 text-slate-500 dark:text-slate-400">focus = [<span
+                                            class="text-emerald-600 dark:text-emerald-400">"AI"</span>, <span
+                                            class="text-emerald-600 dark:text-emerald-400">"Backend"</span>, <span
+                                            class="text-emerald-600 dark:text-emerald-400">"Cloud"</span>]</span></div>
+                                <div class="flex gap-3"><span
+                                        class="text-slate-400 dark:text-slate-600 select-none">04</span> <span
+                                        class="ml-4 text-slate-500 dark:text-slate-400">stack = [<span
+                                            class="text-emerald-600 dark:text-emerald-400">"Python"</span>, <span
+                                            class="text-emerald-600 dark:text-emerald-400">"Typescript"</span>, <span
+                                            class="text-emerald-600 dark:text-emerald-400">"Rust"</span>]</span></div>
+                                <div class="flex gap-3"><span
+                                        class="text-slate-400 dark:text-slate-600 select-none">05</span>
+                                    <span>&nbsp;</span></div>
+                                <div class="flex gap-3"><span
+                                        class="text-slate-400 dark:text-slate-600 select-none">06</span> <span
+                                        class="ml-4"><span class="text-primary">def</span> <span
+                                            class="text-slate-900 dark:text-white">build</span><span
+                                            class="text-slate-500 dark:text-slate-400">(self, idea):</span></span></div>
+                                <div class="flex gap-3"><span
+                                        class="text-slate-400 dark:text-slate-600 select-none">07</span> <span
+                                        class="ml-8 text-slate-400 dark:text-slate-500 italic"># think, learn,
+                                        scale</span></div>
+                                <div class="flex gap-3"><span
+                                        class="text-slate-400 dark:text-slate-600 select-none">08</span> <span
+                                        class="ml-8"><span class="text-primary">return</span> <span
+                                            class="text-slate-500 dark:text-slate-400">ship(idea, scalable=<span
+                                                class="text-primary">True</span>)</span></span></div>
+                                <div class="flex gap-3"><span
+                                        class="text-slate-400 dark:text-slate-600 select-none">09</span>
+                                    <span>&nbsp;</span></div>
+                                <div class="flex gap-3"><span
+                                        class="text-slate-400 dark:text-slate-600 select-none">10</span>
+                                    <span>&nbsp;</span></div>
+                                <div class="flex gap-3"><span
+                                        class="text-slate-400 dark:text-slate-600 select-none">11</span> <span
+                                        class="text-slate-500 dark:text-slate-400">me = <span
+                                            class="text-slate-900 dark:text-white">SoftwareEngineer</span>()</span>
+                                </div>
+                                <div class="flex gap-3"><span
+                                        class="text-slate-400 dark:text-slate-600 select-none">12</span> <span
+                                        class="text-slate-500 dark:text-slate-400">me.build(<span
+                                            class="text-emerald-600 dark:text-emerald-400">"your next
+                                            system"</span>)</span></div>
+                            </div>
+                            <div
+                                class="px-6 py-3 border-t border-slate-200 dark:border-border-dark flex items-center justify-end font-mono text-[11px] text-slate-400 dark:text-slate-500">
+                                <span class="flex items-center gap-1.5"><span
+                                        class="size-1.5 rounded-full bg-emerald-500"></span> Python 3.12</span>
+                            </div>
+                        </div>
+                        <div
+                            class="absolute -top-6 right-4 animate-float-slow bg-white dark:bg-surface-dark border border-slate-200 dark:border-border-dark rounded-xl shadow-xl px-4 py-3 flex items-center gap-2.5">
+                            <span class="material-symbols-outlined text-primary text-xl">psychology</span>
+                            <span class="font-mono text-[11px] text-slate-600 dark:text-slate-300">AI / ML</span>
+                        </div>
+                        <div
+                            class="absolute -bottom-6 -left-6 animate-float-slow bg-white dark:bg-surface-dark border border-slate-200 dark:border-border-dark rounded-xl shadow-xl px-4 py-3 flex items-center gap-2.5">
+                            <span class="material-symbols-outlined text-primary text-xl">cloud</span>
+                            <span class="font-mono text-[11px] text-slate-600 dark:text-slate-300">Backend &amp;
+                                Cloud</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a class="hidden lg:flex absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex-col items-center gap-1 text-slate-400 dark:text-slate-500 hover:text-primary transition-colors"
+                href="#about" aria-label="Scroll to About section">
+                <span class="font-mono text-[10px] uppercase tracking-widest">Scroll</span>
+                <span class="material-symbols-outlined animate-bounce">keyboard_arrow_down</span>
+            </a>
+        </section>
+        <!-- About Section -->
+        <section class="py-24 bg-slate-50 dark:bg-surface-dark/30" id="about">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                    <div class="lg:col-span-4">
+                        <h2 class="text-slate-900 dark:text-white text-3xl font-bold flex items-center gap-3">About Me
+                        </h2>
+                    </div>
+                    <div class="lg:col-span-8 space-y-6 text-slate-600 dark:text-slate-300 text-lg leading-relaxed">
+                        <p>Hi, I'm Manasés Lovera, a passionate Software Engineer based in the Dominican Republic. My
+                            journey into tech started with a deep fascination for problem-solving and the way technology
+                            can transform ideas into reality.</p>
+                        <p>I specialize in Machine Learning and Backend development, driven by a curiosity about how
+                            complex systems operate and evolve. My expertise lies in building intelligent systems that
+                            seamlessly integrate advanced AI models with robust, production-ready backend
+                            infrastructure.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Experience & Education -->
+        <section class="py-24" id="experience">
+            <div class="max-w-7xl mx-auto px-6">
+                <h2 class="text-slate-900 dark:text-white text-3xl font-bold mb-16 flex items-center gap-3">Experience
+                    &amp; Education</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Professional Experience -->
+                    <div class="space-y-8">
+                        <h3 class="text-slate-500 dark:text-slate-400 font-mono text-xs uppercase tracking-widest mb-6">
+                            Professional Path</h3>
+                        <div class="relative pl-8 border-l border-slate-200 dark:border-border-dark group">
+                            <div class="absolute -left-1.5 top-0 size-3 rounded-full bg-primary ring-4 ring-primary/20">
+                            </div>
+                            <div class="mb-1 text-primary font-mono text-sm"><time datetime="2026-07">July 2026</time> -
+                                Present</div>
+                            <h4 class="text-slate-900 dark:text-white text-xl font-bold">IT Administrator &amp; Robotics
+                                Teacher</h4>
+                            <div class="text-slate-500 dark:text-slate-400 mb-4">WELEEC</div>
+                            <p class="text-slate-500 dark:text-slate-400 text-sm">Managing IT infrastructure and
+                                teaching robotics, while integrating AI/ML into core business processes.</p>
+                        </div>
+                        <div class="relative pl-8 border-l border-slate-200 dark:border-border-dark group">
+                            <div class="absolute -left-1.5 top-0 size-3 rounded-full bg-slate-300 dark:bg-border-dark">
+                            </div>
+                            <div class="mb-1 text-slate-400 dark:text-slate-500 font-mono text-sm"><time
+                                    datetime="2025-09">Sep 2025</time> - Present</div>
+                            <h4 class="text-slate-900 dark:text-white text-xl font-bold">Alterna Academy</h4>
+                            <div class="space-y-4 mt-4">
+                                <div class="relative pl-4 border-l border-slate-200 dark:border-border-dark">
+                                    <div
+                                        class="absolute -left-[5px] top-1 size-2 rounded-full bg-slate-300 dark:bg-border-dark">
+                                    </div>
+                                    <div class="mb-1 text-slate-400 dark:text-slate-500 font-mono text-xs"><time
+                                            datetime="2026-05">May 2026</time> - Present</div>
+                                    <h5 class="text-slate-900 dark:text-white text-base font-semibold">Builder Coach
+                                    </h5>
+                                    <p class="text-slate-500 dark:text-slate-400 text-sm">Coaching professionals on AI
+                                        integration: LLM mechanics, advanced prompting, agentic skills, and MCP.</p>
+                                </div>
+                                <div class="relative pl-4 border-l border-slate-200 dark:border-border-dark">
+                                    <div
+                                        class="absolute -left-[5px] top-1 size-2 rounded-full bg-slate-300 dark:bg-border-dark">
+                                    </div>
+                                    <div class="mb-1 text-slate-400 dark:text-slate-500 font-mono text-xs"><time
+                                            datetime="2025-09">Sep 2025</time> - <time datetime="2026-05">May
+                                            2026</time></div>
+                                    <h5 class="text-slate-900 dark:text-white text-base font-semibold">AI Instructor
+                                    </h5>
+                                    <p class="text-slate-500 dark:text-slate-400 text-sm">Teaching AI/ML fundamentals,
+                                        agent architectures, MCP (Model Context Protocol), and RAG (Retrieval-Augmented
+                                        Generation).</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="relative pl-8 border-l border-slate-200 dark:border-border-dark group">
+                            <div class="absolute -left-1.5 top-0 size-3 rounded-full bg-slate-300 dark:bg-border-dark">
+                            </div>
+                            <div class="mb-1 text-slate-400 dark:text-slate-500 font-mono text-sm"><time
+                                    datetime="2024-11">Nov 2024</time> - <time datetime="2026-07">July 2026</time></div>
+                            <h4 class="text-slate-900 dark:text-white text-xl font-bold">AI / Software Engineer</h4>
+                            <div class="text-slate-500 dark:text-slate-400 mb-4">Tagshelf</div>
+                            <p class="text-slate-500 dark:text-slate-400 text-sm">Focusing on AI-driven automation and
+                                developing intelligent workflows for document processing.</p>
+                        </div>
+                        <div class="relative pl-8 border-l border-slate-200 dark:border-border-dark group">
+                            <div class="absolute -left-1.5 top-0 size-3 rounded-full bg-slate-300 dark:bg-border-dark">
+                            </div>
+                            <div class="mb-1 text-slate-400 dark:text-slate-500 font-mono text-sm"><time
+                                    datetime="2024-04">April 2024</time> - <time datetime="2024-07">July 2024</time>
+                            </div>
+                            <h4 class="text-slate-900 dark:text-white text-xl font-bold">Software Developer</h4>
+                            <div class="text-slate-500 dark:text-slate-400 mb-4">Oriontek</div>
+                            <p class="text-slate-500 dark:text-slate-400 text-sm">Worked as a fullstack developer using
+                                ASP .NET Core and React for building from scratch an application. Responsible for both
+                                backend and frontend development, and deployed applications to the cloud using Netlify
+                                and Azure.</p>
+                        </div>
+                    </div>
+                    <!-- Education -->
+                    <div class="space-y-8">
+                        <h3 class="text-slate-500 dark:text-slate-400 font-mono text-xs uppercase tracking-widest mb-6">
+                            Academic Background</h3>
+                        <div
+                            class="bg-white border border-slate-200 dark:bg-surface-dark dark:border-border-dark p-6 rounded-xl hover:border-primary/50 transition-colors">
+                            <div class="flex items-center gap-4 mb-4">
+                                <span class="material-symbols-outlined text-primary text-3xl">school</span>
+                                <div>
+                                    <h4 class="text-slate-900 dark:text-white font-bold">Software Engineering</h4>
+                                    <p class="text-slate-500 dark:text-slate-400 text-sm">UAPA (Universidad Abierta para
+                                        Adultos)</p>
+                                </div>
+                            </div>
+                            <p class="text-slate-400 dark:text-slate-500 text-sm font-mono"><time datetime="2021-01">Jan
+                                    2021</time> - Present</p>
+                            <p class="text-slate-500 dark:text-slate-400 text-sm mt-2">Focus on .NET stack, Agile
+                                methodologies, Distributed systems, and Algorithms.</p>
+                        </div>
+                        <div
+                            class="bg-white border border-slate-200 dark:bg-surface-dark dark:border-border-dark p-6 rounded-xl hover:border-primary/50 transition-colors">
+                            <div class="flex items-center gap-4 mb-4">
+                                <span class="material-symbols-outlined text-primary text-3xl">workspace_premium</span>
+                                <div>
+                                    <h4 class="text-slate-900 dark:text-white font-bold">Full Stack Developer</h4>
+                                    <p class="text-slate-500 dark:text-slate-400 text-sm">Alterna Academy</p>
+                                </div>
+                            </div>
+                            <p class="text-slate-400 dark:text-slate-500 text-sm font-mono"><time datetime="2024-02">Feb
+                                    2024</time> - <time datetime="2024-07">July 2024</time></p>
+                            <p class="text-slate-500 dark:text-slate-400 text-sm mt-2">Intensive bootcamp covering
+                                TypeScript, C#, ASP.NET Core, Node/Express, Linux, and React.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Technical Stack -->
+        <section class="py-24 bg-slate-50 dark:bg-surface-dark/30" id="stack">
+            <div class="max-w-7xl mx-auto px-6">
+                <h2 class="text-slate-900 dark:text-white text-3xl font-bold mb-16 flex items-center gap-3">Technical
+                    Stack</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+                    <!-- Languages -->
+                    <div
+                        class="p-6 bg-white border border-slate-200 dark:bg-background-dark dark:border-border-dark rounded-xl hover:translate-y-[-4px] transition-all">
+                        <div class="size-10 rounded bg-primary/20 flex items-center justify-center mb-6">
+                            <span class="material-symbols-outlined text-primary">code</span>
+                        </div>
+                        <h4 class="text-slate-900 dark:text-white font-bold mb-4">Languages</h4>
+                        <ul class="space-y-3 font-mono text-sm text-slate-500 dark:text-slate-400">
+                            <li class="flex items-center gap-2"><span class="size-1.5 rounded-full bg-primary"></span>
+                                Python</li>
+                            <li class="flex items-center gap-2"><span class="size-1.5 rounded-full bg-primary"></span>
+                                JavaScript / TypeScript</li>
+                            <li class="flex items-center gap-2"><span class="size-1.5 rounded-full bg-primary"></span>
+                                C#</li>
+                            <li class="flex items-center gap-2"><span class="size-1.5 rounded-full bg-primary"></span>
+                                Rust</li>
+                            <li class="flex items-center gap-2"><span class="size-1.5 rounded-full bg-primary"></span>
+                                SQL</li>
+                        </ul>
+                    </div>
+                    <!-- AI/ML -->
+                    <div
+                        class="p-6 bg-white border border-slate-200 dark:bg-background-dark dark:border-border-dark rounded-xl hover:translate-y-[-4px] transition-all">
+                        <div class="size-10 rounded bg-primary/20 flex items-center justify-center mb-6">
+                            <span class="material-symbols-outlined text-primary">psychology</span>
+                        </div>
+                        <h4 class="text-slate-900 dark:text-white font-bold mb-4">AI / ML</h4>
+                        <ul class="space-y-3 font-mono text-sm text-slate-500 dark:text-slate-400">
+                            <li class="flex items-center gap-2"><span class="size-1.5 rounded-full bg-primary"></span>
+                                PyTorch</li>
+                            <li class="flex items-center gap-2"><span class="size-1.5 rounded-full bg-primary"></span>
+                                LangChain</li>
+                            <li class="flex items-center gap-2"><span class="size-1.5 rounded-full bg-primary"></span>
+                                Scikit-Learn</li>
+                            <li class="flex items-center gap-2"><span class="size-1.5 rounded-full bg-primary"></span>
+                                Document AI</li>
+                        </ul>
+                    </div>
+                    <div
+                        class="p-6 bg-white border border-slate-200 dark:bg-background-dark dark:border-border-dark rounded-xl hover:translate-y-[-4px] transition-all">
+                        <div class="size-10 rounded bg-primary/20 flex items-center justify-center mb-6"><span
+                                class="material-symbols-outlined text-primary">database</span></div>
+                        <h4 class="text-slate-900 dark:text-white font-bold mb-4">Databases</h4>
+                        <ul class="space-y-3 font-mono text-sm text-slate-500 dark:text-slate-400">
+                            <li class="flex items-center gap-2"><span class="size-1.5 rounded-full bg-primary"></span>
+                                PostgreSQL</li>
+                            <li class="flex items-center gap-2"><span class="size-1.5 rounded-full bg-primary"></span>
+                                SQL Server</li>
+                            <li class="flex items-center gap-2"><span class="size-1.5 rounded-full bg-primary"></span>
+                                MongoDB</li>
+                        </ul>
+                    </div>
+                    <!-- Infrastructure -->
+                    <div
+                        class="p-6 bg-white border border-slate-200 dark:bg-background-dark dark:border-border-dark rounded-xl hover:translate-y-[-4px] transition-all">
+                        <div class="size-10 rounded bg-primary/20 flex items-center justify-center mb-6">
+                            <span class="material-symbols-outlined text-primary">cloud</span>
+                        </div>
+                        <h4 class="text-slate-900 dark:text-white font-bold mb-4">Infrastructure</h4>
+                        <ul class="space-y-3 font-mono text-sm text-slate-500 dark:text-slate-400">
+                            <li class="flex items-center gap-2"><span class="size-1.5 rounded-full bg-primary"></span>
+                                Docker &amp; K8s</li>
+                            <li class="flex items-center gap-2"><span class="size-1.5 rounded-full bg-primary"></span>
+                                GCP / Azure</li>
+                            <li class="flex items-center gap-2"><span class="size-1.5 rounded-full bg-primary"></span>
+                                Linux Internals</li>
+                            <li class="flex items-center gap-2"><span class="size-1.5 rounded-full bg-primary"></span>
+                                CI/CD Pipelines</li>
+                        </ul>
+                    </div>
+                    <!-- Backend/Web -->
+                    <div
+                        class="p-6 bg-white border border-slate-200 dark:bg-background-dark dark:border-border-dark rounded-xl hover:translate-y-[-4px] transition-all">
+                        <div class="size-10 rounded bg-primary/20 flex items-center justify-center mb-6">
+                            <span class="material-symbols-outlined text-primary">settings_ethernet</span>
+                        </div>
+                        <h4 class="text-slate-900 dark:text-white font-bold mb-4">Backend/Web</h4>
+                        <ul class="space-y-3 font-mono text-sm text-slate-500 dark:text-slate-400">
+                            <li class="flex items-center gap-2"><span class="size-1.5 rounded-full bg-primary"></span>
+                                FastAPI</li>
+                            <li class="flex items-center gap-2"><span class="size-1.5 rounded-full bg-primary"></span>
+                                ASP.NET Core</li>
+                            <li class="flex items-center gap-2"><span class="size-1.5 rounded-full bg-primary"></span>
+                                Express.js</li>
+                            <li class="flex items-center gap-2"><span class="size-1.5 rounded-full bg-primary"></span>
+                                React.js</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Featured Projects -->
+        <section class="py-24" id="projects">
+            <div class="max-w-7xl mx-auto px-6">
+                <h2 class="text-slate-900 dark:text-white text-3xl font-bold mb-16 flex items-center gap-3">Featured
+                    Projects</h2>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <!-- Project: Task Manager -->
+                    <div class="group">
+                        <div
+                            class="relative overflow-hidden rounded-xl aspect-video mb-6 bg-slate-50 border border-slate-200 dark:bg-surface-dark dark:border-border-dark">
+                            <img src="task-manager.png" alt="Task Manager Project Screenshot"
+                                class="absolute inset-0 w-full h-full object-cover" />
+                            <div class="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent"></div>
+                        </div>
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-2">task-manager</h3>
+                                <div class="flex gap-2">
+                                    <span
+                                        class="px-2 py-1 rounded bg-slate-50 border border-slate-200 dark:bg-surface-dark dark:border-border-dark text-[10px] font-mono text-slate-500 dark:text-slate-400">REACT</span>
+                                    <span
+                                        class="px-2 py-1 rounded bg-slate-50 border border-slate-200 dark:bg-surface-dark dark:border-border-dark text-[10px] font-mono text-slate-500 dark:text-slate-400">BACKEND</span>
+                                </div>
+                            </div>
+                            <div class="flex gap-2">
+                                <a class="text-slate-400 hover:text-slate-900 dark:text-slate-500 dark:hover:text-white transition-colors"
+                                    href="https://github.com/ManasesLovera/task-manager" target="_blank"
+                                    aria-label="GitHub Repository">
+                                    <span class="material-symbols-outlined">code</span>
+                                </a>
+                                <a class="text-slate-400 hover:text-slate-900 dark:text-slate-500 dark:hover:text-white transition-colors"
+                                    href="https://task-manager-ui.up.railway.app/" target="_blank"
+                                    aria-label="Live Demo">
+                                    <span class="material-symbols-outlined">open_in_new</span>
+                                </a>
+                            </div>
+                        </div>
+                        <p class="text-slate-500 dark:text-slate-400 mb-6">
+                            A comprehensive task management application designed to streamline workflow and improve team
+                            collaboration, featuring a modern UI and robust backend.
                         </p>
-</div>
-<!-- Project 2: Talk Budget -->
-<div class="group">
-<div class="relative overflow-hidden rounded-xl aspect-video mb-6 bg-slate-50 border border-slate-200 dark:bg-surface-dark dark:border-border-dark">
-<div class="absolute inset-0 bg-gradient-to-bl from-primary/20 to-transparent"></div>
-<div class="absolute inset-0 flex items-center justify-center opacity-40 group-hover:opacity-100 transition-opacity">
-<div class="bg-white dark:bg-background-dark p-6 rounded-xl border border-primary/30 shadow-2xl group-hover:scale-105 transition-transform">
-<span class="material-symbols-outlined text-primary text-6xl">account_balance_wallet</span>
-</div>
-</div>
-</div>
-<div class="flex justify-between items-start mb-4">
-<div>
-<h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-2">Talk Budget</h3>
-<div class="flex gap-2">
-<span class="px-2 py-1 rounded bg-slate-50 border border-slate-200 dark:bg-surface-dark dark:border-border-dark text-[10px] font-mono text-slate-500 dark:text-slate-400">PYTHON</span>
-<span class="px-2 py-1 rounded bg-slate-50 border border-slate-200 dark:bg-surface-dark dark:border-border-dark text-[10px] font-mono text-slate-500 dark:text-slate-400">NEXT.JS</span>
-<span class="px-2 py-1 rounded bg-slate-50 border border-slate-200 dark:bg-surface-dark dark:border-border-dark text-[10px] font-mono text-slate-500 dark:text-slate-400">DOCKER</span>
-</div>
-</div>
-<a class="text-slate-400 hover:text-slate-900 dark:text-slate-500 dark:hover:text-white transition-colors" href="https://github.com/ManasesLovera/talk-budget" target="_blank" aria-label="GitHub Repository">
-<span class="material-symbols-outlined">code</span>
-</a>
-</div>
-<p class="text-slate-500 dark:text-slate-400 mb-6">
-                            A mobile-first, AI-native personal finance application built with FastAPI, Next.js 14, PostgreSQL, and Docker.
+                    </div>
+                    <!-- Project 1: Stora -->
+                    <div class="group">
+                        <div
+                            class="relative overflow-hidden rounded-xl aspect-video mb-6 bg-slate-50 border border-slate-200 dark:bg-surface-dark dark:border-border-dark">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent"></div>
+                            <div
+                                class="absolute inset-0 flex items-center justify-center opacity-40 group-hover:opacity-100 transition-opacity">
+                                <div
+                                    class="bg-white dark:bg-background-dark p-8 rounded-lg border border-slate-200 dark:border-border-dark shadow-2xl scale-90 group-hover:scale-100 transition-transform">
+                                    <div class="flex gap-2 mb-3">
+                                        <div class="h-2 w-12 bg-primary rounded"></div>
+                                        <div class="h-2 w-8 bg-slate-200 dark:bg-border-dark rounded"></div>
+                                    </div>
+                                    <div class="space-y-2">
+                                        <div class="h-1.5 w-full bg-slate-300 dark:bg-slate-700 rounded"></div>
+                                        <div class="h-1.5 w-3/4 bg-slate-300 dark:bg-slate-700 rounded"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-2">stora</h3>
+                                <div class="flex gap-2">
+                                    <span
+                                        class="px-2 py-1 rounded bg-slate-50 border border-slate-200 dark:bg-surface-dark dark:border-border-dark text-[10px] font-mono text-slate-500 dark:text-slate-400">MULTI-TENANT</span>
+                                    <span
+                                        class="px-2 py-1 rounded bg-slate-50 border border-slate-200 dark:bg-surface-dark dark:border-border-dark text-[10px] font-mono text-slate-500 dark:text-slate-400">POSTGRES</span>
+                                </div>
+                            </div>
+                            <a class="text-slate-400 hover:text-slate-900 dark:text-slate-500 dark:hover:text-white transition-colors"
+                                href="https://github.com/ManasesLovera/stora" target="_blank"
+                                aria-label="GitHub Repository">
+                                <span class="material-symbols-outlined">code</span>
+                            </a>
+                        </div>
+                        <p class="text-slate-500 dark:text-slate-400 mb-6">
+                            A high-performance multi-tenant e-commerce platform built with an emphasis on database
+                            isolation and horizontal scalability.
                         </p>
-</div>
-<div class="group"><div class="relative overflow-hidden rounded-xl aspect-video mb-6 bg-slate-50 border border-slate-200 dark:bg-surface-dark dark:border-border-dark"><div class="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent"></div><div class="absolute inset-0 flex items-center justify-center opacity-40 group-hover:opacity-100 transition-opacity"><div class="bg-white dark:bg-background-dark p-6 rounded-xl border border-primary/30 shadow-2xl group-hover:scale-105 transition-transform"><span class="material-symbols-outlined text-primary text-6xl">show_chart</span></div></div></div><div class="flex justify-between items-start mb-4"><div><h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-2">Finshark</h3><div class="flex gap-2"><span class="px-2 py-1 rounded bg-slate-50 border border-slate-200 dark:bg-surface-dark dark:border-border-dark text-[10px] font-mono text-slate-500 dark:text-slate-400">.NET CORE</span><span class="px-2 py-1 rounded bg-slate-50 border border-slate-200 dark:bg-surface-dark dark:border-border-dark text-[10px] font-mono text-slate-500 dark:text-slate-400">REACT</span></div></div><div class="flex gap-2"><a class="text-slate-400 hover:text-slate-900 dark:text-slate-500 dark:hover:text-white transition-colors" href="https://github.com/ManasesLovera/finshark" target="_blank" aria-label="GitHub Backend Repository"><span class="material-symbols-outlined">code</span></a><a class="text-slate-400 hover:text-slate-900 dark:text-slate-500 dark:hover:text-white transition-colors" href="https://github.com/ManasesLovera/finsharkFrontend" target="_blank" aria-label="GitHub Frontend Repository"><span class="material-symbols-outlined">web</span></a></div></div><p class="text-slate-500 dark:text-slate-400 mb-6">A comprehensive .NET C# and Reactjs application designed for efficiently managing and tracking stock portfolios.</p></div></div>
-</div>
-</section>
-</main>
-<!-- Footer -->
-<footer class="bg-slate-50 dark:bg-surface-dark py-16 border-t border-slate-200 dark:border-border-dark" id="footer">
-<div class="max-w-7xl mx-auto px-6">
-<div class="flex flex-col md:flex-row justify-between items-center gap-12 text-center md:text-left">
-<div class="space-y-4">
-<div class="flex items-center justify-center md:justify-start gap-3">
-<div class="size-6 bg-primary rounded flex items-center justify-center text-white text-[10px]">ML</div>
-<span class="text-slate-900 dark:text-white font-bold tracking-tight">Manasés Lovera</span>
-</div>
-<p class="text-slate-500 dark:text-slate-400 max-w-sm italic">
+                    </div>
+                    <!-- Project 2: Talk Budget -->
+                    <div class="group">
+                        <div
+                            class="relative overflow-hidden rounded-xl aspect-video mb-6 bg-slate-50 border border-slate-200 dark:bg-surface-dark dark:border-border-dark">
+                            <div class="absolute inset-0 bg-gradient-to-bl from-primary/20 to-transparent"></div>
+                            <div
+                                class="absolute inset-0 flex items-center justify-center opacity-40 group-hover:opacity-100 transition-opacity">
+                                <div
+                                    class="bg-white dark:bg-background-dark p-6 rounded-xl border border-primary/30 shadow-2xl group-hover:scale-105 transition-transform">
+                                    <span
+                                        class="material-symbols-outlined text-primary text-6xl">account_balance_wallet</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-2">Talk Budget</h3>
+                                <div class="flex gap-2">
+                                    <span
+                                        class="px-2 py-1 rounded bg-slate-50 border border-slate-200 dark:bg-surface-dark dark:border-border-dark text-[10px] font-mono text-slate-500 dark:text-slate-400">PYTHON</span>
+                                    <span
+                                        class="px-2 py-1 rounded bg-slate-50 border border-slate-200 dark:bg-surface-dark dark:border-border-dark text-[10px] font-mono text-slate-500 dark:text-slate-400">NEXT.JS</span>
+                                    <span
+                                        class="px-2 py-1 rounded bg-slate-50 border border-slate-200 dark:bg-surface-dark dark:border-border-dark text-[10px] font-mono text-slate-500 dark:text-slate-400">DOCKER</span>
+                                </div>
+                            </div>
+                            <a class="text-slate-400 hover:text-slate-900 dark:text-slate-500 dark:hover:text-white transition-colors"
+                                href="https://github.com/ManasesLovera/talk-budget" target="_blank"
+                                aria-label="GitHub Repository">
+                                <span class="material-symbols-outlined">code</span>
+                            </a>
+                        </div>
+                        <p class="text-slate-500 dark:text-slate-400 mb-6">
+                            A mobile-first, AI-native personal finance application built with FastAPI, Next.js 14,
+                            PostgreSQL, and Docker.
+                        </p>
+                    </div>
+                    <div class="group">
+                        <div
+                            class="relative overflow-hidden rounded-xl aspect-video mb-6 bg-slate-50 border border-slate-200 dark:bg-surface-dark dark:border-border-dark">
+                            <div class="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent"></div>
+                            <div
+                                class="absolute inset-0 flex items-center justify-center opacity-40 group-hover:opacity-100 transition-opacity">
+                                <div
+                                    class="bg-white dark:bg-background-dark p-6 rounded-xl border border-primary/30 shadow-2xl group-hover:scale-105 transition-transform">
+                                    <span class="material-symbols-outlined text-primary text-6xl">show_chart</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-2">Finshark</h3>
+                                <div class="flex gap-2"><span
+                                        class="px-2 py-1 rounded bg-slate-50 border border-slate-200 dark:bg-surface-dark dark:border-border-dark text-[10px] font-mono text-slate-500 dark:text-slate-400">.NET
+                                        CORE</span><span
+                                        class="px-2 py-1 rounded bg-slate-50 border border-slate-200 dark:bg-surface-dark dark:border-border-dark text-[10px] font-mono text-slate-500 dark:text-slate-400">REACT</span>
+                                </div>
+                            </div>
+                            <div class="flex gap-2"><a
+                                    class="text-slate-400 hover:text-slate-900 dark:text-slate-500 dark:hover:text-white transition-colors"
+                                    href="https://github.com/ManasesLovera/finshark" target="_blank"
+                                    aria-label="GitHub Backend Repository"><span
+                                        class="material-symbols-outlined">code</span></a><a
+                                    class="text-slate-400 hover:text-slate-900 dark:text-slate-500 dark:hover:text-white transition-colors"
+                                    href="https://github.com/ManasesLovera/finsharkFrontend" target="_blank"
+                                    aria-label="GitHub Frontend Repository"><span
+                                        class="material-symbols-outlined">web</span></a></div>
+                        </div>
+                        <p class="text-slate-500 dark:text-slate-400 mb-6">A comprehensive .NET C# and Reactjs
+                            application designed for efficiently managing and tracking stock portfolios.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-slate-50 dark:bg-surface-dark py-16 border-t border-slate-200 dark:border-border-dark"
+        id="footer">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-12 text-center md:text-left">
+                <div class="space-y-4">
+                    <div class="flex items-center justify-center md:justify-start gap-3">
+                        <div class="size-6 bg-primary rounded flex items-center justify-center text-white text-[10px]">
+                            ML</div>
+                        <span class="text-slate-900 dark:text-white font-bold tracking-tight">Manasés Lovera</span>
+                    </div>
+                    <p class="text-slate-500 dark:text-slate-400 max-w-sm italic">
                         "Automating the boring stuff, one AI agent at a time."
                     </p>
-<div class="flex justify-center md:justify-start gap-6 mt-6">
-<a class="text-slate-500 dark:text-slate-400 hover:text-primary transition-colors" href="https://linkedin.com/in/manaseslovera" target="_blank">LinkedIn</a>
-<a class="text-slate-500 dark:text-slate-400 hover:text-primary transition-colors" href="https://github.com/manaseslovera" target="_blank">GitHub</a>
-<a class="text-slate-500 dark:text-slate-400 hover:text-primary transition-colors" href="mailto:manaseslovera07@gmail.com">Email</a>
-</div>
-</div>
-<div class="bg-white dark:bg-background-dark p-8 rounded-xl border border-slate-200 dark:border-border-dark max-w-md w-full">
-<h4 class="text-slate-900 dark:text-white font-bold mb-4">Ready to build something intelligent?</h4>
-<a class="inline-flex items-center gap-2 text-primary hover:underline font-mono" href="mailto:manaseslovera07@gmail.com">
+                    <div class="flex justify-center md:justify-start gap-6 mt-6">
+                        <a class="text-slate-500 dark:text-slate-400 hover:text-primary transition-colors"
+                            href="https://linkedin.com/in/manaseslovera" target="_blank">LinkedIn</a>
+                        <a class="text-slate-500 dark:text-slate-400 hover:text-primary transition-colors"
+                            href="https://github.com/manaseslovera" target="_blank">GitHub</a>
+                        <a class="text-slate-500 dark:text-slate-400 hover:text-primary transition-colors"
+                            href="mailto:manaseslovera07@gmail.com">Email</a>
+                    </div>
+                </div>
+                <div
+                    class="bg-white dark:bg-background-dark p-8 rounded-xl border border-slate-200 dark:border-border-dark max-w-md w-full">
+                    <h4 class="text-slate-900 dark:text-white font-bold mb-4">Ready to build something intelligent?</h4>
+                    <a class="inline-flex items-center gap-2 text-primary hover:underline font-mono"
+                        href="mailto:manaseslovera07@gmail.com">
                         manaseslovera07@gmail.com <span class="material-symbols-outlined text-sm">mail</span>
-</a>
-</div>
-</div>
-<div class="mt-16 pt-8 border-t border-slate-200 dark:border-border-dark/50 text-center text-slate-400 dark:text-slate-500 text-xs font-mono">© 2026 MANASES LOVERA // BACKEND &amp; AI ENGINEER // BUILT WITH PRECISION</div>
-</div>
-</footer>
-<script>
-    function toggleTheme() {
-        const isDark = document.documentElement.classList.toggle('dark');
-        localStorage.setItem('theme', isDark ? 'dark' : 'light');
-    }
-</script>
-</body></html>
+                    </a>
+                </div>
+            </div>
+            <div
+                class="mt-16 pt-8 border-t border-slate-200 dark:border-border-dark/50 text-center text-slate-400 dark:text-slate-500 text-xs font-mono">
+                © 2026 MANASES LOVERA // BACKEND &amp; AI ENGINEER // BUILT WITH PRECISION</div>
+        </div>
+    </footer>
+    <script>
+        function toggleTheme() {
+            const isDark = document.documentElement.classList.toggle('dark');
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        }
+    </script>
+</body>
+
+</html>
