@@ -199,70 +199,118 @@ for (const dialog of document.querySelectorAll("dialog.modal")) {
 // Projects carousel: one copy of the cards is appended so the row loops seamlessly. Copies
 // still open the same modals on click but stay out of the tab order and accessibility tree.
 const track = document.querySelector(".cards-projects");
-if (track && !reducedMotion) {
+const controls = document.querySelector(".carousel-controls");
+if (track && controls) {
   const originals = [...track.children];
-  for (const card of originals) {
-    const copy = card.cloneNode(true);
-    copy.setAttribute("aria-hidden", "true");
-    copy.querySelectorAll("a, button").forEach((el) => el.setAttribute("tabindex", "-1"));
-    track.append(copy);
-  }
-  const loopWidth = () => track.children[originals.length].offsetLeft - originals[0].offsetLeft;
+  const step = () => originals[1].offsetLeft - originals[0].offsetLeft;
+  const pauseButton = controls.querySelector(".carousel-pause");
+  const dirButtons = controls.querySelectorAll("[data-dir]");
+  controls.hidden = false;
 
-  const pauseButton = document.querySelector(".carousel-pause");
-  const SPEED = 24; // px per second
-  let stopped = false;
-  let hovered = false;
-  let focused = false;
-  let touchedUntil = 0;
-  let visible = false;
-  let pos = track.scrollLeft;
-  let last = 0;
+  if (reducedMotion) {
+    // No autoscroll: the arrows step one card at a time, without animation.
+    pauseButton.hidden = true;
+    for (const button of dirButtons) {
+      button.addEventListener("click", () => track.scrollBy({ left: Number(button.dataset.dir) * step() }));
+    }
+  } else {
+    for (const card of originals) {
+      const copy = card.cloneNode(true);
+      copy.setAttribute("aria-hidden", "true");
+      copy.querySelectorAll("a, button").forEach((el) => el.setAttribute("tabindex", "-1"));
+      track.append(copy);
+    }
+    const loopWidth = () => track.children[originals.length].offsetLeft - originals[0].offsetLeft;
 
-  const wrap = () => {
-    const width = loopWidth();
-    if (track.scrollLeft >= width) track.scrollLeft -= width;
-  };
+    const SPEED = 24; // px per second
+    const FAST = 720; // px per second while an arrow is clicked or held
+    let stopped = false;
+    let hovered = false;
+    let focused = false;
+    let touchedUntil = 0;
+    let visible = false;
+    let held = 0; // direction of the arrow being held down
+    let heldSince = 0;
+    let boost = 0; // distance left to travel after an arrow click, signed
+    let pos = track.scrollLeft;
+    let last = 0;
 
-  const tick = (now) => {
-    const dt = last ? Math.min(now - last, 100) / 1000 : 0;
-    last = now;
-    const paused =
-      stopped || hovered || focused || !visible || now < touchedUntil || document.querySelector("dialog.modal[open]");
-    // Pick up manual scrolling so the autoscroll continues from wherever the user left it.
-    if (Math.abs(track.scrollLeft - pos) > 2) pos = track.scrollLeft;
-    if (!paused) {
-      pos += SPEED * dt;
+    const wrap = () => {
       const width = loopWidth();
-      if (pos >= width) pos -= width;
-      track.scrollLeft = pos;
+      if (track.scrollLeft >= width) track.scrollLeft -= width;
+    };
+
+    const tick = (now) => {
+      const dt = last ? Math.min(now - last, 100) / 1000 : 0;
+      last = now;
+      // Pick up manual scrolling so the autoscroll continues from wherever the user left it.
+      if (Math.abs(track.scrollLeft - pos) > 2) pos = track.scrollLeft;
+      let delta = 0;
+      if (held && now - heldSince > 300) {
+        delta = held * FAST * dt;
+      } else if (boost) {
+        delta = Math.sign(boost) * Math.min(FAST * dt, Math.abs(boost));
+        boost -= delta;
+      } else if (
+        !(stopped || hovered || focused || now < touchedUntil || document.querySelector("dialog.modal[open]"))
+      ) {
+        delta = SPEED * dt;
+      }
+      if (delta) {
+        const width = loopWidth();
+        pos = (((pos + delta) % width) + width) % width;
+        track.scrollLeft = pos;
+      }
+      if (visible) requestAnimationFrame(tick);
+    };
+
+    new IntersectionObserver(([entry]) => {
+      const wasVisible = visible;
+      visible = entry.isIntersecting;
+      if (visible && !wasVisible) {
+        last = 0;
+        requestAnimationFrame(tick);
+      }
+    }).observe(track);
+
+    track.addEventListener("pointerenter", (event) => (hovered = event.pointerType === "mouse"));
+    track.addEventListener("pointerleave", () => (hovered = false));
+    // Keyboard focus only: a mouse click leaves focus on the card after its modal closes.
+    track.addEventListener("focusin", (event) => (focused = event.target.matches(":focus-visible")));
+    track.addEventListener("focusout", () => (focused = false));
+    track.addEventListener("touchstart", () => (touchedUntil = Infinity), { passive: true });
+    track.addEventListener("touchend", () => (touchedUntil = performance.now() + 3000), { passive: true });
+    track.addEventListener("scroll", wrap, { passive: true });
+
+    // A click glides one card; holding keeps moving fast until release.
+    for (const button of dirButtons) {
+      const dir = Number(button.dataset.dir);
+      button.addEventListener("pointerdown", () => {
+        held = dir;
+        heldSince = performance.now();
+      });
+      const release = () => {
+        if (held === dir && performance.now() - heldSince > 300) boost = 0;
+        held = 0;
+      };
+      button.addEventListener("pointerup", release);
+      button.addEventListener("pointerleave", release);
+      button.addEventListener("pointercancel", release);
+      button.addEventListener("click", () => {
+        if (performance.now() - heldSince > 300 && heldSince) {
+          heldSince = 0;
+          return;
+        }
+        heldSince = 0;
+        boost += dir * step();
+      });
     }
-    if (visible) requestAnimationFrame(tick);
-  };
 
-  new IntersectionObserver(([entry]) => {
-    const wasVisible = visible;
-    visible = entry.isIntersecting;
-    if (visible && !wasVisible) {
-      last = 0;
-      requestAnimationFrame(tick);
-    }
-  }).observe(track);
-
-  track.addEventListener("pointerenter", (event) => (hovered = event.pointerType === "mouse"));
-  track.addEventListener("pointerleave", () => (hovered = false));
-  // Keyboard focus only: a mouse click leaves focus on the card after its modal closes.
-  track.addEventListener("focusin", (event) => (focused = event.target.matches(":focus-visible")));
-  track.addEventListener("focusout", () => (focused = false));
-  track.addEventListener("touchstart", () => (touchedUntil = Infinity), { passive: true });
-  track.addEventListener("touchend", () => (touchedUntil = performance.now() + 3000), { passive: true });
-  track.addEventListener("scroll", wrap, { passive: true });
-
-  pauseButton.hidden = false;
-  pauseButton.addEventListener("click", () => {
-    stopped = !stopped;
-    pauseButton.textContent = stopped ? "Play" : "Pause";
-  });
+    pauseButton.addEventListener("click", () => {
+      stopped = !stopped;
+      pauseButton.textContent = stopped ? "Play" : "Pause";
+    });
+  }
 }
 // On small screens the hero has no network, so the scene stays hidden while it is in view.
 const hero = document.getElementById("top");

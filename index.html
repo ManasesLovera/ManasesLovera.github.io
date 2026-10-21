@@ -394,7 +394,11 @@
                         </div>
                     </article>
                 </div>
-                <button class="carousel-pause" type="button" hidden>Pause</button>
+                <div class="carousel-controls" hidden>
+                    <button class="carousel-arrow" type="button" data-dir="-1" aria-label="Move projects left"><span aria-hidden="true">←</span></button>
+                    <button class="carousel-arrow" type="button" data-dir="1" aria-label="Move projects right"><span aria-hidden="true">→</span></button>
+                    <button class="carousel-pause" type="button">Pause</button>
+                </div>
 
                 <dialog class="modal" id="p-planboard" aria-labelledby="p-planboard-title" closedby="any">
                     <div class="modal-body">

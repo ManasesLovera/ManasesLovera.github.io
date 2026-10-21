@@ -1308,10 +1308,24 @@ p {
   flex: 0 0 clamp(260px, 80vw, 340px);
 }
 
-.carousel-pause {
-  display: block;
-  margin: 12px 0 0 auto;
-  padding: 6px 12px;
+.carousel-controls {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.carousel-controls[hidden],
+.carousel-pause[hidden] {
+  display: none;
+}
+
+.carousel-controls button {
+  display: inline-grid;
+  place-items: center;
+  min-width: 34px;
+  height: 34px;
+  padding: 0 12px;
   border: 1px solid var(--line-strong);
   border-radius: 999px;
   background: transparent;
@@ -1321,15 +1335,20 @@ p {
   letter-spacing: 0.06em;
   text-transform: uppercase;
   cursor: pointer;
+  touch-action: manipulation;
+  user-select: none;
+  transition: color 0.2s, background-color 0.2s;
 }
 
-.carousel-pause:hover {
+.carousel-controls .carousel-arrow {
+  padding: 0;
+  font-size: 1rem;
+  letter-spacing: 0;
+}
+
+.carousel-controls button:hover {
   color: var(--ink);
   background: var(--hover);
-}
-
-.carousel-pause[hidden] {
-  display: none;
 }
 
 /* Project modal */
