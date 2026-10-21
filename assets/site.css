@@ -186,6 +186,12 @@ a {
   opacity: 1;
 }
 
+/* The hero draws its own static network, so the scene only shows once it scrolls away
+   (site.js sets .at-hero). */
+.at-hero #scene.ready {
+  opacity: 0;
+}
+
 .hud {
   position: fixed;
   right: var(--gutter);
@@ -521,10 +527,6 @@ p {
   transition: opacity 1s var(--ease);
 }
 
-.scene-on .hero-art {
-  opacity: 0;
-}
-
 .hero-art .stop-a {
   stop-color: var(--accent-2);
 }
@@ -716,14 +718,13 @@ p {
 }
 
 /* A transformer block (encoder and decoder) at the hero's right edge, with the static
-   network moved left to make room. The WebGL network fills that space, so the figure only
-   shows over the fallback, and only when the column is wide enough to read it. */
+   network moved left to make room, only when the column is wide enough to read it. */
 .hero-deck .deck-tf {
   display: none;
 }
 
 @media (min-width: 1700px) {
-  :root:not(.scene-on) .hero-deck .deck-tf {
+  .hero-deck .deck-tf {
     display: block;
     top: 32px;
     left: auto;
@@ -732,7 +733,7 @@ p {
     translate: 0 -50%;
   }
 
-  :root:not(.scene-on) .hero-art {
+  .hero-art {
     right: calc(var(--edge) + 308px);
   }
 }
@@ -1820,8 +1821,7 @@ body:has(.modal[open]) {
     display: block;
   }
 
-  /* No network on small screens: the hero is text only, and the scene stays hidden while
-     the hero is on screen (site.js sets .at-hero). */
+  /* No network on small screens: the hero is text only. */
   .hero {
     min-height: calc(100svh - 64px);
     padding: 56px 0 72px;
@@ -1829,10 +1829,6 @@ body:has(.modal[open]) {
 
   .hero-art {
     display: none;
-  }
-
-  .at-hero #scene {
-    opacity: 0;
   }
 
   /* Stacked, nudged left and right so the arrows still zigzag, and kept compact. */

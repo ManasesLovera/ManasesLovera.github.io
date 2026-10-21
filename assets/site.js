@@ -363,12 +363,14 @@ function setupCarousel(carousel) {
 }
 document.querySelectorAll(".carousel").forEach(setupCarousel);
 
-// On small screens the hero has no network, so the scene stays hidden while it is in view.
+// The hero has its own static network, so the scene stays hidden while it is in view.
 const hero = document.getElementById("top");
 if (hero && "IntersectionObserver" in window) {
-  root.classList.toggle("at-hero", window.scrollY < hero.offsetHeight * 0.6);
+  // Same mid-viewport band the scene uses to pick its shape, so it fades in as the next
+  // section takes over.
+  root.classList.toggle("at-hero", hero.getBoundingClientRect().bottom > window.innerHeight / 2);
   new IntersectionObserver(([entry]) => root.classList.toggle("at-hero", entry.isIntersecting), {
-    rootMargin: "0px 0px -40% 0px",
+    rootMargin: "-48% 0px -48% 0px",
   }).observe(hero);
 }
 
