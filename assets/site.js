@@ -1,7 +1,6 @@
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const root = document.documentElement;
 const systemLight = window.matchMedia("(prefers-color-scheme: light)");
-const themeListeners = [];
 
 function currentTheme() {
   return root.dataset.theme || (systemLight.matches ? "light" : "dark");
@@ -18,7 +17,6 @@ function applyTheme(theme, remember) {
   }
   const toggle = document.querySelector(".theme-toggle");
   toggle?.setAttribute("aria-label", theme === "dark" ? "Switch to light theme" : "Switch to dark theme");
-  themeListeners.forEach((listener) => listener(theme));
 }
 
 function storedTheme() {
@@ -362,84 +360,3 @@ function setupCarousel(carousel) {
   toggle();
 }
 document.querySelectorAll(".carousel").forEach(setupCarousel);
-
-// The hero has its own static network, so the scene stays hidden while it is in view.
-const hero = document.getElementById("top");
-if (hero && "IntersectionObserver" in window) {
-  // Same mid-viewport band the scene uses to pick its shape, so it fades in as the next
-  // section takes over.
-  root.classList.toggle("at-hero", hero.getBoundingClientRect().bottom > window.innerHeight / 2);
-  new IntersectionObserver(([entry]) => root.classList.toggle("at-hero", entry.isIntersecting), {
-    rootMargin: "-48% 0px -48% 0px",
-  }).observe(hero);
-}
-
-const labels = {
-  network: "Neural network",
-  distill: "Distillation",
-  document: "Document AI",
-  globe: "Scale",
-  chip: "Silicon",
-  wave: "Interference",
-};
-
-function webglAvailable() {
-  try {
-    const probe = document.createElement("canvas");
-    return Boolean(probe.getContext("webgl2") || probe.getContext("webgl"));
-  } catch {
-    return false;
-  }
-}
-
-async function startScene() {
-  const canvas = document.getElementById("scene");
-  if (!canvas || !webglAvailable()) return;
-  let scene;
-  try {
-    const { createScene } = await import("./scene.js");
-    const column = document.querySelector(".site-header .wrap");
-    const edge = () => {
-      if (!column) return 0;
-      const rect = column.getBoundingClientRect();
-      return window.innerWidth - rect.right + parseFloat(getComputedStyle(column).paddingRight);
-    };
-    scene = createScene(canvas, { reducedMotion, theme: currentTheme(), edge });
-  } catch (error) {
-    console.warn("Scene disabled:", error);
-    return;
-  }
-  themeListeners.push((theme) => scene.setTheme(theme));
-  canvas.classList.add("ready");
-  root.classList.add("scene-on");
-
-  const hud = document.querySelector(".hud");
-  const hudIndex = hud?.querySelector("[data-hud-index]");
-  const hudLabel = hud?.querySelector("[data-hud-label]");
-  const sections = [...document.querySelectorAll("[data-scene]")];
-
-  // A thin band across the middle of the viewport decides the active section.
-  const io = new IntersectionObserver(
-    (entries) => {
-      for (const entry of entries) {
-        if (!entry.isIntersecting) continue;
-        const name = entry.target.dataset.scene;
-        scene.setShape(name);
-        // The hero carries its own figures, so the HUD only labels later sections.
-        hud?.classList.toggle("on", entry.target.id !== "top");
-        if (hudIndex && hudLabel) {
-          hudIndex.textContent = `Fig. ${String(sections.indexOf(entry.target) + 1).padStart(2, "0")}`;
-          hudLabel.textContent = labels[name];
-        }
-      }
-    },
-    { rootMargin: "-48% 0px -48% 0px" },
-  );
-  sections.forEach((section) => io.observe(section));
-}
-
-if ("requestIdleCallback" in window) {
-  requestIdleCallback(startScene, { timeout: 1200 });
-} else {
-  setTimeout(startScene, 200);
-}

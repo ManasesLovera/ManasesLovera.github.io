@@ -55,8 +55,6 @@
 
 <body>
     <a class="skip" href="#main">Skip to content</a>
-    <canvas id="scene" aria-hidden="true"></canvas>
-    <p class="hud" aria-hidden="true"><span data-hud-index>Fig. 01</span> <span data-hud-label>Neural network</span></p>
 
     <header class="site-header">
         <div class="wrap header-row">
@@ -89,8 +87,7 @@
     </header>
 
     <main id="main">
-        <section class="hero" id="top" data-scene="network">
-            <!-- Static stand-in, replaced by the WebGL scene once it loads. -->
+        <section class="hero" id="top">
             <svg class="hero-art" viewBox="0 0 560 420" aria-hidden="true" focusable="false"><defs><linearGradient id="art-edge" x1="0" x2="1"><stop offset="0" class="stop-a"/><stop offset="1" class="stop-b"/></linearGradient></defs><g stroke="url(#art-edge)" stroke-width="1" opacity=".28"><line x1="60" y1="126" x2="170" y2="70"/><line x1="60" y1="126" x2="170" y2="126"/><line x1="60" y1="126" x2="170" y2="182"/><line x1="60" y1="126" x2="170" y2="238"/><line x1="60" y1="126" x2="170" y2="294"/><line x1="60" y1="126" x2="170" y2="350"/><line x1="60" y1="182" x2="170" y2="70"/><line x1="60" y1="182" x2="170" y2="126"/><line x1="60" y1="182" x2="170" y2="182"/><line x1="60" y1="182" x2="170" y2="238"/><line x1="60" y1="182" x2="170" y2="294"/><line x1="60" y1="182" x2="170" y2="350"/><line x1="60" y1="238" x2="170" y2="70"/><line x1="60" y1="238" x2="170" y2="126"/><line x1="60" y1="238" x2="170" y2="182"/><line x1="60" y1="238" x2="170" y2="238"/><line x1="60" y1="238" x2="170" y2="294"/><line x1="60" y1="238" x2="170" y2="350"/><line x1="60" y1="294" x2="170" y2="70"/><line x1="60" y1="294" x2="170" y2="126"/><line x1="60" y1="294" x2="170" y2="182"/><line x1="60" y1="294" x2="170" y2="238"/><line x1="60" y1="294" x2="170" y2="294"/><line x1="60" y1="294" x2="170" y2="350"/><line x1="170" y1="70" x2="280" y2="70"/><line x1="170" y1="70" x2="280" y2="126"/><line x1="170" y1="70" x2="280" y2="182"/><line x1="170" y1="70" x2="280" y2="238"/><line x1="170" y1="70" x2="280" y2="294"/><line x1="170" y1="70" x2="280" y2="350"/><line x1="170" y1="126" x2="280" y2="70"/><line x1="170" y1="126" x2="280" y2="126"/><line x1="170" y1="126" x2="280" y2="182"/><line x1="170" y1="126" x2="280" y2="238"/><line x1="170" y1="126" x2="280" y2="294"/><line x1="170" y1="126" x2="280" y2="350"/><line x1="170" y1="182" x2="280" y2="70"/><line x1="170" y1="182" x2="280" y2="126"/><line x1="170" y1="182" x2="280" y2="182"/><line x1="170" y1="182" x2="280" y2="238"/><line x1="170" y1="182" x2="280" y2="294"/><line x1="170" y1="182" x2="280" y2="350"/><line x1="170" y1="238" x2="280" y2="70"/><line x1="170" y1="238" x2="280" y2="126"/><line x1="170" y1="238" x2="280" y2="182"/><line x1="170" y1="238" x2="280" y2="238"/><line x1="170" y1="238" x2="280" y2="294"/><line x1="170" y1="238" x2="280" y2="350"/><line x1="170" y1="294" x2="280" y2="70"/><line x1="170" y1="294" x2="280" y2="126"/><line x1="170" y1="294" x2="280" y2="182"/><line x1="170" y1="294" x2="280" y2="238"/><line x1="170" y1="294" x2="280" y2="294"/><line x1="170" y1="294" x2="280" y2="350"/><line x1="170" y1="350" x2="280" y2="70"/><line x1="170" y1="350" x2="280" y2="126"/><line x1="170" y1="350" x2="280" y2="182"/><line x1="170" y1="350" x2="280" y2="238"/><line x1="170" y1="350" x2="280" y2="294"/><line x1="170" y1="350" x2="280" y2="350"/><line x1="280" y1="70" x2="390" y2="126"/><line x1="280" y1="70" x2="390" y2="182"/><line x1="280" y1="70" x2="390" y2="238"/><line x1="280" y1="70" x2="390" y2="294"/><line x1="280" y1="126" x2="390" y2="126"/><line x1="280" y1="126" x2="390" y2="182"/><line x1="280" y1="126" x2="390" y2="238"/><line x1="280" y1="126" x2="390" y2="294"/><line x1="280" y1="182" x2="390" y2="126"/><line x1="280" y1="182" x2="390" y2="182"/><line x1="280" y1="182" x2="390" y2="238"/><line x1="280" y1="182" x2="390" y2="294"/><line x1="280" y1="238" x2="390" y2="126"/><line x1="280" y1="238" x2="390" y2="182"/><line x1="280" y1="238" x2="390" y2="238"/><line x1="280" y1="238" x2="390" y2="294"/><line x1="280" y1="294" x2="390" y2="126"/><line x1="280" y1="294" x2="390" y2="182"/><line x1="280" y1="294" x2="390" y2="238"/><line x1="280" y1="294" x2="390" y2="294"/><line x1="280" y1="350" x2="390" y2="126"/><line x1="280" y1="350" x2="390" y2="182"/><line x1="280" y1="350" x2="390" y2="238"/><line x1="280" y1="350" x2="390" y2="294"/><line x1="390" y1="126" x2="500" y2="182"/><line x1="390" y1="126" x2="500" y2="238"/><line x1="390" y1="182" x2="500" y2="182"/><line x1="390" y1="182" x2="500" y2="238"/><line x1="390" y1="238" x2="500" y2="182"/><line x1="390" y1="238" x2="500" y2="238"/><line x1="390" y1="294" x2="500" y2="182"/><line x1="390" y1="294" x2="500" y2="238"/></g><g class="n0"><circle cx="60" cy="126" r="6"/><circle cx="60" cy="182" r="6"/><circle cx="60" cy="238" r="6"/><circle cx="60" cy="294" r="6"/></g><g class="n1"><circle cx="170" cy="70" r="6"/><circle cx="170" cy="126" r="6"/><circle cx="170" cy="182" r="6"/><circle cx="170" cy="238" r="6"/><circle cx="170" cy="294" r="6"/><circle cx="170" cy="350" r="6"/></g><g class="n2"><circle cx="280" cy="70" r="6"/><circle cx="280" cy="126" r="6"/><circle cx="280" cy="182" r="6"/><circle cx="280" cy="238" r="6"/><circle cx="280" cy="294" r="6"/><circle cx="280" cy="350" r="6"/></g><g class="n3"><circle cx="390" cy="126" r="6"/><circle cx="390" cy="182" r="6"/><circle cx="390" cy="238" r="6"/><circle cx="390" cy="294" r="6"/></g><g class="n4"><circle cx="500" cy="182" r="6"/><circle cx="500" cy="238" r="6"/></g></svg>
             <div class="hero-deck" aria-hidden="true">
                 <figure class="deck-arch">
@@ -256,7 +253,7 @@
             </div>
         </section>
 
-        <section class="section" id="approach" data-scene="distill" aria-labelledby="approach-title">
+        <section class="section" id="approach" aria-labelledby="approach-title">
             <div class="wrap">
                 <header class="section-head reveal">
                     <p class="kicker"><span class="num">01</span> Approach</p>
@@ -320,7 +317,7 @@
             </div>
         </section>
 
-        <section class="section" id="projects" data-scene="globe" aria-labelledby="projects-title">
+        <section class="section" id="projects" aria-labelledby="projects-title">
             <div class="wrap">
                 <header class="section-head reveal">
                     <p class="kicker"><span class="num">02</span> Projects</p>
@@ -485,7 +482,7 @@
             </div>
         </section>
 
-        <section class="section" id="lab" data-scene="chip" aria-labelledby="lab-title">
+        <section class="section" id="lab" aria-labelledby="lab-title">
             <div class="wrap">
                 <header class="section-head reveal">
                     <p class="kicker"><span class="num">03</span> Lab</p>
@@ -557,7 +554,7 @@
             </div>
         </section>
 
-        <section class="section" id="experience" data-scene="wave" aria-labelledby="experience-title">
+        <section class="section" id="experience" aria-labelledby="experience-title">
             <div class="wrap">
                 <header class="section-head reveal">
                     <p class="kicker"><span class="num">04</span> Experience</p>
@@ -702,7 +699,7 @@
             </div>
         </section>
 
-        <section class="section contact" id="contact" data-scene="network" aria-labelledby="contact-title">
+        <section class="section contact" id="contact" aria-labelledby="contact-title">
             <div class="wrap">
                 <p class="kicker reveal"><span class="num">05</span> Contact</p>
                 <h2 id="contact-title" class="reveal">Is your AI product slow or expensive?</h2>

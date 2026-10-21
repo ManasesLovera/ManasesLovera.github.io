@@ -169,52 +169,6 @@ a {
   top: 12px;
 }
 
-/* Scene */
-
-#scene {
-  position: fixed;
-  inset: 0;
-  width: 100vw;
-  height: 100lvh;
-  z-index: 0;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 1.2s var(--ease);
-}
-
-#scene.ready {
-  opacity: 1;
-}
-
-/* The hero draws its own static network, so the scene only shows once it scrolls away
-   (site.js sets .at-hero). */
-.at-hero #scene.ready {
-  opacity: 0;
-}
-
-.hud {
-  position: fixed;
-  right: var(--gutter);
-  bottom: 20px;
-  z-index: 2;
-  margin: 0;
-  font-family: var(--mono);
-  font-size: 0.72rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--muted);
-  display: none;
-}
-
-.hud [data-hud-index] {
-  color: var(--accent);
-  margin-right: 8px;
-}
-
-.hud.on {
-  display: block;
-}
-
 main,
 .site-footer {
   position: relative;
@@ -555,9 +509,8 @@ p {
   fill: var(--accent);
 }
 
-/* Annotations around the hero network. The anchor sits on the network's centre (the scene
-   puts it mid-viewport, --net wide and about half as tall, its right side on the
-   column's right edge). */
+/* Annotations around the hero network. The anchor sits on the network's centre (--net
+   wide and about half as tall, its right side on the column's right edge). */
 .hero-deck {
   --half: calc(var(--net) / 4);
   --net: min(36vw, 80vh, 700px);
@@ -1812,8 +1765,7 @@ body:has(.modal[open]) {
 /* Responsive */
 
 @media (max-width: 959px) {
-  .nav,
-  .hud.on {
+  .nav {
     display: none;
   }
 

@@ -30,9 +30,7 @@ This project overrides the global worktree and PR conventions in
 | --- | --- |
 | `index.html` | The whole site: head/SEO/JSON-LD, header, sections, project modals, footer |
 | `assets/site.css` | All styles, one file, tokens on `:root` |
-| `assets/site.js` | Progressive enhancement: theme, menu, reveals, modals, carousels, scene loader |
-| `assets/scene.js` | Three.js particle background, lazy-loaded; morphs per section's `data-scene` |
-| `assets/vendor/` | Vendored `three.module.min.js` and its licence |
+| `assets/site.js` | Progressive enhancement: theme, menu, reveals, modals, carousels |
 | `assets/fonts/` | Self-hosted Geist and Geist Mono (`OFL.txt`) |
 | `assets/img/` | Project and lab screenshots |
 | `cv.pdf`, `CNAME`, `robots.txt`, `sitemap.xml` | Hand-maintained; bump `lastmod` in the sitemap on content changes |
@@ -66,7 +64,10 @@ For any change to markup, CSS or JS, verify in a real browser before committing:
 - External links use `target="_blank" rel="noopener noreferrer"` with a trailing
   `<span aria-hidden="true">↗</span>`.
 - No `href="#"`, no CDNs, no frameworks, no runtime dependencies. Fonts, images,
-  CSS, JS and Three.js are all served locally from `assets/`.
+  CSS and JS are all served locally from `assets/`.
+- The hero network is a static inline SVG. A WebGL particle background that replaced
+  it and morphed per section was removed on 2026-10-21 at the user's request; don't
+  bring back scroll-driven or animated background scenes.
 - The site must work without JavaScript; `site.js` only enhances. JS-only controls
   (theme toggle, carousel arrows and Pause) ship with `hidden` and are revealed by JS.
 - Project cards open `<dialog class="modal">` via invoker commands
@@ -114,6 +115,6 @@ scalable, AI-driven software made cheaper and faster.
 
 ## Code style
 
-- Plain browser JS (ES modules for `scene.js`), no bundler. Prettier-style formatting:
+- Plain browser JS, no bundler. Prettier-style formatting:
   double quotes, trailing commas, 2-space indent in JS/CSS, 4-space in `index.html`.
 - Sparse comments that explain *why*, not what. Match the existing terse style.
