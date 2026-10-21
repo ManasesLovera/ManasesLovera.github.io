@@ -1598,10 +1598,42 @@ body:has(.modal[open]) {
   font-size: 0.8rem;
 }
 
-.facts li > .muted:first-child {
-  display: inline-block;
-  min-width: 112px;
-  margin-right: 8px;
+.toolbox {
+  margin: 0;
+  border-top: 1px solid var(--line);
+}
+
+.toolbox > div {
+  display: grid;
+  grid-template-columns: 112px 1fr;
+  gap: 8px 16px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.toolbox dt {
+  padding-top: 5px;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.toolbox dd {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0;
+}
+
+.toolbox dd span {
+  padding: 3px 10px;
+  border: 1px solid var(--line-strong);
+  border-radius: 6px;
+  background: var(--bg-raised);
+  font-size: 0.88rem;
+  line-height: 1.5;
 }
 
 /* Contact */
@@ -1800,6 +1832,14 @@ body:has(.modal[open]) {
   .also ul,
   .facts {
     grid-template-columns: 1fr;
+  }
+
+  .toolbox > div {
+    grid-template-columns: 1fr;
+  }
+
+  .toolbox dt {
+    padding-top: 0;
   }
 
   .modal-body {
