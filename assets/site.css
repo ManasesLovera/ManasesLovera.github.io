@@ -1288,25 +1288,48 @@ p {
   color: var(--accent);
 }
 
-.cards-projects .card-wide {
-  grid-column: 1 / -1;
-  display: grid;
-  grid-template-columns: 1.25fr 1fr;
-  gap: 32px;
-  align-items: center;
-  padding-bottom: 16px;
+/* One row that scrolls natively (swipe, trackpad, keyboard); site.js adds a slow, looping
+   autoscroll on top. Vertical padding keeps the hover lift from being clipped. */
+.cards-projects {
+  display: flex;
+  gap: 16px;
+  padding: 6px 0 10px;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
+  mask-image: linear-gradient(to right, transparent, #000 32px, #000 calc(100% - 32px), transparent);
 }
 
-.card-wide .shot {
-  margin-bottom: 0;
+.cards-projects::-webkit-scrollbar {
+  display: none;
 }
 
-.card-wide h3 {
-  font-size: clamp(1.6rem, 3vw, 2.2rem);
+.cards-projects .card {
+  flex: 0 0 clamp(260px, 80vw, 340px);
 }
 
-.card-wide .card-body {
-  flex: none;
+.carousel-pause {
+  display: block;
+  margin: 12px 0 0 auto;
+  padding: 6px 12px;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.carousel-pause:hover {
+  color: var(--ink);
+  background: var(--hover);
+}
+
+.carousel-pause[hidden] {
+  display: none;
 }
 
 /* Project modal */
@@ -1794,13 +1817,8 @@ body:has(.modal[open]) {
     height: 14px;
   }
 
-  .phases,
-  .cards-projects .card-wide {
+  .phases {
     grid-template-columns: 1fr;
-  }
-
-  .cards-projects .card-wide {
-    gap: 20px;
   }
 
   .job summary {

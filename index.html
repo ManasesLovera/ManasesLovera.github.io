@@ -327,8 +327,8 @@
                     <h2 id="projects-title">Things I've built</h2>
                 </header>
 
-                <div class="cards cards-projects">
-                    <article class="card card-wide reveal">
+                <div class="cards cards-projects reveal" role="region" aria-label="Projects">
+                    <article class="card">
                         <figure class="shot">
                             <img src="assets/img/planboard.png" width="1648" height="927" loading="lazy"
                                 alt="Planboard admin dashboard with school overview and system health" />
@@ -341,7 +341,7 @@
                             <p class="card-note">Private · in production</p>
                         </div>
                     </article>
-                    <article class="card reveal">
+                    <article class="card">
                         <figure class="shot">
                             <img src="assets/img/scrumforge.png" width="1916" height="1078" loading="lazy"
                                 alt="scrumforge terminal board with tasks across backlog, review and done columns" />
@@ -354,7 +354,7 @@
                                 rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
                         </div>
                     </article>
-                    <article class="card reveal">
+                    <article class="card">
                         <figure class="shot">
                             <img src="assets/img/lab.png" width="1916" height="900" loading="lazy"
                                 alt="Lab Monitor app health page showing 11 healthy homelab containers" />
@@ -367,7 +367,7 @@
                                 rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
                         </div>
                     </article>
-                    <article class="card reveal">
+                    <article class="card">
                         <figure class="shot">
                             <img src="assets/img/glm-ocr.png" width="1458" height="820" loading="lazy"
                                 alt="GLM-OCR app showing a text recognition result" />
@@ -380,7 +380,7 @@
                                 rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
                         </div>
                     </article>
-                    <article class="card reveal">
+                    <article class="card">
                         <figure class="shot">
                             <img src="assets/img/talk-budget.png" width="1440" height="810" loading="lazy"
                                 alt="Talk Budget dashboard with the AI assistant chat open" />
@@ -394,6 +394,7 @@
                         </div>
                     </article>
                 </div>
+                <button class="carousel-pause" type="button" hidden>Pause</button>
 
                 <dialog class="modal" id="p-planboard" aria-labelledby="p-planboard-title" closedby="any">
                     <div class="modal-body">
