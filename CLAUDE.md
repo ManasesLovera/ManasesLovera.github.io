@@ -1,7 +1,7 @@
 # Project instructions — mlovera.dev
 
-Bilingual (English/Spanish) static portfolio for <https://mlovera.dev>, generated
-by a small Node script and hosted from the repository root on GitHub Pages.
+Single-page, English-only static portfolio for <https://mlovera.dev>, hand-written
+HTML/CSS/JS with no build step, served from the repository root by GitHub Pages.
 
 ## Git workflow
 
@@ -20,126 +20,100 @@ This project overrides the global worktree and PR conventions in
 - **No AI attribution in commits.** Never add a `Co-Authored-By: Claude …` trailer,
   a "Generated with Claude Code" line, or any other self-attribution to commit
   messages. Commits are authored by the user alone.
-- **Commit source and generated output together.** CI fails if `npm run build` changes
-  any committed output (see the generated-output section below).
+- **A push is a deploy.** There is no CI; GitHub Pages serves whatever is on `main`.
+- The commit hook reads every `-m` as a subject line. For a commit with a body, write
+  the message to a file and use `git commit -F <file>`.
 
-## Commands
-
-Requires Node.js 22.13+ (CI uses Node 24).
-
-```bash
-npm ci                         # install dev dependencies
-npm run dev                    # build once, then serve http://127.0.0.1:4173/en/
-npm run build                  # regenerate all committed HTML, sitemap, robots
-npm run check                  # lint + build + node:test unit tests
-npx playwright install chromium
-npm run test:browser           # Playwright + axe (reuses a running dev server)
-```
-
-- `npm run dev` builds **only at startup**. After editing source, run `npm run build`
-  and refresh — or restart the server.
-- Before proposing a commit, run `npm run check`, then confirm
-  `git diff --exit-code -- index.html en es sitemap.xml robots.txt` shows only changes
-  you intended. Run `npm run test:browser` for any change to markup, CSS, client JS,
-  or copy length.
-
-## Architecture
+## Layout
 
 | Path | Role |
 | --- | --- |
-| `src/home.mjs` | `homeCopy`: short homepage and page-chrome copy, keyed `en` / `es` |
-| `src/content.mjs` | `profile` (links, email, project ids) and `copy`: project details, background, notes agenda, contact |
-| `src/render.mjs` | `escapeHtml`, `shell()` (head, SEO, header, footer) and page functions |
-| `src/notes.mjs` | Markdown note parsing, validation, rendering (marked + Shiki) |
-| `scripts/build.mjs` | Static generator; writes every route, `sitemap.xml`, `robots.txt`, `.nojekyll` |
-| `scripts/serve.mjs` | Dev server; serves only public paths (`/src` etc. return 404) |
-| `assets/site.css` | All styles, one file, CSS custom properties on `:root` |
-| `assets/site.js` | Tiny progressive enhancement: mobile menu, language-switch hash |
-| `content/notes/` | Markdown sources for Engineering Notes (currently none published) |
-| `tests/site.test.mjs` | `node:test` unit tests for output, notes publishing, escaping |
-| `tests/browser/` | Playwright tests at 360/768/1440 px, both locales, axe scans |
-| `docs/` | `portfolio-audit.md` (positioning, evidence) and `writing-notes.md` (note contract) |
+| `index.html` | The whole site: head/SEO/JSON-LD, header, sections, project modals, footer |
+| `assets/site.css` | All styles, one file, tokens on `:root` |
+| `assets/site.js` | Progressive enhancement: theme, menu, reveals, modals, carousels, scene loader |
+| `assets/scene.js` | Three.js particle background, lazy-loaded; morphs per section's `data-scene` |
+| `assets/vendor/` | Vendored `three.module.min.js` and its licence |
+| `assets/fonts/` | Self-hosted Geist and Geist Mono (`OFL.txt`) |
+| `assets/img/` | Project and lab screenshots |
+| `cv.pdf`, `CNAME`, `robots.txt`, `sitemap.xml` | Hand-maintained; bump `lastmod` in the sitemap on content changes |
 
-Pages are pure functions of `lang` that return HTML strings via template literals,
-then pass through `shell()`. Copy is merged per page as
-`const c = { ...copy[lang], ...homeCopy[lang] }`.
+Sections in `index.html`, in order: hero (`#top`), `#approach`, `#projects`, `#lab`,
+`#experience`, `#contact`. Header nav and the mobile `.menu` link to them; keep both in
+sync when adding or renaming a section.
 
-## Generated output
+## Running and checking
 
-`index.html`, `en/`, `es/`, `sitemap.xml`, `robots.txt` and `.nojekyll` are
-**build output that is committed**. Never hand-edit them; change `src/`, `content/`
-or `scripts/` and rebuild. The build deletes and regenerates `en|es/work/` and
-`en|es/notes/`, so removed projects or unpublished notes disappear automatically.
-`cv.pdf`, `CNAME` and `assets/` are hand-maintained and not generated.
+There is no `package.json`, linter config or test suite. `node_modules/` (ignored) may
+still hold `playwright` and `@axe-core/playwright`; if not, install them with
+`npm i --no-save playwright @axe-core/playwright` and `npx playwright install chromium`.
 
-CI (`.github/workflows/check.yml`) only verifies; it does not deploy. GitHub Pages
-serves whatever is pushed to `main`, so a push is a deploy.
+```bash
+python3 -m http.server 4173      # then open http://127.0.0.1:4173/
+```
 
-## Bilingual rules
+For any change to markup, CSS or JS, verify in a real browser before committing:
 
-- Every user-facing string exists in **both** `en` and `es`, with identical keys and
-  array shapes. Spanish is written natively (Dominican Republic, `es_DO`), not
-  machine-translated word for word.
-- Arrays are index-aligned across files: `homeCopy[lang].projectSummaries` and
-  `projectLabels` line up with `copy[lang].work.projects`, and those line up with
-  `profile.projects`. Adding, removing or reordering a project means touching all of
-  them, in both languages.
-- Each new page needs `path`, `alternatePaths` (use `pagePaths(suffix)`), a localized
-  `title` and the route registered in `scripts/build.mjs` so it reaches the sitemap.
-- No hardcoded user-visible English in `render.mjs`; a few `aria-label`s use an inline
-  `lang === "en" ? … : …` — prefer moving new strings into the copy objects.
+- 360, 768 and 1440 px widths; no horizontal scroll at 360 px
+  (`document.documentElement.scrollWidth`).
+- Both themes, and with `prefers-reduced-motion: reduce`.
+- axe with tags `wcag2a`, `wcag2aa`, `wcag21a`, `wcag21aa`: zero violations. Use
+  `browser.newContext()` pages; `AxeBuilder` refuses pages from `browser.newPage()`.
+- No console errors.
 
 ## HTML and security conventions
 
-- Escape every interpolated value with `e(...)` (`escapeHtml`). Only pre-built HTML
-  fragments from other helpers go in unescaped.
-- External links use the `external()` helper (`target="_blank"`,
-  `rel="noopener noreferrer"`, `↗` marked `aria-hidden`).
-- Exactly one `<h1>` per page; sections start at `<h2>`. Element `id`s are unique.
-- No `href="#"`, no CDNs, no frameworks, no runtime dependencies. Everything (fonts,
-  images, CSS, JS) is served locally from `assets/`. npm packages are build-time only.
-- The site must work without JavaScript; `site.js` only enhances. Keep the
-  `<noscript>` fallback for the mobile nav working.
+- Exactly one `<h1>`; sections start at `<h2>`. Element `id`s are unique.
+- External links use `target="_blank" rel="noopener noreferrer"` with a trailing
+  `<span aria-hidden="true">↗</span>`.
+- No `href="#"`, no CDNs, no frameworks, no runtime dependencies. Fonts, images,
+  CSS, JS and Three.js are all served locally from `assets/`.
+- The site must work without JavaScript; `site.js` only enhances. JS-only controls
+  (theme toggle, carousel arrows and Pause) ship with `hidden` and are revealed by JS.
+- Project cards open `<dialog class="modal">` via invoker commands
+  (`commandfor` / `command="show-modal"`), with a JS fallback in `site.js`.
+
+## Carousels
+
+`#projects` and, at `max-width: 650px` only, `#lab` are `.carousel` wrappers around a
+`.cards` track. `setupCarousel()` in `site.js` drives every `.carousel`:
+
+- Appends one `aria-hidden` copy of the cards (links/buttons `tabindex="-1"`) for a
+  seamless loop; copies still open the same modals or links on click.
+- Slow autoscroll that pauses on mouse hover, keyboard focus, touch, an open modal,
+  off-screen, or the Pause button (WCAG 2.2.2).
+- Side arrows: a click glides one card, holding moves fast. A vertical wheel over the
+  carousel scrolls it sideways; outside it the page scrolls normally.
+- `data-media="<query>"` limits a carousel to matching screens and tears it down
+  (removes copies, hides controls) when the query stops matching.
+- Under reduced motion: no copies, no autoscroll, arrows step one card, Pause hidden.
+
+The `.carousel-controls` (Pause) element must be the carousel's next sibling.
 
 ## CSS and accessibility
 
-- Dark-only design (`color-scheme: dark`). Use the `:root` tokens (`--bg`, `--ink`,
-  `--muted`, `--line`, `--accent`, `--font`, `--mono`) instead of new raw colours.
-- Breakpoints in use: `max-width: 959px`, `max-width: 650px`; JS uses
-  `min-width: 960px`. Reuse them rather than adding new ones.
-- No horizontal scroll at 360 px; respect `prefers-reduced-motion`.
-- Must pass axe WCAG 2.0/2.1 A and AA with zero violations; keep visible
-  `:focus-visible` outlines and keyboard support (Escape closes the menu).
+- Dark and light themes. Colours come from `:root` tokens (`--bg`, `--bg-raised`,
+  `--panel`, `--ink`, `--muted`, `--line`, `--line-strong`, `--accent`, `--hover`,
+  …), redefined for `[data-theme="light"]` and `prefers-color-scheme: light`. Don't
+  add raw colours. The theme follows the system until the user toggles it
+  (`localStorage` `theme`).
+- Breakpoints in use: `max-width: 959px`, `max-width: 650px`, `min-width: 960px`,
+  `min-width: 1260px`, `min-width: 1700px`. Reuse them rather than adding new ones.
+- Respect `prefers-reduced-motion`; keep visible `:focus-visible` outlines and keyboard
+  support (Escape closes the menu and modals).
 
 ## Content and claims
 
-The site is for founders with expensive, slow or unreliable AI products. Follow
-`docs/portfolio-audit.md`:
+The site is for founders with expensive, slow or unreliable AI products: it pitches
+scalable, AI-driven software made cheaper and faster.
 
-- Plain-language homepage (about 340 words); technical depth goes on project pages
-  or inside the `<details>` disclosure.
-- Keep capability copy separate from demonstrated outcomes. **Never invent**
-  metrics, benchmarks, accuracy numbers, client names, testimonials, employment
-  dates or availability. Only add a measurement with a reproducible source and
-  context.
-- Employer names and career history belong on the About/background page only, not
-  the homepage hero (tests assert `Tagshelf` stays out of it).
-- Avoid dashboards, metric strips, capability cards or "proof" banners.
-
-## Engineering Notes
-
-Follow `docs/writing-notes.md`. In short: flat `.md` files in `content/notes/`,
-required YAML frontmatter, `status: draft | published`, a real `YYYY-MM-DD` `date`,
-kebab-case `slug` and `translationKey`, translations share the `translationKey`.
-Drafts never render. Raw HTML is escaped and unsafe link protocols dropped. Use a
-`pipeline` code fence for simple flow diagrams.
+- Keep capability copy separate from demonstrated outcomes. **Never invent** metrics,
+  benchmarks, accuracy numbers, client names, testimonials, employment dates or
+  availability. Only add a measurement with a reproducible source and context.
+- Employer names and career history belong in `#experience`, not the hero.
+- Avoid dashboards, metric strips or "proof" banners.
 
 ## Code style
 
-- ES modules (`.mjs`), Node built-ins via `node:` imports, async `fs/promises`.
-- Prettier-style formatting (double quotes, trailing commas, 2-space indent) and
-  ESLint `js.configs.recommended`; `npm run lint` must pass.
+- Plain browser JS (ES modules for `scene.js`), no bundler. Prettier-style formatting:
+  double quotes, trailing commas, 2-space indent in JS/CSS, 4-space in `index.html`.
 - Sparse comments that explain *why*, not what. Match the existing terse style.
-- Tests: `node:test` + `node:assert/strict` for build logic, using temp dirs for
-  fixture builds; Playwright for anything a browser renders. Add a test when you add
-  a validation rule, a route or an interactive behaviour.
