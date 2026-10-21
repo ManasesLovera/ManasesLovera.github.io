@@ -1308,6 +1308,48 @@ p {
   flex: 0 0 clamp(260px, 80vw, 340px);
 }
 
+.carousel {
+  position: relative;
+}
+
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+  display: inline-grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  background: var(--panel);
+  color: var(--ink);
+  font-size: 1.05rem;
+  cursor: pointer;
+  touch-action: manipulation;
+  user-select: none;
+  transform: translateY(-50%);
+  transition: border-color 0.2s, background-color 0.2s;
+}
+
+.carousel-prev {
+  left: 4px;
+}
+
+.carousel-next {
+  right: 4px;
+}
+
+.carousel-arrow:hover {
+  border-color: var(--muted);
+  background: var(--bg-raised);
+}
+
+.carousel-arrow[hidden] {
+  display: none;
+}
+
 .carousel-controls {
   display: flex;
   justify-content: flex-end;
@@ -1335,15 +1377,7 @@ p {
   letter-spacing: 0.06em;
   text-transform: uppercase;
   cursor: pointer;
-  touch-action: manipulation;
-  user-select: none;
   transition: color 0.2s, background-color 0.2s;
-}
-
-.carousel-controls .carousel-arrow {
-  padding: 0;
-  font-size: 1rem;
-  letter-spacing: 0;
 }
 
 .carousel-controls button:hover {

@@ -327,7 +327,8 @@
                     <h2 id="projects-title">Things I've built</h2>
                 </header>
 
-                <div class="cards cards-projects reveal" role="region" aria-label="Projects">
+                <div class="carousel reveal">
+                <div class="cards cards-projects" role="region" aria-label="Projects">
                     <article class="card">
                         <figure class="shot">
                             <img src="assets/img/planboard.png" width="1648" height="927" loading="lazy"
@@ -394,9 +395,10 @@
                         </div>
                     </article>
                 </div>
+                <button class="carousel-arrow carousel-prev" type="button" data-dir="-1" aria-label="Move projects left" hidden><span aria-hidden="true">←</span></button>
+                <button class="carousel-arrow carousel-next" type="button" data-dir="1" aria-label="Move projects right" hidden><span aria-hidden="true">→</span></button>
+                </div>
                 <div class="carousel-controls" hidden>
-                    <button class="carousel-arrow" type="button" data-dir="-1" aria-label="Move projects left"><span aria-hidden="true">←</span></button>
-                    <button class="carousel-arrow" type="button" data-dir="1" aria-label="Move projects right"><span aria-hidden="true">→</span></button>
                     <button class="carousel-pause" type="button">Pause</button>
                 </div>
 

@@ -198,21 +198,37 @@ for (const dialog of document.querySelectorAll("dialog.modal")) {
 
 // Projects carousel: one copy of the cards is appended so the row loops seamlessly. Copies
 // still open the same modals on click but stay out of the tab order and accessibility tree.
-const track = document.querySelector(".cards-projects");
-const controls = document.querySelector(".carousel-controls");
-if (track && controls) {
+const carousel = document.querySelector(".carousel");
+if (carousel) {
+  const track = carousel.querySelector(".cards-projects");
+  const controls = document.querySelector(".carousel-controls");
   const originals = [...track.children];
   const step = () => originals[1].offsetLeft - originals[0].offsetLeft;
   const pauseButton = controls.querySelector(".carousel-pause");
-  const dirButtons = controls.querySelectorAll("[data-dir]");
-  controls.hidden = false;
+  const dirButtons = carousel.querySelectorAll(".carousel-arrow");
+  dirButtons.forEach((button) => (button.hidden = false));
+  // A vertical wheel over the carousel moves it sideways; horizontal wheels and trackpads
+  // already scroll it natively. Outside the carousel the page scrolls as usual.
+  const wheelDelta = (event) =>
+    Math.abs(event.deltaY) > Math.abs(event.deltaX) ? event.deltaY * (event.deltaMode === 1 ? 16 : 1) : 0;
 
   if (reducedMotion) {
     // No autoscroll: the arrows step one card at a time, without animation.
-    pauseButton.hidden = true;
     for (const button of dirButtons) {
       button.addEventListener("click", () => track.scrollBy({ left: Number(button.dataset.dir) * step() }));
     }
+    // Hand the wheel back to the page once the row hits either end.
+    carousel.addEventListener(
+      "wheel",
+      (event) => {
+        const delta = wheelDelta(event);
+        const max = track.scrollWidth - track.clientWidth;
+        if (!delta || (delta < 0 && track.scrollLeft <= 0) || (delta > 0 && track.scrollLeft >= max - 1)) return;
+        event.preventDefault();
+        track.scrollLeft += delta;
+      },
+      { passive: false },
+    );
   } else {
     for (const card of originals) {
       const copy = card.cloneNode(true);
@@ -240,6 +256,12 @@ if (track && controls) {
       if (track.scrollLeft >= width) track.scrollLeft -= width;
     };
 
+    const moveBy = (delta) => {
+      const width = loopWidth();
+      pos = (((pos + delta) % width) + width) % width;
+      track.scrollLeft = pos;
+    };
+
     const tick = (now) => {
       const dt = last ? Math.min(now - last, 100) / 1000 : 0;
       last = now;
@@ -256,11 +278,7 @@ if (track && controls) {
       ) {
         delta = SPEED * dt;
       }
-      if (delta) {
-        const width = loopWidth();
-        pos = (((pos + delta) % width) + width) % width;
-        track.scrollLeft = pos;
-      }
+      if (delta) moveBy(delta);
       if (visible) requestAnimationFrame(tick);
     };
 
@@ -273,14 +291,25 @@ if (track && controls) {
       }
     }).observe(track);
 
-    track.addEventListener("pointerenter", (event) => (hovered = event.pointerType === "mouse"));
-    track.addEventListener("pointerleave", () => (hovered = false));
+    carousel.addEventListener("pointerenter", (event) => (hovered = event.pointerType === "mouse"));
+    carousel.addEventListener("pointerleave", () => (hovered = false));
     // Keyboard focus only: a mouse click leaves focus on the card after its modal closes.
     track.addEventListener("focusin", (event) => (focused = event.target.matches(":focus-visible")));
     track.addEventListener("focusout", () => (focused = false));
     track.addEventListener("touchstart", () => (touchedUntil = Infinity), { passive: true });
     track.addEventListener("touchend", () => (touchedUntil = performance.now() + 3000), { passive: true });
     track.addEventListener("scroll", wrap, { passive: true });
+    carousel.addEventListener(
+      "wheel",
+      (event) => {
+        const delta = wheelDelta(event);
+        if (!delta) return;
+        event.preventDefault();
+        if (Math.abs(track.scrollLeft - pos) > 2) pos = track.scrollLeft;
+        moveBy(delta);
+      },
+      { passive: false },
+    );
 
     // A click glides one card; holding keeps moving fast until release.
     for (const button of dirButtons) {
@@ -306,6 +335,7 @@ if (track && controls) {
       });
     }
 
+    controls.hidden = false;
     pauseButton.addEventListener("click", () => {
       stopped = !stopped;
       pauseButton.textContent = stopped ? "Play" : "Pause";
