@@ -493,8 +493,9 @@
                     <p class="section-lede">The math inside a network, the physics of a launch, the circuit under
                         the code.</p>
                 </header>
-                <div class="cards cards-lab">
-                    <article class="card reveal">
+                <div class="carousel reveal" data-media="(max-width: 650px)">
+                <div class="cards cards-lab" role="region" aria-label="Lab">
+                    <article class="card">
                         <figure class="shot">
                             <img src="assets/img/cnn-visualizer.webp" width="1280" height="800" loading="lazy"
                                 alt="3D CNN visualizer showing convolution and pooling layers classifying a cat image" />
@@ -504,7 +505,7 @@
                                 rel="noopener noreferrer">CNN visualizer <span aria-hidden="true">↗</span></a></h3>
                         <p>Watch a CNN tell cats from dogs, layer by layer, in 3D.</p>
                     </article>
-                    <article class="card reveal">
+                    <article class="card">
                         <figure class="shot">
                             <img src="assets/img/esp32-kit-landing.png" width="1648" height="927" loading="lazy"
                                 alt="ESP32-S3 kit landing page with a 3D render of the board" />
@@ -514,7 +515,7 @@
                                 rel="noopener noreferrer">ESP32-S3 kit <span aria-hidden="true">↗</span></a></h3>
                         <p>A 3D board you can spin, with its projects simulated live.</p>
                     </article>
-                    <article class="card reveal">
+                    <article class="card">
                         <figure class="shot">
                             <img src="assets/img/rocket-science.webp" width="1280" height="800" loading="lazy"
                                 alt="Rocket Science Explained landing page with an illustrated rocket" />
@@ -524,6 +525,12 @@
                                 rel="noopener noreferrer">Rocket science <span aria-hidden="true">↗</span></a></h3>
                         <p>Thrust, staging and engines, simulated so you can play with them.</p>
                     </article>
+                </div>
+                <button class="carousel-arrow carousel-prev" type="button" data-dir="-1" aria-label="Move lab projects left" hidden><span aria-hidden="true">←</span></button>
+                <button class="carousel-arrow carousel-next" type="button" data-dir="1" aria-label="Move lab projects right" hidden><span aria-hidden="true">→</span></button>
+                </div>
+                <div class="carousel-controls" hidden>
+                    <button class="carousel-pause" type="button">Pause</button>
                 </div>
                 <div class="also reveal">
                     <h3>Also on the bench</h3>

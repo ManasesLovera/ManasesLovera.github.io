@@ -1289,7 +1289,8 @@ p {
 }
 
 /* One row that scrolls natively (swipe, trackpad, keyboard); site.js adds a slow, looping
-   autoscroll on top. Vertical padding keeps the hover lift from being clipped. */
+   autoscroll on top. Vertical padding keeps the hover lift from being clipped. Lab joins
+   in on small screens only (see the 650px query). */
 .cards-projects {
   display: flex;
   gap: 16px;
@@ -1926,10 +1927,58 @@ body:has(.modal[open]) {
   }
 
   .cards,
-  .cards-lab,
   .also ul,
   .facts {
     grid-template-columns: 1fr;
+  }
+
+  .cards-lab {
+    display: flex;
+    padding: 6px 0 10px;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
+  }
+
+  .cards-lab::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Carousel cards: smaller type, more room around it. */
+  .cards-projects,
+  .cards-lab {
+    gap: 20px;
+  }
+
+  .cards-projects .card,
+  .cards-lab .card {
+    flex: 0 0 74vw;
+    padding: 20px 20px 24px;
+  }
+
+  .cards-projects .card .shot,
+  .cards-lab .card .shot {
+    margin-bottom: 18px;
+  }
+
+  .cards-projects h3,
+  .cards-lab h3 {
+    font-size: 1.05rem;
+  }
+
+  .cards-projects .card-body p,
+  .cards-lab .card > p:last-child {
+    font-size: 0.86rem;
+  }
+
+  .cards-lab .tags span {
+    font-size: 0.62rem;
+  }
+
+  /* Centre the arrows on the screenshot (track padding + card padding + half a 16:9 shot)
+     so they stay off the text. */
+  .carousel-arrow {
+    top: calc(26px + (74vw - 40px) * 9 / 32);
   }
 
   .toolbox > div {
