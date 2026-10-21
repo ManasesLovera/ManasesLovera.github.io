@@ -1736,7 +1736,6 @@ body:has(.modal[open]) {
 
 @media (max-width: 959px) {
   .nav,
-  .header-cta,
   .hud.on {
     display: none;
   }
@@ -1827,6 +1826,35 @@ body:has(.modal[open]) {
 }
 
 @media (max-width: 650px) {
+  /* Tighter header so Contact fits at 360px; the icon-only summary keeps its aria-label. */
+  .header-row {
+    gap: 8px;
+  }
+
+  .brand {
+    gap: 8px;
+    font-size: 0.94rem;
+    white-space: nowrap;
+  }
+
+  .theme-toggle,
+  .header-cta {
+    flex-shrink: 0;
+  }
+
+  .header-cta {
+    padding: 8px 9px;
+  }
+
+  .menu summary {
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    padding: 0;
+    gap: 0;
+    font-size: 0;
+  }
+
   .cards,
   .cards-lab,
   .also ul,
