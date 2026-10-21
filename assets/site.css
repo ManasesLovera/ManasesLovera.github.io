@@ -1297,7 +1297,6 @@ p {
   overflow-x: auto;
   overscroll-behavior-x: contain;
   scrollbar-width: none;
-  mask-image: linear-gradient(to right, transparent, #000 32px, #000 calc(100% - 32px), transparent);
 }
 
 .cards-projects::-webkit-scrollbar {
