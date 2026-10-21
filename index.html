@@ -90,15 +90,6 @@
             font-family: 'Inter', sans-serif;
         }
 
-        .tech-grid-pattern {
-            background-image: radial-gradient(#2f2348 1px, transparent 1px);
-            background-size: 30px 30px;
-        }
-
-        html:not(.dark) .tech-grid-pattern {
-            background-image: radial-gradient(#d8d5de 1px, transparent 1px);
-        }
-
         * {
             transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
         }
@@ -171,7 +162,7 @@
     </header>
     <main class="pt-16">
         <!-- Hero Section -->
-        <section class="relative min-h-[90vh] flex items-center overflow-hidden tech-grid-pattern">
+        <section class="relative min-h-[90vh] flex items-center overflow-hidden">
             <div
                 class="absolute inset-0 pointer-events-none bg-gradient-to-b from-transparent via-background-light/50 to-background-light dark:via-background-dark/50 dark:to-background-dark">
             </div>
@@ -351,11 +342,6 @@
                     </div>
                 </div>
             </div>
-            <a class="hidden lg:flex absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex-col items-center gap-1 text-slate-400 dark:text-slate-500 hover:text-primary transition-colors"
-                href="#about" aria-label="Scroll to About section">
-                <span class="font-mono text-[10px] uppercase tracking-widest">Scroll</span>
-                <span class="material-symbols-outlined animate-bounce">keyboard_arrow_down</span>
-            </a>
         </section>
         <!-- About Section -->
         <section class="py-24 bg-slate-50 dark:bg-surface-dark/30" id="about">
