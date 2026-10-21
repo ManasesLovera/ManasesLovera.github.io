@@ -1,28 +1,38 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
     <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Manasés Lovera | Software &amp; AI/ML Engineer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Manasés Lovera | AI &amp; Software Engineer</title>
     <meta name="description"
-        content="Manasés Lovera (mlovera) - Software Engineer and Software Developer specializing in Machine Learning and Backend development. Building intelligent systems and scalable infrastructure." />
-    <meta name="keywords"
-        content="Manases Lovera, Manasés Lovera, manaseslovera, mlovera, lovera, manases, Software Engineer, Software Developer, AI Engineer, AI Engineer Dominican Republic, Dominican Engineer, Dominican Software Engineer, Fullstack Engineer, Fullstack Developer, Backend Engineer, Backend Developer, AI/ML Engineer, Machine Learning Engineer, Machine Learning, Artificial Intelligence, AI, LLM Engineer, Agentic AI, MCP, RAG, ASP.NET Core, Python, TypeScript, React, Rust, FastAPI, Docker, Dominican Republic, Remote Software Engineer" />
+        content="Manasés Lovera builds AI software that's fast, cheap to run and built to scale: model benchmarking, fine-tuning, classic ML, and local inference with Ollama and vLLM." />
     <meta name="author" content="Manasés Lovera" />
     <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#0c0d10" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
     <link rel="canonical" href="https://mlovera.dev/" />
-    <meta property="og:title" content="Manasés Lovera | Software & AI/ML Engineer" />
+    <meta property="og:title" content="Manasés Lovera | AI & Software Engineer" />
     <meta property="og:description"
-        content="Manasés Lovera (mlovera) – Software Engineer and Developer building systems that think, learn, and scale. Specializing in Backend and AI/ML." />
+        content="AI software that's fast, cheap to run and built to scale. Benchmarking, fine-tuning, classic ML and local inference." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://mlovera.dev/" />
     <meta property="og:site_name" content="Manasés Lovera" />
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="Manasés Lovera | Software & AI/ML Engineer" />
+    <meta name="twitter:title" content="Manasés Lovera | AI & Software Engineer" />
     <meta name="twitter:description"
-        content="Manasés Lovera (mlovera) – Software Engineer and Developer building systems that think, learn, and scale." />
+        content="AI software that's fast, cheap to run and built to scale." />
+    <link rel="icon"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23111827'/%3E%3Ccircle cx='10' cy='16' r='3' fill='%239ca3af'/%3E%3Ccircle cx='22' cy='10' r='3' fill='%233b82f6'/%3E%3Ccircle cx='22' cy='22' r='3' fill='%233b82f6'/%3E%3Cpath d='M10 16 22 10M10 16l12 6' stroke='%239ca3af' stroke-width='1.2' opacity='.6'/%3E%3C/svg%3E" />
+    <link rel="preload" href="assets/fonts/geist.woff2" as="font" type="font/woff2" crossorigin />
+    <script>
+        try {
+            const theme = localStorage.getItem("theme");
+            if (theme === "light" || theme === "dark") document.documentElement.dataset.theme = theme;
+        } catch { /* storage blocked: follow the system theme */ }
+    </script>
+    <link rel="stylesheet" href="assets/site.css" />
+    <script src="assets/site.js" defer></script>
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -30,870 +40,662 @@
   "name": "Manasés Lovera",
   "alternateName": ["mlovera", "manaseslovera", "Manases Lovera"],
   "url": "https://mlovera.dev/",
-  "jobTitle": "Software Engineer",
-  "description": "Software Engineer and Software Developer specializing in Machine Learning and Backend development.",
+  "email": "mailto:manaseslovera07@gmail.com",
+  "jobTitle": "AI & Software Engineer",
+  "description": "Software engineer building AI software that's fast, cheap to run and built to scale.",
+  "knowsAbout": ["Machine Learning", "Large Language Models", "Fine-tuning", "Computer Vision", "Natural Language Processing", "vLLM", "Ollama", "Backend Development"],
+  "address": { "@type": "PostalAddress", "addressCountry": "DO" },
   "sameAs": [
     "https://linkedin.com/in/manaseslovera",
     "https://github.com/manaseslovera"
   ]
 }
 </script>
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=JetBrains+Mono:wght@400;700&amp;display=swap"
-        rel="stylesheet" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-        rel="stylesheet" />
-    <script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "primary": "#5a0ff0",
-                        "background-light": "#f6f5f8",
-                        "background-dark": "#0a0a0c",
-                        "surface-light": "#ffffff",
-                        "surface-dark": "#161022",
-                        "border-light": "#e2dfe6",
-                        "border-dark": "#2f2348",
-                    },
-                    fontFamily: {
-                        "display": ["Inter", "sans-serif"],
-                        "mono": ["JetBrains Mono", "monospace"],
-                    },
-                    borderRadius: {
-                        "DEFAULT": "0.25rem",
-                        "lg": "0.5rem",
-                        "xl": "0.75rem",
-                        "full": "9999px"
-                    },
-                },
-            },
-        }
-    </script>
-    <script>
-            (function () {
-                const saved = localStorage.getItem('theme');
-                if (saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-                    document.documentElement.classList.add('dark');
-                }
-            })();
-    </script>
-    <style>
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-
-        * {
-            transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
-        }
-
-        @keyframes float {
-
-            0%,
-            100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-12px);
-            }
-        }
-
-        .animate-float {
-            animation: float 6s ease-in-out infinite;
-        }
-
-        .animate-float-slow {
-            animation: float 9s ease-in-out infinite;
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-
-            .animate-float,
-            .animate-float-slow {
-                animation: none;
-            }
-        }
-    </style>
 </head>
 
-<body
-    class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 selection:bg-primary selection:text-white">
-    <!-- Top Navigation -->
-    <header
-        class="fixed top-0 w-full z-50 border-b border-solid border-slate-200 dark:border-border-dark bg-white/80 dark:bg-background-dark/80 backdrop-blur-md">
-        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-            <div class="flex items-center gap-3">
-                <div class="size-8 bg-primary rounded flex items-center justify-center text-white">
-                    <span class="material-symbols-outlined">terminal</span>
-                </div>
-                <span class="text-slate-900 dark:text-white font-bold tracking-tight">Manasés Lovera</span>
-            </div>
-            <nav class="hidden md:flex items-center gap-8">
-                <a class="text-sm font-medium hover:text-primary transition-colors text-slate-600 dark:text-slate-300"
-                    href="#about">About</a>
-                <a class="text-sm font-medium hover:text-primary transition-colors text-slate-600 dark:text-slate-300"
-                    href="#experience">Experience</a>
-                <a class="text-sm font-medium hover:text-primary transition-colors text-slate-600 dark:text-slate-300"
-                    href="#stack">Stack</a>
-                <a class="text-sm font-medium hover:text-primary transition-colors text-slate-600 dark:text-slate-300"
-                    href="#projects">Projects</a>
+<body>
+    <a class="skip" href="#main">Skip to content</a>
+    <canvas id="scene" aria-hidden="true"></canvas>
+    <p class="hud" aria-hidden="true"><span data-hud-index>Fig. 01</span> <span data-hud-label>Neural network</span></p>
+
+    <header class="site-header">
+        <div class="wrap header-row">
+            <a class="brand" href="#top" aria-label="Manasés Lovera, back to top">
+                <span class="brand-mark" aria-hidden="true"></span>
+                <span>Manasés Lovera</span>
+            </a>
+            <nav class="nav" aria-label="Main">
+                <a href="#approach">Approach</a>
+                <a href="#projects">Projects</a>
+                <a href="#lab">Lab</a>
+                <a href="#experience">Experience</a>
             </nav>
-            <div class="flex items-center gap-4">
-                <button onclick="toggleTheme()"
-                    class="p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-border-dark transition-colors"
-                    aria-label="Toggle theme">
-                    <span class="material-symbols-outlined dark:hidden">dark_mode</span>
-                    <span class="material-symbols-outlined hidden dark:inline">light_mode</span>
-                </button>
-                <a class="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg text-sm font-bold transition-all flex items-center gap-2"
-                    href="#footer">
-                    Connect <span class="material-symbols-outlined text-sm">open_in_new</span>
-                </a>
-            </div>
+            <button class="theme-toggle" type="button" hidden aria-label="Switch theme">
+                <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.5" /><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8" /></svg>
+                <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z" /></svg>
+            </button>
+            <a class="btn btn-small btn-ghost header-cta" href="#contact">Contact</a>
+            <details class="menu">
+                <summary aria-label="Open menu"><span class="menu-icon" aria-hidden="true"></span>Menu</summary>
+                <nav class="menu-panel" aria-label="Mobile">
+                    <a href="#approach">Approach</a>
+                        <a href="#projects">Projects</a>
+                    <a href="#lab">Lab</a>
+                    <a href="#experience">Experience</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+            </details>
         </div>
     </header>
-    <main class="pt-16">
-        <!-- Hero Section -->
-        <section class="relative min-h-[90vh] flex items-center overflow-hidden">
-            <div
-                class="absolute inset-0 pointer-events-none bg-gradient-to-b from-transparent via-background-light/50 to-background-light dark:via-background-dark/50 dark:to-background-dark">
+
+    <main id="main">
+        <section class="hero" id="top" data-scene="network">
+            <!-- Static stand-in, replaced by the WebGL scene once it loads. -->
+            <svg class="hero-art" viewBox="0 0 560 420" aria-hidden="true" focusable="false"><defs><linearGradient id="art-edge" x1="0" x2="1"><stop offset="0" class="stop-a"/><stop offset="1" class="stop-b"/></linearGradient></defs><g stroke="url(#art-edge)" stroke-width="1" opacity=".28"><line x1="60" y1="126" x2="170" y2="70"/><line x1="60" y1="126" x2="170" y2="126"/><line x1="60" y1="126" x2="170" y2="182"/><line x1="60" y1="126" x2="170" y2="238"/><line x1="60" y1="126" x2="170" y2="294"/><line x1="60" y1="126" x2="170" y2="350"/><line x1="60" y1="182" x2="170" y2="70"/><line x1="60" y1="182" x2="170" y2="126"/><line x1="60" y1="182" x2="170" y2="182"/><line x1="60" y1="182" x2="170" y2="238"/><line x1="60" y1="182" x2="170" y2="294"/><line x1="60" y1="182" x2="170" y2="350"/><line x1="60" y1="238" x2="170" y2="70"/><line x1="60" y1="238" x2="170" y2="126"/><line x1="60" y1="238" x2="170" y2="182"/><line x1="60" y1="238" x2="170" y2="238"/><line x1="60" y1="238" x2="170" y2="294"/><line x1="60" y1="238" x2="170" y2="350"/><line x1="60" y1="294" x2="170" y2="70"/><line x1="60" y1="294" x2="170" y2="126"/><line x1="60" y1="294" x2="170" y2="182"/><line x1="60" y1="294" x2="170" y2="238"/><line x1="60" y1="294" x2="170" y2="294"/><line x1="60" y1="294" x2="170" y2="350"/><line x1="170" y1="70" x2="280" y2="70"/><line x1="170" y1="70" x2="280" y2="126"/><line x1="170" y1="70" x2="280" y2="182"/><line x1="170" y1="70" x2="280" y2="238"/><line x1="170" y1="70" x2="280" y2="294"/><line x1="170" y1="70" x2="280" y2="350"/><line x1="170" y1="126" x2="280" y2="70"/><line x1="170" y1="126" x2="280" y2="126"/><line x1="170" y1="126" x2="280" y2="182"/><line x1="170" y1="126" x2="280" y2="238"/><line x1="170" y1="126" x2="280" y2="294"/><line x1="170" y1="126" x2="280" y2="350"/><line x1="170" y1="182" x2="280" y2="70"/><line x1="170" y1="182" x2="280" y2="126"/><line x1="170" y1="182" x2="280" y2="182"/><line x1="170" y1="182" x2="280" y2="238"/><line x1="170" y1="182" x2="280" y2="294"/><line x1="170" y1="182" x2="280" y2="350"/><line x1="170" y1="238" x2="280" y2="70"/><line x1="170" y1="238" x2="280" y2="126"/><line x1="170" y1="238" x2="280" y2="182"/><line x1="170" y1="238" x2="280" y2="238"/><line x1="170" y1="238" x2="280" y2="294"/><line x1="170" y1="238" x2="280" y2="350"/><line x1="170" y1="294" x2="280" y2="70"/><line x1="170" y1="294" x2="280" y2="126"/><line x1="170" y1="294" x2="280" y2="182"/><line x1="170" y1="294" x2="280" y2="238"/><line x1="170" y1="294" x2="280" y2="294"/><line x1="170" y1="294" x2="280" y2="350"/><line x1="170" y1="350" x2="280" y2="70"/><line x1="170" y1="350" x2="280" y2="126"/><line x1="170" y1="350" x2="280" y2="182"/><line x1="170" y1="350" x2="280" y2="238"/><line x1="170" y1="350" x2="280" y2="294"/><line x1="170" y1="350" x2="280" y2="350"/><line x1="280" y1="70" x2="390" y2="126"/><line x1="280" y1="70" x2="390" y2="182"/><line x1="280" y1="70" x2="390" y2="238"/><line x1="280" y1="70" x2="390" y2="294"/><line x1="280" y1="126" x2="390" y2="126"/><line x1="280" y1="126" x2="390" y2="182"/><line x1="280" y1="126" x2="390" y2="238"/><line x1="280" y1="126" x2="390" y2="294"/><line x1="280" y1="182" x2="390" y2="126"/><line x1="280" y1="182" x2="390" y2="182"/><line x1="280" y1="182" x2="390" y2="238"/><line x1="280" y1="182" x2="390" y2="294"/><line x1="280" y1="238" x2="390" y2="126"/><line x1="280" y1="238" x2="390" y2="182"/><line x1="280" y1="238" x2="390" y2="238"/><line x1="280" y1="238" x2="390" y2="294"/><line x1="280" y1="294" x2="390" y2="126"/><line x1="280" y1="294" x2="390" y2="182"/><line x1="280" y1="294" x2="390" y2="238"/><line x1="280" y1="294" x2="390" y2="294"/><line x1="280" y1="350" x2="390" y2="126"/><line x1="280" y1="350" x2="390" y2="182"/><line x1="280" y1="350" x2="390" y2="238"/><line x1="280" y1="350" x2="390" y2="294"/><line x1="390" y1="126" x2="500" y2="182"/><line x1="390" y1="126" x2="500" y2="238"/><line x1="390" y1="182" x2="500" y2="182"/><line x1="390" y1="182" x2="500" y2="238"/><line x1="390" y1="238" x2="500" y2="182"/><line x1="390" y1="238" x2="500" y2="238"/><line x1="390" y1="294" x2="500" y2="182"/><line x1="390" y1="294" x2="500" y2="238"/></g><g class="n0"><circle cx="60" cy="126" r="6"/><circle cx="60" cy="182" r="6"/><circle cx="60" cy="238" r="6"/><circle cx="60" cy="294" r="6"/></g><g class="n1"><circle cx="170" cy="70" r="6"/><circle cx="170" cy="126" r="6"/><circle cx="170" cy="182" r="6"/><circle cx="170" cy="238" r="6"/><circle cx="170" cy="294" r="6"/><circle cx="170" cy="350" r="6"/></g><g class="n2"><circle cx="280" cy="70" r="6"/><circle cx="280" cy="126" r="6"/><circle cx="280" cy="182" r="6"/><circle cx="280" cy="238" r="6"/><circle cx="280" cy="294" r="6"/><circle cx="280" cy="350" r="6"/></g><g class="n3"><circle cx="390" cy="126" r="6"/><circle cx="390" cy="182" r="6"/><circle cx="390" cy="238" r="6"/><circle cx="390" cy="294" r="6"/></g><g class="n4"><circle cx="500" cy="182" r="6"/><circle cx="500" cy="238" r="6"/></g></svg>
+            <div class="hero-deck" aria-hidden="true">
+                <figure class="deck-arch">
+                    <svg viewBox="0 0 480 176" focusable="false">
+                        <g class="arch-wire">
+                            <path d="M118 88H176" />
+                            <path d="M236 88C262 88 262 30 290 30" />
+                            <path d="M236 88C262 88 262 66 290 66" />
+                            <path d="M236 88C262 88 262 110 290 110" />
+                            <path d="M370 30C396 30 396 88 414 88" />
+                            <path d="M370 66C392 66 392 88 414 88" />
+                            <path d="M370 110C392 110 392 88 414 88" />
+                        </g>
+                        <g class="arch-flow">
+                            <path d="M118 88H176" />
+                            <path d="M236 88C262 88 262 30 290 30" />
+                            <path d="M236 88C262 88 262 66 290 66" />
+                            <path d="M236 88C262 88 262 110 290 110" />
+                        </g>
+                        <g class="arch-scale">
+                            <path class="arch-wire" d="M236 88C262 88 262 146 290 146" />
+                            <path class="arch-wire" d="M370 146C396 146 396 88 414 88" />
+                            <rect class="arch-box arch-new" x="290" y="134" width="80" height="24" rx="5" />
+                            <text x="330" y="150">svc · new</text>
+                        </g>
+                        <path class="arch-cloud" d="M40 112h64a20 20 0 0 0 0-40 28 28 0 0 0-54-6 22 22 0 0 0-10 46Z" />
+                        <circle class="arch-dot" cx="62" cy="92" r="3" />
+                        <circle class="arch-dot" cx="76" cy="92" r="3" />
+                        <circle class="arch-dot" cx="90" cy="92" r="3" />
+                        <rect class="arch-box arch-lb" x="176" y="70" width="60" height="36" rx="18" />
+                        <text x="206" y="92">LB</text>
+                        <rect class="arch-box" x="290" y="18" width="80" height="24" rx="5" />
+                        <text x="330" y="34">svc · api</text>
+                        <rect class="arch-box" x="290" y="54" width="80" height="24" rx="5" />
+                        <text x="330" y="70">svc · ml</text>
+                        <rect class="arch-box" x="290" y="98" width="80" height="24" rx="5" />
+                        <text x="330" y="114">svc · jobs</text>
+                        <path class="arch-box" d="M414 76c0-6 44-6 44 0v26c0 6-44 6-44 0Z" />
+                        <path class="arch-wire" d="M414 76c0 6 44 6 44 0" />
+                        <text class="arch-label" x="72" y="134">cloud</text>
+                        <text class="arch-label" x="206" y="126">load balancer</text>
+                        <text class="arch-label" x="436" y="126">data</text>
+                    </svg>
+                    <figcaption>Services that scale out under load</figcaption>
+                </figure>
+                <figure class="deck-math">
+                    <math>
+                        <msup><mi>δ</mi><mrow><mo>(</mo><mi>l</mi><mo>)</mo></mrow></msup>
+                        <mo>=</mo>
+                        <mrow><mo>(</mo><msup><mrow><mo>(</mo><msup><mi>W</mi><mrow><mo>(</mo><mi>l</mi><mo>+</mo><mn>1</mn><mo>)</mo></mrow></msup><mo>)</mo></mrow><mo>⊤</mo></msup><msup><mi>δ</mi><mrow><mo>(</mo><mi>l</mi><mo>+</mo><mn>1</mn><mo>)</mo></mrow></msup><mo>)</mo></mrow>
+                        <mo>⊙</mo>
+                        <msup><mi>σ</mi><mo>′</mo></msup><mrow><mo>(</mo><msup><mi>z</mi><mrow><mo>(</mo><mi>l</mi><mo>)</mo></mrow></msup><mo>)</mo></mrow>
+                    </math>
+                    <math>
+                        <mfrac><mrow><mo>∂</mo><mi>L</mi></mrow><mrow><mo>∂</mo><msup><mi>W</mi><mrow><mo>(</mo><mi>l</mi><mo>)</mo></mrow></msup></mrow></mfrac>
+                        <mo>=</mo>
+                        <msup><mi>δ</mi><mrow><mo>(</mo><mi>l</mi><mo>)</mo></mrow></msup>
+                        <msup><mrow><mo>(</mo><msup><mi>a</mi><mrow><mo>(</mo><mi>l</mi><mo>−</mo><mn>1</mn><mo>)</mo></mrow></msup><mo>)</mo></mrow><mo>⊤</mo></msup>
+                    </math>
+                </figure>
+                <figure class="deck-tf">
+                    <svg viewBox="0 0 300 304" focusable="false">
+                        <rect class="arch-wire tf-frame" x="18" y="134" width="124" height="96" rx="8" />
+                        <rect class="arch-wire tf-frame" x="152" y="72" width="120" height="158" rx="8" />
+                        <g class="arch-wire">
+                            <path d="M80 262V254" />
+                            <path d="M80 242V222" />
+                            <path d="M80 232H60V222" />
+                            <path d="M80 232H100V222" />
+                            <path d="M80 234H24V186H30" />
+                            <path d="M80 196V192" />
+                            <path d="M80 180V174" />
+                            <path d="M80 158V154" />
+                            <path d="M80 177H24V148H30" />
+                            <path d="M210 262V254" />
+                            <path d="M210 242V222" />
+                            <path d="M210 232H190V222" />
+                            <path d="M210 232H230V222" />
+                            <path d="M210 234H266V186H260" />
+                            <path d="M210 196V192" />
+                            <path d="M235 180V160" />
+                            <path d="M235 176H266V124H260" />
+                            <path d="M210 134V130" />
+                            <path d="M210 118V112" />
+                            <path d="M210 115H266V86H260" />
+                            <path d="M210 96V92" />
+                            <path d="M210 80V62" />
+                            <path d="M210 46V34" />
+                            <path d="M210 18V14" />
+                            <path d="M65 248H74" />
+                            <path d="M216 248H225" />
+                            <path d="M80 142V114H148V168H200V160" />
+                            <path d="M180 168V160" />
+                        </g>
+                        <g class="arch-flow">
+                            <path d="M80 142V114H148V168H200V160" />
+                            <path d="M180 168V160" />
+                        </g>
+                        <rect class="arch-box tf-attn" x="30" y="196" width="100" height="26" rx="4" />
+                        <text x="80" y="207.5">multi-head</text>
+                        <text x="80" y="216.5">attention</text>
+                        <rect class="arch-box" x="30" y="180" width="100" height="12" rx="4" />
+                        <text class="arch-label" x="80" y="189">add &amp; norm</text>
+                        <rect class="arch-box tf-ff" x="30" y="158" width="100" height="16" rx="4" />
+                        <text x="80" y="169">feed forward</text>
+                        <rect class="arch-box" x="30" y="142" width="100" height="12" rx="4" />
+                        <text class="arch-label" x="80" y="151">add &amp; norm</text>
+                        <rect class="arch-box tf-attn" x="160" y="196" width="100" height="26" rx="4" />
+                        <text x="210" y="207.5">masked multi-head</text>
+                        <text x="210" y="216.5">attention</text>
+                        <rect class="arch-box" x="160" y="180" width="100" height="12" rx="4" />
+                        <text class="arch-label" x="210" y="189">add &amp; norm</text>
+                        <rect class="arch-box tf-attn" x="160" y="134" width="100" height="26" rx="4" />
+                        <text x="210" y="145.5">multi-head</text>
+                        <text x="210" y="154.5">attention</text>
+                        <rect class="arch-box" x="160" y="118" width="100" height="12" rx="4" />
+                        <text class="arch-label" x="210" y="127">add &amp; norm</text>
+                        <rect class="arch-box tf-ff" x="160" y="96" width="100" height="16" rx="4" />
+                        <text x="210" y="107">feed forward</text>
+                        <rect class="arch-box" x="160" y="80" width="100" height="12" rx="4" />
+                        <text class="arch-label" x="210" y="89">add &amp; norm</text>
+                        <rect class="arch-box" x="175" y="46" width="70" height="16" rx="4" />
+                        <text x="210" y="57">linear</text>
+                        <rect class="arch-box" x="175" y="18" width="70" height="16" rx="4" />
+                        <text x="210" y="29">softmax</text>
+                        <rect class="arch-box" x="35" y="262" width="90" height="18" rx="4" />
+                        <text x="80" y="274">input embedding</text>
+                        <rect class="arch-box" x="165" y="262" width="90" height="18" rx="4" />
+                        <text x="210" y="274">output embedding</text>
+                        <g class="tf-pos">
+                            <circle cx="80" cy="248" r="6" />
+                            <path d="M74 248H86M80 242V254" />
+                            <circle cx="210" cy="248" r="6" />
+                            <path d="M204 248H216M210 242V254" />
+                            <circle cx="58" cy="248" r="7" />
+                            <path d="M52 248q3-6 6 0t6 0" />
+                            <circle cx="232" cy="248" r="7" />
+                            <path d="M226 248q3-6 6 0t6 0" />
+                        </g>
+                        <text class="arch-label" x="8" y="185">N×</text>
+                        <text class="arch-label" x="286" y="154">N×</text>
+                        <text class="arch-label" x="210" y="9">output probabilities</text>
+                        <text class="arch-label" x="80" y="296">inputs</text>
+                        <text class="arch-label" x="210" y="296">outputs (shifted right)</text>
+                    </svg>
+                </figure>
             </div>
-            <div
-                class="max-w-7xl mx-auto px-6 py-20 lg:py-16 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center relative z-10">
-                <div class="lg:col-span-7 flex flex-col gap-6">
-                    <div
-                        class="self-start inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-mono">
-                        <span class="relative flex h-2 w-2">
-                            <span
-                                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-                            <span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
-                        </span>
-                        Available for Engineering and Developer Roles
+            <div class="wrap hero-inner">
+                <p class="kicker reveal">Hi, I'm</p>
+                <h1 class="reveal">Manasés Lovera</h1>
+                <p class="hero-role reveal"><em>Fullstack &amp; AI</em> Software Engineer</p>
+                <p class="lede reveal">I build software that thinks, learns and scales, from the backend up to the
+                    model behind it.</p>
+                <div class="actions reveal">
+                    <a class="btn btn-primary" href="#projects">View projects <span aria-hidden="true">→</span></a>
+                    <a class="btn btn-ghost" href="cv.pdf" download="Manases_Lovera_CV_2026.pdf">Download CV</a>
+                </div>
+                <ul class="meta reveal">
+                    <li><span class="dot" aria-hidden="true"></span>Dominican Republic · open to remote · UTC−4</li>
+                    <li>Currently @ WELEEC · Alterna Academy</li>
+                    <li>Spanish &amp; English (C1)</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section" id="approach" data-scene="distill" aria-labelledby="approach-title">
+            <div class="wrap">
+                <header class="section-head reveal">
+                    <p class="kicker"><span class="num">01</span> Approach</p>
+                    <h2 id="approach-title">Make it work. Then make it cheaper.</h2>
+                </header>
+                <div class="path">
+                    <svg class="path-line" aria-hidden="true" focusable="false"></svg>
+                    <ol class="steps">
+                        <li class="step">
+                            <button class="step-head" type="button" aria-expanded="false" aria-controls="step-1">
+                                <span class="step-num" aria-hidden="true">01</span>
+                                <span class="step-title">Pick the right model</span>
+                                <span class="step-short">Your data, not leaderboards.</span>
+                            </button>
+                            <div class="step-more" id="step-1">
+                                <p>Benchmarked on your data. Sometimes it's an LLM, sometimes classic ML that costs almost nothing.</p>
+                            </div>
+                        </li>
+                        <li class="step">
+                            <button class="step-head" type="button" aria-expanded="false" aria-controls="step-2">
+                                <span class="step-num" aria-hidden="true">02</span>
+                                <span class="step-title">Capture the data</span>
+                                <span class="step-short">Every call is training data.</span>
+                            </button>
+                            <div class="step-more" id="step-2">
+                                <p>Log inputs, outputs and corrections from day one. Today's API calls become tomorrow's training set.</p>
+                            </div>
+                        </li>
+                        <li class="step">
+                            <button class="step-head" type="button" aria-expanded="false" aria-controls="step-3">
+                                <span class="step-num" aria-hidden="true">03</span>
+                                <span class="step-title">Measure what matters</span>
+                                <span class="step-short">Cost, latency, quality.</span>
+                            </button>
+                            <div class="step-more" id="step-3">
+                                <p>Compared with evals and A/B tests before anything ships.</p>
+                            </div>
+                        </li>
+                        <li class="step">
+                            <button class="step-head" type="button" aria-expanded="false" aria-controls="step-4">
+                                <span class="step-num" aria-hidden="true">04</span>
+                                <span class="step-title">Swap in something cheaper</span>
+                                <span class="step-short">Smaller, tuned, routed.</span>
+                            </button>
+                            <div class="step-more" id="step-4">
+                                <p>Fine-tune a small LM, a VLM or a YOLO detector, or route the easy cases away from the expensive model.</p>
+                            </div>
+                        </li>
+                        <li class="step">
+                            <button class="step-head" type="button" aria-expanded="false" aria-controls="step-5">
+                                <span class="step-num" aria-hidden="true">05</span>
+                                <span class="step-title">Run it where it fits</span>
+                                <span class="step-short">Hosted, local or next to your data.</span>
+                            </button>
+                            <div class="step-more" id="step-5">
+                                <p>A hosted API, local inference with Ollama or vLLM, or a container beside your data.</p>
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="projects" data-scene="globe" aria-labelledby="projects-title">
+            <div class="wrap">
+                <header class="section-head reveal">
+                    <p class="kicker"><span class="num">02</span> Projects</p>
+                    <h2 id="projects-title">Things I've built</h2>
+                </header>
+
+                <div class="cards cards-projects">
+                    <article class="card card-wide reveal">
+                        <figure class="shot">
+                            <img src="assets/img/planboard.png" width="1648" height="927" loading="lazy"
+                                alt="Planboard admin dashboard with school overview and system health" />
+                        </figure>
+                        <div class="card-body">
+                            <h3><button class="card-open" type="button" commandfor="p-planboard" command="show-modal"
+                                    aria-haspopup="dialog">Planboard</button></h3>
+                            <p>School curriculum planning where AI assistants follow the same permissions as
+                                people.</p>
+                            <p class="card-note">Private · in production</p>
+                        </div>
+                    </article>
+                    <article class="card reveal">
+                        <figure class="shot">
+                            <img src="assets/img/scrumforge.png" width="1916" height="1078" loading="lazy"
+                                alt="scrumforge terminal board with tasks across backlog, review and done columns" />
+                        </figure>
+                        <div class="card-body">
+                            <h3><button class="card-open" type="button" commandfor="p-scrumforge"
+                                    command="show-modal" aria-haspopup="dialog">scrumforge</button></h3>
+                            <p>A scrum team made of coding agents.</p>
+                            <a class="card-ext" href="https://github.com/ManasesLovera/scrumforge" target="_blank"
+                                rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+                        </div>
+                    </article>
+                    <article class="card reveal">
+                        <figure class="shot">
+                            <img src="assets/img/lab.png" width="1916" height="900" loading="lazy"
+                                alt="Lab Monitor app health page showing 11 healthy homelab containers" />
+                        </figure>
+                        <div class="card-body">
+                            <h3><button class="card-open" type="button" commandfor="p-lab" command="show-modal"
+                                    aria-haspopup="dialog">lab</button></h3>
+                            <p>My homelab as code, reproducible from one repo.</p>
+                            <a class="card-ext" href="https://github.com/ManasesLovera/lab" target="_blank"
+                                rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+                        </div>
+                    </article>
+                    <article class="card reveal">
+                        <figure class="shot">
+                            <img src="assets/img/glm-ocr.png" width="1458" height="820" loading="lazy"
+                                alt="GLM-OCR app showing a text recognition result" />
+                        </figure>
+                        <div class="card-body">
+                            <h3><button class="card-open" type="button" commandfor="p-glm-ocr" command="show-modal"
+                                    aria-haspopup="dialog">glm-ocr</button></h3>
+                            <p>Local OCR that turns documents into structured JSON.</p>
+                            <a class="card-ext" href="https://github.com/ManasesLovera/glm-ocr" target="_blank"
+                                rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+                        </div>
+                    </article>
+                    <article class="card reveal">
+                        <figure class="shot">
+                            <img src="assets/img/talk-budget.png" width="1440" height="810" loading="lazy"
+                                alt="Talk Budget dashboard with the AI assistant chat open" />
+                        </figure>
+                        <div class="card-body">
+                            <h3><button class="card-open" type="button" commandfor="p-talk-budget"
+                                    command="show-modal" aria-haspopup="dialog">Talk Budget</button></h3>
+                            <p>Personal finance you can talk to.</p>
+                            <a class="card-ext" href="https://github.com/ManasesLovera/talk-budget" target="_blank"
+                                rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+                        </div>
+                    </article>
+                </div>
+
+                <dialog class="modal" id="p-planboard" aria-labelledby="p-planboard-title" closedby="any">
+                    <div class="modal-body">
+                        <button class="modal-close" type="button" commandfor="p-planboard" command="close"
+                            aria-label="Close">×</button>
+                        <figure class="shot">
+                            <img src="assets/img/planboard.png" width="1648" height="927" loading="lazy" alt="" />
+                        </figure>
+                        <p class="tags"><span>Next.js</span><span>Postgres</span><span>MCP</span><span
+                                class="tag-private">Private · in production</span></p>
+                        <h3 id="p-planboard-title">Planboard</h3>
+                        <p>A curriculum planning platform built for WELEEC, a private school. Teachers edit weekly
+                            plans in a real editor instead of spreadsheets, exports land on the school's own .xlsx and
+                            .docx templates, and an MCP server lets AI assistants work under the same permissions as
+                            people.</p>
+                        <p><strong>Six roles</strong>: admin, teacher, academic supervisor, viewer, floor coordinator
+                            and parent, each with its own permissions, enforced for humans and AI assistants alike.</p>
+                    </div>
+                </dialog>
+                <dialog class="modal" id="p-scrumforge" aria-labelledby="p-scrumforge-title" closedby="any">
+                    <div class="modal-body">
+                        <button class="modal-close" type="button" commandfor="p-scrumforge" command="close"
+                            aria-label="Close">×</button>
+                        <figure class="shot">
+                            <img src="assets/img/scrumforge.png" width="1916" height="1078" loading="lazy" alt="" />
+                        </figure>
+                        <p class="tags"><span>Rust</span><span>AI agents</span><span>TUI</span></p>
+                        <h3 id="p-scrumforge-title">scrumforge</h3>
+                        <p>An orchestrator for running several coding agents on one project. Agents play scrum master,
+                            developer and reviewer; developers work in isolated git worktrees and open pull requests,
+                            and reviewers merge or send work back.</p>
+                        <a class="btn btn-primary" href="https://github.com/ManasesLovera/scrumforge" target="_blank"
+                            rel="noopener noreferrer">View on GitHub <span aria-hidden="true">↗</span></a>
+                    </div>
+                </dialog>
+                <dialog class="modal" id="p-lab" aria-labelledby="p-lab-title" closedby="any">
+                    <div class="modal-body">
+                        <button class="modal-close" type="button" commandfor="p-lab" command="close"
+                            aria-label="Close">×</button>
+                        <figure class="shot">
+                            <img src="assets/img/lab.png" width="1916" height="900" loading="lazy" alt="" />
+                        </figure>
+                        <p class="tags"><span>Docker</span><span>Nginx</span><span>Go</span></p>
+                        <h3 id="p-lab-title">lab</h3>
+                        <p>My homelab as code: a reproducible Docker Compose environment with shared core services
+                            (Nginx, Postgres, Redis, Cloudflare Tunnel), custom Go services, management CLIs and
+                            architecture decision records.</p>
+                        <a class="btn btn-primary" href="https://github.com/ManasesLovera/lab" target="_blank"
+                            rel="noopener noreferrer">View on GitHub <span aria-hidden="true">↗</span></a>
+                    </div>
+                </dialog>
+                <dialog class="modal" id="p-glm-ocr" aria-labelledby="p-glm-ocr-title" closedby="any">
+                    <div class="modal-body">
+                        <button class="modal-close" type="button" commandfor="p-glm-ocr" command="close"
+                            aria-label="Close">×</button>
+                        <figure class="shot">
+                            <img src="assets/img/glm-ocr.png" width="1458" height="820" loading="lazy" alt="" />
+                        </figure>
+                        <p class="tags"><span>Ollama</span><span>Document AI</span><span>Next.js</span></p>
+                        <h3 id="p-glm-ocr-title">glm-ocr</h3>
+                        <p>Local document OCR with GLM-OCR through Ollama for text, tables and figures, with an
+                            optional second pass where a small Gemma model turns the text into structured JSON.</p>
+                        <a class="btn btn-primary" href="https://github.com/ManasesLovera/glm-ocr" target="_blank"
+                            rel="noopener noreferrer">View on GitHub <span aria-hidden="true">↗</span></a>
+                    </div>
+                </dialog>
+                <dialog class="modal" id="p-talk-budget" aria-labelledby="p-talk-budget-title" closedby="any">
+                    <div class="modal-body">
+                        <button class="modal-close" type="button" commandfor="p-talk-budget" command="close"
+                            aria-label="Close">×</button>
+                        <figure class="shot">
+                            <img src="assets/img/talk-budget.png" width="1440" height="810" loading="lazy" alt="" />
+                        </figure>
+                        <p class="tags"><span>FastAPI</span><span>Next.js</span><span>Postgres</span></p>
+                        <h3 id="p-talk-budget-title">Talk Budget</h3>
+                        <p>A mobile-first, AI-native personal finance app with a built-in AI assistant, built with
+                            FastAPI, Next.js, PostgreSQL and Docker.</p>
+                        <a class="btn btn-primary" href="https://github.com/ManasesLovera/talk-budget" target="_blank"
+                            rel="noopener noreferrer">View on GitHub <span aria-hidden="true">↗</span></a>
+                    </div>
+                </dialog>
+            </div>
+        </section>
+
+        <section class="section" id="lab" data-scene="chip" aria-labelledby="lab-title">
+            <div class="wrap">
+                <header class="section-head reveal">
+                    <p class="kicker"><span class="num">03</span> Lab</p>
+                    <h2 id="lab-title">Curious all the way down</h2>
+                    <p class="section-lede">The math inside a network, the physics of a launch, the circuit under
+                        the code.</p>
+                </header>
+                <div class="cards cards-lab">
+                    <article class="card reveal">
+                        <figure class="shot">
+                            <img src="assets/img/cnn-visualizer.webp" width="1280" height="800" loading="lazy"
+                                alt="3D CNN visualizer showing convolution and pooling layers classifying a cat image" />
+                        </figure>
+                        <p class="tags"><span>Math</span><span>Three.js</span><span>CNN</span></p>
+                        <h3><a class="card-link" href="https://mlovera.dev/cnn-visualizer-v2/" target="_blank"
+                                rel="noopener noreferrer">CNN visualizer <span aria-hidden="true">↗</span></a></h3>
+                        <p>Watch a CNN tell cats from dogs, layer by layer, in 3D.</p>
+                    </article>
+                    <article class="card reveal">
+                        <figure class="shot">
+                            <img src="assets/img/esp32-kit-landing.png" width="1648" height="927" loading="lazy"
+                                alt="ESP32-S3 kit landing page with a 3D render of the board" />
+                        </figure>
+                        <p class="tags"><span>Electronics</span><span>Three.js</span><span>Preact</span></p>
+                        <h3><a class="card-link" href="https://esp32-kit-landing.vercel.app/" target="_blank"
+                                rel="noopener noreferrer">ESP32-S3 kit <span aria-hidden="true">↗</span></a></h3>
+                        <p>A 3D board you can spin, with its projects simulated live.</p>
+                    </article>
+                    <article class="card reveal">
+                        <figure class="shot">
+                            <img src="assets/img/rocket-science.webp" width="1280" height="800" loading="lazy"
+                                alt="Rocket Science Explained landing page with an illustrated rocket" />
+                        </figure>
+                        <p class="tags"><span>Physics</span><span>Simulation</span></p>
+                        <h3><a class="card-link" href="https://rocket-science-red.vercel.app/" target="_blank"
+                                rel="noopener noreferrer">Rocket science <span aria-hidden="true">↗</span></a></h3>
+                        <p>Thrust, staging and engines, simulated so you can play with them.</p>
+                    </article>
+                </div>
+                <div class="also reveal">
+                    <h3>Also on the bench</h3>
+                    <ul>
+                        <li><a href="https://transformer-insight-interactive-llm-visualizer-788464194957.us-west1.run.app/"
+                                target="_blank" rel="noopener noreferrer">Transformer visualizer <span
+                                    aria-hidden="true">↗</span></a> Attention and token flow inside an LLM.</li>
+                        <li><a href="https://mlovera.dev/3d-chess/" target="_blank" rel="noopener noreferrer">3D chess
+                                <span aria-hidden="true">↗</span></a> A minimax engine, and pieces that shatter.</li>
+                        <li><a href="https://github.com/ManasesLovera/ws-group-bot" target="_blank"
+                                rel="noopener noreferrer">ws-group-bot <span aria-hidden="true">↗</span></a> A small LM
+                            that learned to talk like a group chat.</li>
+                        <li><a href="https://github.com/ManasesLovera/spam-detector" target="_blank"
+                                rel="noopener noreferrer">spam-detector <span aria-hidden="true">↗</span></a> Three
+                            classic models race on the same spam.</li>
+                        <li><a href="https://github.com/ManasesLovera/practical-python-for-algorithmic-trading"
+                                target="_blank" rel="noopener noreferrer">ML for algorithmic trading <span
+                                    aria-hidden="true">↗</span></a> Market models, backtested walk-forward.</li>
+                        <li><a href="https://github.com/ManasesLovera/pytorch-ann" target="_blank"
+                                rel="noopener noreferrer">pytorch-ann <span aria-hidden="true">↗</span></a> Neural
+                            networks from scratch, on CUDA.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="experience" data-scene="wave" aria-labelledby="experience-title">
+            <div class="wrap">
+                <header class="section-head reveal">
+                    <p class="kicker"><span class="num">04</span> Experience</p>
+                    <h2 id="experience-title">Where I've worked</h2>
+                </header>
+                <div class="jobs">
+                    <details class="job reveal" name="job">
+                        <summary>
+                            <span class="when">Jul 2026 – now</span>
+                            <h3>Software Engineer &amp; IT Admin <span class="org">WELEEC</span></h3>
+                            <span class="job-icon" aria-hidden="true"></span>
+                        </summary>
+                        <div class="job-body">
+                            <ul class="ticks">
+                                <li>Built <button class="inline-link" type="button" commandfor="p-planboard"
+                                        command="show-modal" aria-haspopup="dialog">Planboard</button>, the school's
+                                    curriculum planning platform, including an MCP server for AI assistants</li>
+                                <li>Automating school operations with AI where it saves people real time</li>
+                                <li>Running the IT, network and Microsoft 365 infrastructure</li>
+                            </ul>
+                            <p class="tags"><span>Next.js</span><span>Postgres</span><span>MCP</span><span>Microsoft
+                                    365</span><span>Networking</span></p>
+                        </div>
+                    </details>
+                    <details class="job reveal" name="job">
+                        <summary>
+                            <span class="when">Nov 2024 – Jul 2026</span>
+                            <h3>AI / Software Engineer <span class="org">Tagshelf</span></h3>
+                            <span class="job-icon" aria-hidden="true"></span>
+                        </summary>
+                        <div class="job-body">
+                            <p>Production document AI on Alfred, Tagshelf's platform, across the whole model
+                                lifecycle.</p>
+                            <div class="phases">
+                                <div class="phase">
+                                    <p class="phase-label">Choose</p>
+                                    <ul class="ticks">
+                                        <li>Benchmarked AI models against each other on real tasks</li>
+                                        <li>Evaluated small language models for text understanding and generation
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="phase">
+                                    <p class="phase-label">Train</p>
+                                    <ul class="ticks">
+                                        <li>Trained NLP classification models from scratch</li>
+                                        <li>Fine-tuned YOLO object-detection models</li>
+                                        <li>Fine-tuned vision-language models (VLMs)</li>
+                                    </ul>
+                                </div>
+                                <div class="phase">
+                                    <p class="phase-label">Prove &amp; run</p>
+                                    <ul class="ticks">
+                                        <li>A/B tested model changes before rolling them out</li>
+                                        <li>Served models locally with Ollama and vLLM</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <ul class="ticks">
+                                <li>Built multi-step agent pipelines with LLM reasoning, tool use and RAG</li>
+                                <li>Exposed internal tools to agents through MCP servers</li>
+                                <li>Backend services in ASP.NET, FastAPI and Express, on Azure and GCP</li>
+                            </ul>
+                            <p class="tags"><span>Computer vision</span><span>NLP</span><span>VLMs</span><span>YOLO</span><span>Ollama</span><span>vLLM</span><span>RAG</span><span>MCP</span><span>ASP.NET</span><span>FastAPI</span><span>Azure</span><span>GCP</span></p>
+                            <p class="muted job-note">Client data and internal numbers stay private. Happy to walk
+                                through the approach on a call.</p>
+                        </div>
+                    </details>
+                    <details class="job reveal" name="job">
+                        <summary>
+                            <span class="when">May 2026 – now</span>
+                            <h3>Builder Coach <span class="org">Alterna Academy</span></h3>
+                            <span class="job-icon" aria-hidden="true"></span>
+                        </summary>
+                        <div class="job-body">
+                            <ul class="ticks">
+                                <li>Helping professionals put AI to work in their daily workflows</li>
+                                <li>LLM mechanics, tokenomics, advanced prompting and agentic skills</li>
+                                <li>Hands-on with Claude Code, Codex and NotebookLM, including MCP integrations</li>
+                            </ul>
+                            <p class="tags"><span>LLMs</span><span>AI agents</span><span>MCP</span><span>Prompt
+                                    engineering</span></p>
+                        </div>
+                    </details>
+                    <details class="job reveal" name="job">
+                        <summary>
+                            <span class="when">Apr 2024 – Jul 2024</span>
+                            <h3>Software Developer <span class="org">OrionTek</span></h3>
+                            <span class="job-icon" aria-hidden="true"></span>
+                        </summary>
+                        <div class="job-body">
+                            <ul class="ticks">
+                                <li>Built a full-stack application from scratch with ASP.NET Core and React</li>
+                                <li>Integrated the frontend with backend APIs</li>
+                                <li>Deployed and ran it on Azure and Netlify</li>
+                            </ul>
+                            <p class="tags"><span>ASP.NET Core</span><span>React</span><span>C#</span><span>Azure</span><span>Netlify</span></p>
+                        </div>
+                    </details>
+                </div>
+                <div class="facts reveal">
+                    <div>
+                        <h3>Education</h3>
+                        <ul>
+                            <li>Software Engineering, UAPA <span class="muted">· 2021 – in progress</span></li>
+                            <li>Artificial Intelligence specialization, Talento Digital <span class="muted">· 2025 –
+                                    2026</span></li>
+                            <li>Full Stack Developer bootcamp, Alterna Academy <span class="muted">· 2024</span>
+                            </li>
+                        </ul>
                     </div>
                     <div>
-                        <h1
-                            class="text-5xl md:text-7xl font-black leading-[1.05] tracking-tight text-slate-900 dark:text-white">
-                            Manasés Lovera</h1>
-                        <h2
-                            class="text-3xl md:text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white mt-3">
-                            <span class="text-primary">Fullstack &amp; AI</span> Software Engineer</h2>
-                    </div>
-                    <p class="text-lg md:text-xl text-slate-500 dark:text-slate-400 max-w-xl leading-relaxed">
-                        I build the systems that think, learn, and scale—fusing Backend Craftsmanship with AI/ML
-                        Innovation.
-                    </p>
-                    <div
-                        class="flex flex-wrap items-center gap-x-6 gap-y-2 font-mono text-xs text-slate-500 dark:text-slate-400">
-                        <span class="flex items-center gap-1.5"><span
-                                class="material-symbols-outlined text-base text-primary">location_on</span> Dominican
-                            Republic</span>
-                        <span class="flex items-center gap-1.5"><span
-                                class="material-symbols-outlined text-base text-primary">public</span> Open to remote ·
-                            UTC−4</span>
-                        <span class="flex items-center gap-1.5"><span
-                                class="material-symbols-outlined text-base text-primary">bolt</span> Currently @ WELEEC
-                            · Alterna Academy</span>
-                    </div>
-                    <div class="flex flex-wrap items-center gap-3">
-                        <a class="bg-primary text-white px-7 py-3.5 rounded-lg font-bold hover:scale-105 transition-transform flex items-center gap-2"
-                            href="#projects">
-                            View Projects <span class="material-symbols-outlined">arrow_forward</span>
-                        </a>
-                        <a class="bg-white border border-slate-200 text-slate-900 dark:bg-surface-dark dark:border-border-dark dark:text-white px-7 py-3.5 rounded-lg font-bold hover:bg-slate-100 dark:hover:bg-border-dark transition-colors flex items-center gap-2"
-                            href="cv.pdf" download="Manases_Lovera_CV_2026.pdf">
-                            Download CV <span class="material-symbols-outlined">download</span>
-                        </a>
-                        <div class="flex items-center gap-2 sm:ml-2">
-                            <a class="size-[52px] rounded-lg bg-white border border-slate-200 text-slate-500 dark:bg-surface-dark dark:border-border-dark dark:text-slate-400 flex items-center justify-center hover:text-primary hover:border-primary/50 transition-colors"
-                                href="https://github.com/manaseslovera" target="_blank" aria-label="GitHub Profile"
-                                title="GitHub Profile">
-                                <span class="material-symbols-outlined">code</span>
-                            </a>
-                            <a class="size-[52px] rounded-lg bg-white border border-slate-200 text-slate-500 dark:bg-surface-dark dark:border-border-dark dark:text-slate-400 flex items-center justify-center hover:text-primary hover:border-primary/50 transition-colors"
-                                href="https://linkedin.com/in/manaseslovera" target="_blank"
-                                aria-label="LinkedIn Profile" title="LinkedIn Profile">
-                                <span class="material-symbols-outlined">person</span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="flex flex-col gap-3 pt-4 border-t border-slate-200 dark:border-border-dark">
-                        <span
-                            class="font-mono text-[11px] uppercase tracking-widest text-slate-400 dark:text-slate-500">Working
-                            with</span>
-                        <div class="flex flex-wrap gap-2">
-                            <span
-                                class="px-2.5 py-1 rounded bg-white border border-slate-200 dark:bg-surface-dark dark:border-border-dark text-[11px] font-mono text-slate-500 dark:text-slate-400">Python</span>
-                            <span
-                                class="px-2.5 py-1 rounded bg-white border border-slate-200 dark:bg-surface-dark dark:border-border-dark text-[11px] font-mono text-slate-500 dark:text-slate-400">TypeScript</span>
-                            <span
-                                class="px-2.5 py-1 rounded bg-white border border-slate-200 dark:bg-surface-dark dark:border-border-dark text-[11px] font-mono text-slate-500 dark:text-slate-400">C#</span>
-                            <span
-                                class="px-2.5 py-1 rounded bg-white border border-slate-200 dark:bg-surface-dark dark:border-border-dark text-[11px] font-mono text-slate-500 dark:text-slate-400">FastAPI</span>
-                            <span
-                                class="px-2.5 py-1 rounded bg-white border border-slate-200 dark:bg-surface-dark dark:border-border-dark text-[11px] font-mono text-slate-500 dark:text-slate-400">ASP.NET
-                                Core</span>
-                            <span
-                                class="px-2.5 py-1 rounded bg-white border border-slate-200 dark:bg-surface-dark dark:border-border-dark text-[11px] font-mono text-slate-500 dark:text-slate-400">PyTorch</span>
-                            <span
-                                class="px-2.5 py-1 rounded bg-white border border-slate-200 dark:bg-surface-dark dark:border-border-dark text-[11px] font-mono text-slate-500 dark:text-slate-400">Docker</span>
-                            <span
-                                class="px-2.5 py-1 rounded bg-white border border-slate-200 dark:bg-surface-dark dark:border-border-dark text-[11px] font-mono text-slate-500 dark:text-slate-400">PostgreSQL</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="hidden lg:flex lg:col-span-5 justify-center items-center relative">
-                    <div class="absolute size-[500px] bg-primary/10 rounded-full blur-[120px]"></div>
-                    <div class="relative z-10 w-full animate-float">
-                        <div
-                            class="bg-white/60 dark:bg-surface-dark/60 backdrop-blur-sm border border-slate-200 dark:border-border-dark rounded-2xl shadow-2xl rotate-3 hover:rotate-0 transition-transform duration-500">
-                            <div
-                                class="flex items-center gap-3 px-5 py-3 border-b border-slate-200 dark:border-border-dark">
-                                <div class="flex gap-2">
-                                    <div class="size-3 rounded-full bg-red-500/50"></div>
-                                    <div class="size-3 rounded-full bg-yellow-500/50"></div>
-                                    <div class="size-3 rounded-full bg-green-500/50"></div>
-                                </div>
-                                <span
-                                    class="font-mono text-[11px] text-slate-400 dark:text-slate-500">engineer.py</span>
-                            </div>
-                            <div class="p-6 space-y-3 font-mono text-[13px] leading-relaxed">
-                                <div class="flex gap-3"><span
-                                        class="text-slate-400 dark:text-slate-600 select-none">01</span> <span><span
-                                            class="text-primary">class</span> <span
-                                            class="text-slate-900 dark:text-white">SoftwareEngineer</span><span
-                                            class="text-slate-500 dark:text-slate-400">:</span></span></div>
-                                <div class="flex gap-3"><span
-                                        class="text-slate-400 dark:text-slate-600 select-none">02</span> <span
-                                        class="ml-4 text-slate-500 dark:text-slate-400">name = <span
-                                            class="text-emerald-600 dark:text-emerald-400">"Manasés
-                                            Lovera"</span></span></div>
-                                <div class="flex gap-3"><span
-                                        class="text-slate-400 dark:text-slate-600 select-none">03</span> <span
-                                        class="ml-4 text-slate-500 dark:text-slate-400">focus = [<span
-                                            class="text-emerald-600 dark:text-emerald-400">"AI"</span>, <span
-                                            class="text-emerald-600 dark:text-emerald-400">"Backend"</span>, <span
-                                            class="text-emerald-600 dark:text-emerald-400">"Cloud"</span>]</span></div>
-                                <div class="flex gap-3"><span
-                                        class="text-slate-400 dark:text-slate-600 select-none">04</span> <span
-                                        class="ml-4 text-slate-500 dark:text-slate-400">stack = [<span
-                                            class="text-emerald-600 dark:text-emerald-400">"Python"</span>, <span
-                                            class="text-emerald-600 dark:text-emerald-400">"Typescript"</span>, <span
-                                            class="text-emerald-600 dark:text-emerald-400">"Rust"</span>, <span
-                                            class="text-emerald-600 dark:text-emerald-400">"Golang"</span>]</span></div>
-                                <div class="flex gap-3"><span
-                                        class="text-slate-400 dark:text-slate-600 select-none">05</span>
-                                    <span>&nbsp;</span></div>
-                                <div class="flex gap-3"><span
-                                        class="text-slate-400 dark:text-slate-600 select-none">06</span> <span
-                                        class="ml-4"><span class="text-primary">def</span> <span
-                                            class="text-slate-900 dark:text-white">build</span><span
-                                            class="text-slate-500 dark:text-slate-400">(self, idea):</span></span></div>
-                                <div class="flex gap-3"><span
-                                        class="text-slate-400 dark:text-slate-600 select-none">07</span> <span
-                                        class="ml-8 text-slate-400 dark:text-slate-500 italic"># think, learn,
-                                        scale</span></div>
-                                <div class="flex gap-3"><span
-                                        class="text-slate-400 dark:text-slate-600 select-none">08</span> <span
-                                        class="ml-8"><span class="text-primary">return</span> <span
-                                            class="text-slate-500 dark:text-slate-400">ship(idea, scalable=<span
-                                                class="text-primary">True</span>)</span></span></div>
-                                <div class="flex gap-3"><span
-                                        class="text-slate-400 dark:text-slate-600 select-none">09</span>
-                                    <span>&nbsp;</span></div>
-                                <div class="flex gap-3"><span
-                                        class="text-slate-400 dark:text-slate-600 select-none">10</span>
-                                    <span>&nbsp;</span></div>
-                                <div class="flex gap-3"><span
-                                        class="text-slate-400 dark:text-slate-600 select-none">11</span> <span
-                                        class="text-slate-500 dark:text-slate-400">me = <span
-                                            class="text-slate-900 dark:text-white">SoftwareEngineer</span>()</span>
-                                </div>
-                                <div class="flex gap-3"><span
-                                        class="text-slate-400 dark:text-slate-600 select-none">12</span> <span
-                                        class="text-slate-500 dark:text-slate-400">me.build(<span
-                                            class="text-emerald-600 dark:text-emerald-400">"your next
-                                            system"</span>)</span></div>
-                            </div>
-                            <div
-                                class="px-6 py-3 border-t border-slate-200 dark:border-border-dark flex items-center justify-end font-mono text-[11px] text-slate-400 dark:text-slate-500">
-                                <span class="flex items-center gap-1.5"><span
-                                        class="size-1.5 rounded-full bg-emerald-500"></span> Python 3.12</span>
-                            </div>
-                        </div>
-                        <div
-                            class="absolute -top-6 right-4 animate-float-slow bg-white dark:bg-surface-dark border border-slate-200 dark:border-border-dark rounded-xl shadow-xl px-4 py-3 flex items-center gap-2.5">
-                            <span class="material-symbols-outlined text-primary text-xl">psychology</span>
-                            <span class="font-mono text-[11px] text-slate-600 dark:text-slate-300">AI / ML</span>
-                        </div>
-                        <div
-                            class="absolute -bottom-6 -left-6 animate-float-slow bg-white dark:bg-surface-dark border border-slate-200 dark:border-border-dark rounded-xl shadow-xl px-4 py-3 flex items-center gap-2.5">
-                            <span class="material-symbols-outlined text-primary text-xl">cloud</span>
-                            <span class="font-mono text-[11px] text-slate-600 dark:text-slate-300">Backend &amp;
-                                Cloud</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- About Section -->
-        <section class="py-24 bg-slate-50 dark:bg-surface-dark/30" id="about">
-            <div class="max-w-7xl mx-auto px-6">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
-                    <div class="lg:col-span-4">
-                        <h2 class="text-slate-900 dark:text-white text-3xl font-bold flex items-center gap-3">About Me
-                        </h2>
-                    </div>
-                    <div class="lg:col-span-8 space-y-6 text-slate-600 dark:text-slate-300 text-lg leading-relaxed">
-                        <p>Hi, I'm Manasés Lovera, a passionate Software Engineer based in the Dominican Republic. My
-                            journey into tech started with a deep fascination for problem-solving and the way technology
-                            can transform ideas into reality.</p>
-                        <p>I specialize in Machine Learning and Backend development, driven by a curiosity about how
-                            complex systems operate and evolve. My expertise lies in building intelligent systems that
-                            seamlessly integrate advanced AI models with robust, production-ready backend
-                            infrastructure.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Experience & Education -->
-        <section class="py-24" id="experience">
-            <div class="max-w-7xl mx-auto px-6">
-                <h2 class="text-slate-900 dark:text-white text-3xl font-bold mb-16 flex items-center gap-3">Experience
-                    &amp; Education</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <!-- Professional Experience -->
-                    <div class="space-y-8">
-                        <h3 class="text-slate-500 dark:text-slate-400 font-mono text-xs uppercase tracking-widest mb-6">
-                            Professional Path</h3>
-                        <div class="relative pl-8 border-l border-slate-200 dark:border-border-dark group">
-                            <div class="absolute -left-1.5 top-0 size-3 rounded-full bg-primary ring-4 ring-primary/20">
-                            </div>
-                            <div class="mb-1 text-primary font-mono text-sm"><time datetime="2026-07">July 2026</time> -
-                                Present</div>
-                            <h4 class="text-slate-900 dark:text-white text-xl font-bold">IT Administrator &amp; Robotics
-                                Teacher</h4>
-                            <div class="text-slate-500 dark:text-slate-400 mb-4">WELEEC</div>
-                            <p class="text-slate-500 dark:text-slate-400 text-sm">Managing IT infrastructure and
-                                teaching robotics, while integrating AI/ML into core business processes.</p>
-                        </div>
-                        <div class="relative pl-8 border-l border-slate-200 dark:border-border-dark group">
-                            <div class="absolute -left-1.5 top-0 size-3 rounded-full bg-slate-300 dark:bg-border-dark">
-                            </div>
-                            <div class="mb-1 text-slate-400 dark:text-slate-500 font-mono text-sm"><time
-                                    datetime="2025-09">Sep 2025</time> - Present</div>
-                            <h4 class="text-slate-900 dark:text-white text-xl font-bold">Alterna Academy</h4>
-                            <div class="space-y-4 mt-4">
-                                <div class="relative pl-4 border-l border-slate-200 dark:border-border-dark">
-                                    <div
-                                        class="absolute -left-[5px] top-1 size-2 rounded-full bg-slate-300 dark:bg-border-dark">
-                                    </div>
-                                    <div class="mb-1 text-slate-400 dark:text-slate-500 font-mono text-xs"><time
-                                            datetime="2026-05">May 2026</time> - Present</div>
-                                    <h5 class="text-slate-900 dark:text-white text-base font-semibold">Builder Coach
-                                    </h5>
-                                    <p class="text-slate-500 dark:text-slate-400 text-sm">Coaching professionals on AI
-                                        integration: LLM mechanics, advanced prompting, agentic skills, and MCP.</p>
-                                </div>
-                                <div class="relative pl-4 border-l border-slate-200 dark:border-border-dark">
-                                    <div
-                                        class="absolute -left-[5px] top-1 size-2 rounded-full bg-slate-300 dark:bg-border-dark">
-                                    </div>
-                                    <div class="mb-1 text-slate-400 dark:text-slate-500 font-mono text-xs"><time
-                                            datetime="2025-09">Sep 2025</time> - <time datetime="2026-05">May
-                                            2026</time></div>
-                                    <h5 class="text-slate-900 dark:text-white text-base font-semibold">AI Instructor
-                                    </h5>
-                                    <p class="text-slate-500 dark:text-slate-400 text-sm">Teaching AI/ML fundamentals,
-                                        agent architectures, MCP (Model Context Protocol), and RAG (Retrieval-Augmented
-                                        Generation).</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="relative pl-8 border-l border-slate-200 dark:border-border-dark group">
-                            <div class="absolute -left-1.5 top-0 size-3 rounded-full bg-slate-300 dark:bg-border-dark">
-                            </div>
-                            <div class="mb-1 text-slate-400 dark:text-slate-500 font-mono text-sm"><time
-                                    datetime="2024-11">Nov 2024</time> - <time datetime="2026-07">July 2026</time></div>
-                            <h4 class="text-slate-900 dark:text-white text-xl font-bold">AI / Software Engineer</h4>
-                            <div class="text-slate-500 dark:text-slate-400 mb-4">Tagshelf</div>
-                            <p class="text-slate-500 dark:text-slate-400 text-sm">Focusing on AI-driven automation and
-                                developing intelligent workflows for document processing.</p>
-                        </div>
-                        <div class="relative pl-8 border-l border-slate-200 dark:border-border-dark group">
-                            <div class="absolute -left-1.5 top-0 size-3 rounded-full bg-slate-300 dark:bg-border-dark">
-                            </div>
-                            <div class="mb-1 text-slate-400 dark:text-slate-500 font-mono text-sm"><time
-                                    datetime="2024-04">April 2024</time> - <time datetime="2024-07">July 2024</time>
-                            </div>
-                            <h4 class="text-slate-900 dark:text-white text-xl font-bold">Software Developer</h4>
-                            <div class="text-slate-500 dark:text-slate-400 mb-4">Oriontek</div>
-                            <p class="text-slate-500 dark:text-slate-400 text-sm">Worked as a fullstack developer using
-                                ASP .NET Core and React for building from scratch an application. Responsible for both
-                                backend and frontend development, and deployed applications to the cloud using Netlify
-                                and Azure.</p>
-                        </div>
-                    </div>
-                    <!-- Education -->
-                    <div class="space-y-8">
-                        <h3 class="text-slate-500 dark:text-slate-400 font-mono text-xs uppercase tracking-widest mb-6">
-                            Academic Background</h3>
-                        <div
-                            class="bg-white border border-slate-200 dark:bg-surface-dark dark:border-border-dark p-6 rounded-xl hover:border-primary/50 transition-colors">
-                            <div class="flex items-center gap-4 mb-4">
-                                <span class="material-symbols-outlined text-primary text-3xl">school</span>
-                                <div>
-                                    <h4 class="text-slate-900 dark:text-white font-bold">Software Engineering</h4>
-                                    <p class="text-slate-500 dark:text-slate-400 text-sm">UAPA (Universidad Abierta para
-                                        Adultos)</p>
-                                </div>
-                            </div>
-                            <p class="text-slate-400 dark:text-slate-500 text-sm font-mono"><time datetime="2021-01">Jan
-                                    2021</time> - Present</p>
-                            <p class="text-slate-500 dark:text-slate-400 text-sm mt-2">Focus on .NET stack, Agile
-                                methodologies, Distributed systems, and Algorithms.</p>
-                        </div>
-                        <div
-                            class="bg-white border border-slate-200 dark:bg-surface-dark dark:border-border-dark p-6 rounded-xl hover:border-primary/50 transition-colors">
-                            <div class="flex items-center gap-4 mb-4">
-                                <span class="material-symbols-outlined text-primary text-3xl">psychology</span>
-                                <div>
-                                    <h4 class="text-slate-900 dark:text-white font-bold">Artificial Intelligence</h4>
-                                    <p class="text-slate-500 dark:text-slate-400 text-sm"><a
-                                            class="hover:text-primary transition-colors"
-                                            href="https://talentodigital.do" target="_blank"
-                                            rel="noopener noreferrer">Talento Digital</a></p>
-                                </div>
-                            </div>
-                            <p class="text-slate-400 dark:text-slate-500 text-sm font-mono"><time datetime="2025-11">Nov
-                                    2025</time> - <time datetime="2026-01">Jan 2026</time></p>
-                            <p class="text-slate-500 dark:text-slate-400 text-sm mt-2">Specialization covering ML, classic
-                                prediction and classification models, CNNs, Computer Vision, NLP, Transformers, LLMs, MCP,
-                                AI integration, AI cloud platforms, and MLOps.</p>
-                        </div>
-                        <div
-                            class="bg-white border border-slate-200 dark:bg-surface-dark dark:border-border-dark p-6 rounded-xl hover:border-primary/50 transition-colors">
-                            <div class="flex items-center gap-4 mb-4">
-                                <span class="material-symbols-outlined text-primary text-3xl">workspace_premium</span>
-                                <div>
-                                    <h4 class="text-slate-900 dark:text-white font-bold">Full Stack Developer</h4>
-                                    <p class="text-slate-500 dark:text-slate-400 text-sm">Alterna Academy</p>
-                                </div>
-                            </div>
-                            <p class="text-slate-400 dark:text-slate-500 text-sm font-mono"><time datetime="2024-02">Feb
-                                    2024</time> - <time datetime="2024-07">July 2024</time></p>
-                            <p class="text-slate-500 dark:text-slate-400 text-sm mt-2">Intensive bootcamp covering
-                                TypeScript, C#, ASP.NET Core, Node/Express, Linux, and React.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Technical Stack -->
-        <section class="py-24 bg-slate-50 dark:bg-surface-dark/30" id="stack">
-            <div class="max-w-7xl mx-auto px-6">
-                <h2 class="text-slate-900 dark:text-white text-3xl font-bold mb-16 flex items-center gap-3">Technical
-                    Stack</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
-                    <!-- Languages -->
-                    <div
-                        class="p-6 bg-white border border-slate-200 dark:bg-background-dark dark:border-border-dark rounded-xl hover:translate-y-[-4px] transition-all">
-                        <div class="size-10 rounded bg-primary/20 flex items-center justify-center mb-6">
-                            <span class="material-symbols-outlined text-primary">code</span>
-                        </div>
-                        <h4 class="text-slate-900 dark:text-white font-bold mb-4">Languages</h4>
-                        <ul class="space-y-3 font-mono text-sm text-slate-500 dark:text-slate-400">
-                            <li class="flex items-center gap-2"><span class="size-1.5 rounded-full bg-primary"></span>
-                                Python</li>
-                            <li class="flex items-center gap-2"><span class="size-1.5 rounded-full bg-primary"></span>
-                                JavaScript / TypeScript</li>
-                            <li class="flex items-center gap-2"><span class="size-1.5 rounded-full bg-primary"></span>
-                                C#</li>
-                            <li class="flex items-center gap-2"><span class="size-1.5 rounded-full bg-primary"></span>
-                                Rust</li>
-                            <li class="flex items-center gap-2"><span class="size-1.5 rounded-full bg-primary"></span>
-                                SQL</li>
-                        </ul>
-                    </div>
-                    <!-- AI/ML -->
-                    <div
-                        class="p-6 bg-white border border-slate-200 dark:bg-background-dark dark:border-border-dark rounded-xl hover:translate-y-[-4px] transition-all">
-                        <div class="size-10 rounded bg-primary/20 flex items-center justify-center mb-6">
-                            <span class="material-symbols-outlined text-primary">psychology</span>
-                        </div>
-                        <h4 class="text-slate-900 dark:text-white font-bold mb-4">AI / ML</h4>
-                        <ul class="space-y-3 font-mono text-sm text-slate-500 dark:text-slate-400">
-                            <li class="flex items-center gap-2"><span class="size-1.5 rounded-full bg-primary"></span>
-                                PyTorch</li>
-                            <li class="flex items-center gap-2"><span class="size-1.5 rounded-full bg-primary"></span>
+                        <h3>Toolbox</h3>
+                        <ul>
+                            <li><span class="muted">ML</span> PyTorch, scikit-learn, YOLO, Hugging Face, Ollama, vLLM,
                                 LangChain</li>
-                            <li class="flex items-center gap-2"><span class="size-1.5 rounded-full bg-primary"></span>
-                                Scikit-Learn</li>
-                            <li class="flex items-center gap-2"><span class="size-1.5 rounded-full bg-primary"></span>
-                                Document AI</li>
-                        </ul>
-                    </div>
-                    <div
-                        class="p-6 bg-white border border-slate-200 dark:bg-background-dark dark:border-border-dark rounded-xl hover:translate-y-[-4px] transition-all">
-                        <div class="size-10 rounded bg-primary/20 flex items-center justify-center mb-6"><span
-                                class="material-symbols-outlined text-primary">database</span></div>
-                        <h4 class="text-slate-900 dark:text-white font-bold mb-4">Databases</h4>
-                        <ul class="space-y-3 font-mono text-sm text-slate-500 dark:text-slate-400">
-                            <li class="flex items-center gap-2"><span class="size-1.5 rounded-full bg-primary"></span>
-                                PostgreSQL</li>
-                            <li class="flex items-center gap-2"><span class="size-1.5 rounded-full bg-primary"></span>
-                                SQL Server</li>
-                            <li class="flex items-center gap-2"><span class="size-1.5 rounded-full bg-primary"></span>
-                                MongoDB</li>
-                        </ul>
-                    </div>
-                    <!-- Infrastructure -->
-                    <div
-                        class="p-6 bg-white border border-slate-200 dark:bg-background-dark dark:border-border-dark rounded-xl hover:translate-y-[-4px] transition-all">
-                        <div class="size-10 rounded bg-primary/20 flex items-center justify-center mb-6">
-                            <span class="material-symbols-outlined text-primary">cloud</span>
-                        </div>
-                        <h4 class="text-slate-900 dark:text-white font-bold mb-4">Infrastructure</h4>
-                        <ul class="space-y-3 font-mono text-sm text-slate-500 dark:text-slate-400">
-                            <li class="flex items-center gap-2"><span class="size-1.5 rounded-full bg-primary"></span>
-                                Docker &amp; K8s</li>
-                            <li class="flex items-center gap-2"><span class="size-1.5 rounded-full bg-primary"></span>
-                                GCP / Azure</li>
-                            <li class="flex items-center gap-2"><span class="size-1.5 rounded-full bg-primary"></span>
-                                Linux Internals</li>
-                            <li class="flex items-center gap-2"><span class="size-1.5 rounded-full bg-primary"></span>
-                                CI/CD Pipelines</li>
-                        </ul>
-                    </div>
-                    <!-- Backend/Web -->
-                    <div
-                        class="p-6 bg-white border border-slate-200 dark:bg-background-dark dark:border-border-dark rounded-xl hover:translate-y-[-4px] transition-all">
-                        <div class="size-10 rounded bg-primary/20 flex items-center justify-center mb-6">
-                            <span class="material-symbols-outlined text-primary">settings_ethernet</span>
-                        </div>
-                        <h4 class="text-slate-900 dark:text-white font-bold mb-4">Backend/Web</h4>
-                        <ul class="space-y-3 font-mono text-sm text-slate-500 dark:text-slate-400">
-                            <li class="flex items-center gap-2"><span class="size-1.5 rounded-full bg-primary"></span>
-                                FastAPI</li>
-                            <li class="flex items-center gap-2"><span class="size-1.5 rounded-full bg-primary"></span>
-                                ASP.NET Core</li>
-                            <li class="flex items-center gap-2"><span class="size-1.5 rounded-full bg-primary"></span>
-                                Express.js</li>
-                            <li class="flex items-center gap-2"><span class="size-1.5 rounded-full bg-primary"></span>
-                                React.js</li>
+                            <li><span class="muted">Languages</span> Python, TypeScript, C#, Go, Rust, SQL</li>
+                            <li><span class="muted">Frontend</span> React, Next.js</li>
+                            <li><span class="muted">Backend</span> FastAPI, ASP.NET Core, Fiber (Go), Axum (Rust)</li>
+                            <li><span class="muted">Databases</span> PostgreSQL, Redis, MongoDB, SQL Server, Oracle,
+                                MySQL</li>
+                            <li><span class="muted">Infra</span> Docker, Kubernetes, GitOps (Flux CD), Linux, GCP,
+                                Azure, Cloudflare</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </section>
-        <!-- Featured Projects -->
-        <section class="py-24" id="projects">
-            <div class="max-w-7xl mx-auto px-6">
-                <h2 class="text-slate-900 dark:text-white text-3xl font-bold mb-16 flex items-center gap-3">Featured
-                    Projects</h2>
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                    <!-- Project: ESP32-S3 Kit Landing -->
-                    <div class="group">
-                        <a href="https://esp32-kit-landing.vercel.app/" target="_blank" rel="noopener noreferrer"
-                            aria-label="Open the ESP32-S3 kit landing page in a new tab"
-                            class="group/shot block relative overflow-hidden rounded-xl aspect-video mb-6 bg-slate-50 border border-slate-200 dark:bg-surface-dark dark:border-border-dark">
-                            <img src="esp32-kit-landing.png" alt="ESP32-S3 Kit Landing Page Screenshot"
-                                class="absolute inset-0 w-full h-full object-cover motion-safe:transition-transform motion-safe:duration-500 ease-out group-hover/shot:scale-105 group-focus-visible/shot:scale-105" />
-                            <div class="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent"></div>
-                        </a>
-                        <div class="flex justify-between items-start mb-4">
-                            <div>
-                                <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-2">esp32-kit-landing</h3>
-                                <div class="flex gap-2">
-                                    <span
-                                        class="px-2 py-1 rounded bg-slate-50 border border-slate-200 dark:bg-surface-dark dark:border-border-dark text-[10px] font-mono text-slate-500 dark:text-slate-400">PREACT</span>
-                                    <span
-                                        class="px-2 py-1 rounded bg-slate-50 border border-slate-200 dark:bg-surface-dark dark:border-border-dark text-[10px] font-mono text-slate-500 dark:text-slate-400">THREE.JS</span>
-                                </div>
-                            </div>
-                            <div class="flex gap-2">
-                                <a class="text-slate-400 hover:text-slate-900 dark:text-slate-500 dark:hover:text-white transition-colors"
-                                    href="https://github.com/ManasesLovera/esp32-kit-landing" target="_blank"
-                                    aria-label="GitHub Repository">
-                                    <span class="material-symbols-outlined">code</span>
-                                </a>
-                                <a class="text-slate-400 hover:text-slate-900 dark:text-slate-500 dark:hover:text-white transition-colors"
-                                    href="https://esp32-kit-landing.vercel.app/" target="_blank"
-                                    aria-label="Live Demo">
-                                    <span class="material-symbols-outlined">open_in_new</span>
-                                </a>
-                            </div>
-                        </div>
-                        <p class="text-slate-500 dark:text-slate-400 mb-6">
-                            An interactive product landing page for the Freenove ESP32-S3 Ultimate Starter Kit, with a 3D
-                            Three.js stage, live project simulations and real product photography.
-                        </p>
-                    </div>
-                    <!-- Project: Planboard -->
-                    <div class="group">
-                        <div
-                            class="group/shot relative overflow-hidden rounded-xl aspect-video mb-6 bg-slate-50 border border-slate-200 dark:bg-surface-dark dark:border-border-dark">
-                            <img src="planboard.png" alt="Planboard admin dashboard with school overview and system health"
-                                class="absolute inset-0 w-full h-full object-cover object-left-top motion-safe:transition-transform motion-safe:duration-500 ease-out group-hover/shot:scale-105" />
-                            <div class="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent"></div>
-                        </div>
-                        <div class="flex justify-between items-start mb-4">
-                            <div>
-                                <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-2">Planboard</h3>
-                                <div class="flex gap-2">
-                                    <span
-                                        class="px-2 py-1 rounded bg-slate-50 border border-slate-200 dark:bg-surface-dark dark:border-border-dark text-[10px] font-mono text-slate-500 dark:text-slate-400">NEXT.JS</span>
-                                    <span
-                                        class="px-2 py-1 rounded bg-slate-50 border border-slate-200 dark:bg-surface-dark dark:border-border-dark text-[10px] font-mono text-slate-500 dark:text-slate-400">POSTGRES</span>
-                                    <span
-                                        class="px-2 py-1 rounded bg-slate-50 border border-slate-200 dark:bg-surface-dark dark:border-border-dark text-[10px] font-mono text-slate-500 dark:text-slate-400">MCP</span>
-                                </div>
-                            </div>
-                            <span class="text-slate-400 dark:text-slate-500" title="Private repository"
-                                aria-label="Private repository" role="img">
-                                <span class="material-symbols-outlined" aria-hidden="true">lock</span>
-                            </span>
-                        </div>
-                        <p class="text-slate-500 dark:text-slate-400 mb-4">
-                            Curriculum planning platform built for WELEEC, a private school. Teachers edit weekly
-                            plans in a real editor instead of spreadsheets, exports land on the school's own .xlsx and
-                            .docx templates, and an MCP server lets AI assistants work under the same permissions.
-                        </p>
-                        <ul class="text-slate-500 dark:text-slate-400 text-sm space-y-1 mb-6">
-                            <li><span class="text-slate-900 dark:text-white font-medium">Admin</span> manages users,
-                                subjects, schedules and every planning.</li>
-                            <li><span class="text-slate-900 dark:text-white font-medium">Teacher</span> edits assigned
-                                plannings, takes class attendance and keeps private notes.</li>
-                            <li><span class="text-slate-900 dark:text-white font-medium">Academic supervisor</span>
-                                reviews all plannings and leaves feedback without editing content.</li>
-                            <li><span class="text-slate-900 dark:text-white font-medium">Viewer</span> reads the
-                                school-wide surface plus performance metrics.</li>
-                            <li><span class="text-slate-900 dark:text-white font-medium">Floor coordinator</span>
-                                records daily general attendance across grades.</li>
-                            <li><span class="text-slate-900 dark:text-white font-medium">Parent</span> follows their
-                                children and chats with the school.</li>
-                        </ul>
-                    </div>
-                    <!-- Project: Lab (homelab) -->
-                    <div class="group">
-                        <div
-                            class="group/shot relative overflow-hidden rounded-xl aspect-video mb-6 bg-slate-50 border border-slate-200 dark:bg-surface-dark dark:border-border-dark">
-                            <img src="lab.png" alt="Lab Monitor app health page showing 11 healthy homelab containers"
-                                class="absolute inset-0 w-full h-full object-cover object-left-top motion-safe:transition-transform motion-safe:duration-500 ease-out group-hover/shot:scale-105" />
-                            <div class="absolute inset-0 bg-gradient-to-tl from-primary/10 to-transparent"></div>
-                        </div>
-                        <div class="flex justify-between items-start mb-4">
-                            <div>
-                                <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-2">lab</h3>
-                                <div class="flex gap-2">
-                                    <span
-                                        class="px-2 py-1 rounded bg-slate-50 border border-slate-200 dark:bg-surface-dark dark:border-border-dark text-[10px] font-mono text-slate-500 dark:text-slate-400">DOCKER</span>
-                                    <span
-                                        class="px-2 py-1 rounded bg-slate-50 border border-slate-200 dark:bg-surface-dark dark:border-border-dark text-[10px] font-mono text-slate-500 dark:text-slate-400">NGINX</span>
-                                    <span
-                                        class="px-2 py-1 rounded bg-slate-50 border border-slate-200 dark:bg-surface-dark dark:border-border-dark text-[10px] font-mono text-slate-500 dark:text-slate-400">HOMELAB</span>
-                                </div>
-                            </div>
-                            <a class="text-slate-400 hover:text-slate-900 dark:text-slate-500 dark:hover:text-white transition-colors"
-                                href="https://github.com/ManasesLovera/lab" target="_blank"
-                                aria-label="GitHub Repository">
-                                <span class="material-symbols-outlined">code</span>
-                            </a>
-                        </div>
-                        <p class="text-slate-500 dark:text-slate-400 mb-6">
-                            My homelab as code: a reproducible Docker Compose environment for running and replicating my
-                            services on any Linux box or VPS. Organized into shared core services (Nginx proxy, Postgres,
-                            Redis, Cloudflare Tunnel), third-party apps like n8n, custom Go services, management CLIs, and
-                            architecture decision records.
-                        </p>
-                    </div>
-                    <!-- Project: WhatsApp MCP (hidden) -->
-                    <div class="group" hidden>
-                        <div
-                            class="relative overflow-hidden rounded-xl aspect-video mb-6 bg-slate-50 border border-slate-200 dark:bg-surface-dark dark:border-border-dark">
-                            <div class="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent"></div>
-                            <div
-                                class="absolute inset-0 flex items-center justify-center opacity-40 group-hover:opacity-100 transition-opacity">
-                                <div
-                                    class="bg-white dark:bg-background-dark p-6 rounded-xl border border-primary/30 shadow-2xl group-hover:scale-105 transition-transform">
-                                    <span class="material-symbols-outlined text-primary text-6xl">chat</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="flex justify-between items-start mb-4">
-                            <div>
-                                <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-2">whatsapp-mcp</h3>
-                                <div class="flex gap-2">
-                                    <span
-                                        class="px-2 py-1 rounded bg-slate-50 border border-slate-200 dark:bg-surface-dark dark:border-border-dark text-[10px] font-mono text-slate-500 dark:text-slate-400">GO</span>
-                                    <span
-                                        class="px-2 py-1 rounded bg-slate-50 border border-slate-200 dark:bg-surface-dark dark:border-border-dark text-[10px] font-mono text-slate-500 dark:text-slate-400">MCP</span>
-                                    <span
-                                        class="px-2 py-1 rounded bg-slate-50 border border-slate-200 dark:bg-surface-dark dark:border-border-dark text-[10px] font-mono text-slate-500 dark:text-slate-400">AI AGENTS</span>
-                                </div>
-                            </div>
-                            <a class="text-slate-400 hover:text-slate-900 dark:text-slate-500 dark:hover:text-white transition-colors"
-                                href="https://github.com/ManasesLovera/whatsapp-mcp" target="_blank"
-                                aria-label="GitHub Repository">
-                                <span class="material-symbols-outlined">code</span>
-                            </a>
-                        </div>
-                        <p class="text-slate-500 dark:text-slate-400 mb-6">
-                            A personal-use MCP server in Go that links to my WhatsApp account as a device, letting AI
-                            assistants check the connection, list chats and send messages. Runs over stdio or as an
-                            HTTP daemon in Docker.
-                        </p>
-                    </div>
-                    <!-- Project: ScrumForge -->
-                    <div class="group">
-                        <div
-                            class="group/shot relative overflow-hidden rounded-xl aspect-video mb-6 bg-slate-50 border border-slate-200 dark:bg-surface-dark dark:border-border-dark">
-                            <img src="scrumforge.png" alt="scrumforge terminal board with tasks across backlog, review and done columns"
-                                class="absolute inset-0 w-full h-full object-cover motion-safe:transition-transform motion-safe:duration-500 ease-out group-hover/shot:scale-105" />
-                            <div class="absolute inset-0 bg-gradient-to-bl from-primary/10 to-transparent"></div>
-                        </div>
-                        <div class="flex justify-between items-start mb-4">
-                            <div>
-                                <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-2">scrumforge</h3>
-                                <div class="flex gap-2">
-                                    <span
-                                        class="px-2 py-1 rounded bg-slate-50 border border-slate-200 dark:bg-surface-dark dark:border-border-dark text-[10px] font-mono text-slate-500 dark:text-slate-400">RUST</span>
-                                    <span
-                                        class="px-2 py-1 rounded bg-slate-50 border border-slate-200 dark:bg-surface-dark dark:border-border-dark text-[10px] font-mono text-slate-500 dark:text-slate-400">AI AGENTS</span>
-                                    <span
-                                        class="px-2 py-1 rounded bg-slate-50 border border-slate-200 dark:bg-surface-dark dark:border-border-dark text-[10px] font-mono text-slate-500 dark:text-slate-400">TUI</span>
-                                </div>
-                            </div>
-                            <a class="text-slate-400 hover:text-slate-900 dark:text-slate-500 dark:hover:text-white transition-colors"
-                                href="https://github.com/ManasesLovera/scrumforge" target="_blank"
-                                aria-label="GitHub Repository">
-                                <span class="material-symbols-outlined">code</span>
-                            </a>
-                        </div>
-                        <p class="text-slate-500 dark:text-slate-400 mb-6">
-                            An AI scrum team orchestrator for working with multiple coding agents on one project. I act
-                            as product owner while agents play scrum master, developer and code reviewer: tasks move
-                            across a board, developers work in isolated git worktrees and open pull requests, and
-                            reviewers merge or send work back.
-                        </p>
-                    </div>
-                    <!-- Project: GLM-OCR -->
-                    <div class="group">
-                        <div
-                            class="group/shot relative overflow-hidden rounded-xl aspect-video mb-6 bg-slate-50 border border-slate-200 dark:bg-surface-dark dark:border-border-dark">
-                            <img src="glm-ocr.png" alt="GLM-OCR app showing a text recognition result"
-                                class="absolute inset-0 w-full h-full object-cover motion-safe:transition-transform motion-safe:duration-500 ease-out group-hover/shot:scale-105" />
-                            <div class="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent"></div>
-                        </div>
-                        <div class="flex justify-between items-start mb-4">
-                            <div>
-                                <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-2">glm-ocr</h3>
-                                <div class="flex gap-2">
-                                    <span
-                                        class="px-2 py-1 rounded bg-slate-50 border border-slate-200 dark:bg-surface-dark dark:border-border-dark text-[10px] font-mono text-slate-500 dark:text-slate-400">NEXT.JS</span>
-                                    <span
-                                        class="px-2 py-1 rounded bg-slate-50 border border-slate-200 dark:bg-surface-dark dark:border-border-dark text-[10px] font-mono text-slate-500 dark:text-slate-400">OLLAMA</span>
-                                    <span
-                                        class="px-2 py-1 rounded bg-slate-50 border border-slate-200 dark:bg-surface-dark dark:border-border-dark text-[10px] font-mono text-slate-500 dark:text-slate-400">DOCUMENT AI</span>
-                                </div>
-                            </div>
-                            <a class="text-slate-400 hover:text-slate-900 dark:text-slate-500 dark:hover:text-white transition-colors"
-                                href="https://github.com/ManasesLovera/glm-ocr" target="_blank"
-                                aria-label="GitHub Repository">
-                                <span class="material-symbols-outlined">code</span>
-                            </a>
-                        </div>
-                        <p class="text-slate-500 dark:text-slate-400 mb-6">
-                            A local document OCR web app testing GLM-OCR through Ollama for text, table and figure
-                            recognition, with an optional second pass where a Gemma model turns the recognized text into
-                            structured JSON fields.
-                        </p>
-                    </div>
-                    <!-- Project 2: Talk Budget -->
-                    <div class="group">
-                        <div
-                            class="group/shot relative overflow-hidden rounded-xl aspect-video mb-6 bg-slate-50 border border-slate-200 dark:bg-surface-dark dark:border-border-dark">
-                            <img src="talk-budget.png" alt="Talk Budget dashboard with the AI assistant chat open"
-                                class="absolute inset-0 w-full h-full object-cover motion-safe:transition-transform motion-safe:duration-500 ease-out group-hover/shot:scale-105" />
-                            <div class="absolute inset-0 bg-gradient-to-bl from-primary/10 to-transparent"></div>
-                        </div>
-                        <div class="flex justify-between items-start mb-4">
-                            <div>
-                                <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-2">Talk Budget</h3>
-                                <div class="flex gap-2">
-                                    <span
-                                        class="px-2 py-1 rounded bg-slate-50 border border-slate-200 dark:bg-surface-dark dark:border-border-dark text-[10px] font-mono text-slate-500 dark:text-slate-400">PYTHON</span>
-                                    <span
-                                        class="px-2 py-1 rounded bg-slate-50 border border-slate-200 dark:bg-surface-dark dark:border-border-dark text-[10px] font-mono text-slate-500 dark:text-slate-400">NEXT.JS</span>
-                                    <span
-                                        class="px-2 py-1 rounded bg-slate-50 border border-slate-200 dark:bg-surface-dark dark:border-border-dark text-[10px] font-mono text-slate-500 dark:text-slate-400">DOCKER</span>
-                                </div>
-                            </div>
-                            <a class="text-slate-400 hover:text-slate-900 dark:text-slate-500 dark:hover:text-white transition-colors"
-                                href="https://github.com/ManasesLovera/talk-budget" target="_blank"
-                                aria-label="GitHub Repository">
-                                <span class="material-symbols-outlined">code</span>
-                            </a>
-                        </div>
-                        <p class="text-slate-500 dark:text-slate-400 mb-6">
-                            A mobile-first, AI-native personal finance application built with FastAPI, Next.js 14,
-                            PostgreSQL, and Docker.
-                        </p>
-                    </div>
-                </div>
+
+        <section class="section contact" id="contact" data-scene="network" aria-labelledby="contact-title">
+            <div class="wrap">
+                <p class="kicker reveal"><span class="num">05</span> Contact</p>
+                <h2 id="contact-title" class="reveal">Is your AI product slow or expensive?</h2>
+                <p class="section-lede reveal">Tell me what it does and what it costs to run. I'll tell you where I'd
+                    start.</p>
+                <a class="email reveal" href="mailto:manaseslovera07@gmail.com">manaseslovera07@gmail.com</a>
+                <ul class="links reveal">
+                    <li><a href="https://linkedin.com/in/manaseslovera" target="_blank"
+                            rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a></li>
+                    <li><a href="https://github.com/manaseslovera" target="_blank" rel="noopener noreferrer">GitHub
+                            <span aria-hidden="true">↗</span></a></li>
+                    <li><a href="cv.pdf" download>CV (PDF)</a></li>
+                </ul>
             </div>
         </section>
     </main>
-    <!-- Footer -->
-    <footer class="bg-slate-50 dark:bg-surface-dark py-16 border-t border-slate-200 dark:border-border-dark"
-        id="footer">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="flex flex-col md:flex-row justify-between items-center gap-12 text-center md:text-left">
-                <div class="space-y-4">
-                    <div class="flex items-center justify-center md:justify-start gap-3">
-                        <div class="size-6 bg-primary rounded flex items-center justify-center text-white text-[10px]">
-                            ML</div>
-                        <span class="text-slate-900 dark:text-white font-bold tracking-tight">Manasés Lovera</span>
-                    </div>
-                    <p class="text-slate-500 dark:text-slate-400 max-w-sm italic">
-                        "Automating the boring stuff, one AI agent at a time."
-                    </p>
-                    <div class="flex justify-center md:justify-start gap-6 mt-6">
-                        <a class="text-slate-500 dark:text-slate-400 hover:text-primary transition-colors"
-                            href="https://linkedin.com/in/manaseslovera" target="_blank">LinkedIn</a>
-                        <a class="text-slate-500 dark:text-slate-400 hover:text-primary transition-colors"
-                            href="https://github.com/manaseslovera" target="_blank">GitHub</a>
-                        <a class="text-slate-500 dark:text-slate-400 hover:text-primary transition-colors"
-                            href="mailto:manaseslovera07@gmail.com">Email</a>
-                    </div>
-                </div>
-                <div
-                    class="bg-white dark:bg-background-dark p-8 rounded-xl border border-slate-200 dark:border-border-dark max-w-md w-full">
-                    <h4 class="text-slate-900 dark:text-white font-bold mb-4">Ready to build something intelligent?</h4>
-                    <a class="inline-flex items-center gap-2 text-primary hover:underline font-mono"
-                        href="mailto:manaseslovera07@gmail.com">
-                        manaseslovera07@gmail.com <span class="material-symbols-outlined text-sm">mail</span>
-                    </a>
-                </div>
-            </div>
-            <div
-                class="mt-16 pt-8 border-t border-slate-200 dark:border-border-dark/50 text-center text-slate-400 dark:text-slate-500 text-xs font-mono">
-                © 2026 MANASES LOVERA // SOFTWARE &amp; AI ENGINEER // BUILT WITH PRECISION</div>
+
+    <footer class="site-footer">
+        <div class="wrap">
+            <p>© 2026 Manasés Lovera · mlovera.dev</p>
         </div>
     </footer>
-    <script>
-        function toggleTheme() {
-            const isDark = document.documentElement.classList.toggle('dark');
-            localStorage.setItem('theme', isDark ? 'dark' : 'light');
-        }
-    </script>
 </body>
 
 </html>
